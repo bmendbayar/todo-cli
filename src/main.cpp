@@ -1,9 +1,9 @@
-#include "todo_controller.h"
+#include "controller.h"
 
 int main()
 {
-    TodoController app;
-    app.run();
+  Todo::Controller app;
+  app.run();
 
-    return 0;
+  return 0;
 }

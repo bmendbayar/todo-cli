@@ -9,9 +9,9 @@ find_package(Boost REQUIRED COMPONENTS json CONFIG)
 
 set(SRC_FILES
     src/main.cpp
-    src/todo_view.cpp
-    src/todo_list.cpp
-    src/todo_controller.cpp
+    src/view.cpp
+    src/model.cpp
+    src/controller.cpp
 )
 
 include_directories(
