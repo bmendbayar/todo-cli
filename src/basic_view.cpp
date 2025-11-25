@@ -1,12 +1,11 @@
 #include <curses.h>
 
-#include <iomanip>
 #include <iostream>
 #include <limits>
 #include <string>
 #include <vector>
 
-#include "view.h"
+#include "basic_view.h"
 
 void clear_input_buf()
 {
@@ -14,7 +13,7 @@ void clear_input_buf()
   std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 }
 
-Todo::MenuOptions Todo::View::get_menu_opt()
+Todo::MenuOptions Todo::BasicView::get_menu_opt()
 {
   std::cout << "1. Add a task\n"
             << "2. Remove a task\n"
@@ -34,7 +33,7 @@ Todo::MenuOptions Todo::View::get_menu_opt()
   return MenuOptions::INVALID;
 }
 
-std::string Todo::View::get_task_desc(const std::string &msg)
+std::string Todo::BasicView::get_task_desc(const std::string &msg)
 {
   std::cout << msg;
   std::string desc;
@@ -42,7 +41,7 @@ std::string Todo::View::get_task_desc(const std::string &msg)
   return desc;
 }
 
-size_t Todo::View::get_index(const std::string &msg)
+size_t Todo::BasicView::get_index(const std::string &msg)
 {
   std::cout << msg;
   size_t index;
@@ -51,8 +50,8 @@ size_t Todo::View::get_index(const std::string &msg)
   return index;
 }
 
-void Todo::View::display_list(const std::vector<Todo::Task> &todo_list,
-                              size_t level)
+void Todo::BasicView::display_list(const std::vector<Todo::Task> &todo_list,
+                                   size_t level)
 {
   size_t id = 1;
   for (const auto &task : todo_list)
@@ -70,7 +69,7 @@ void Todo::View::display_list(const std::vector<Todo::Task> &todo_list,
   std::cout << '\n';
 }
 
-void Todo::View::display_msg(const std::string &msg)
+void Todo::BasicView::display_msg(const std::string &msg)
 {
   std::cout << msg << '\n';
 }

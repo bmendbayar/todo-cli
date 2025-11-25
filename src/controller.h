@@ -11,10 +11,10 @@ class Controller
 {
 private:
   Model model_;
-  View view_;
+  View *view_;
 
 public:
-  Controller() = default;
+  Controller();
   void run();
 
 private:

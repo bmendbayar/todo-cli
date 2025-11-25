@@ -12,7 +12,7 @@ find_package(Curses REQUIRED)
 
 set(SRC_FILES
     src/main.cpp
-    src/view.cpp
+    src/basic_view.cpp
     src/model.cpp
     src/controller.cpp
 )
