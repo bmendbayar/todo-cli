@@ -1,0 +1,116 @@
+\doxysection{Todo Namespace Reference}
+\hypertarget{namespace_todo}{}\label{namespace_todo}\index{Todo@{Todo}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_todo_1_1_basic_view}{Basic\+View}}
+\item 
+class \mbox{\hyperlink{class_todo_1_1_controller}{Controller}}
+\item 
+class \mbox{\hyperlink{class_todo_1_1_i_view}{IView}}
+\item 
+struct \mbox{\hyperlink{struct_todo_1_1_task}{Task}}
+\item 
+class \mbox{\hyperlink{class_todo_1_1_model}{Model}}
+\item 
+class \mbox{\hyperlink{class_todo_1_1_view}{View}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35}{Status}} \+: uint8\+\_\+t \{ \mbox{\hyperlink{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35a06972acc3aafeb3a65dbd996c8dedc73}{NOT\+\_\+\+STARTED}} = 1
+, \mbox{\hyperlink{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35aca69f96c768067fbff6c911ca87bccc9}{IN\+\_\+\+PROGRESS}} = 2
+, \mbox{\hyperlink{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35a8f7afecbc8fbc4cd0f50a57d1172482e}{COMPLETED}} = 3
+ \}
+\item 
+enum class \mbox{\hyperlink{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3c}{Menu\+Options}} \{ \newline
+\mbox{\hyperlink{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3caa42b2fb0e720a080e79a92f4ca97d927}{EXIT}} = 0
+, \mbox{\hyperlink{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3ca9eeb52badb613229884838847294b90d}{ADD}} = 1
+, \mbox{\hyperlink{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3ca78baf367c4626442174307cdf41c6538}{REMOVE}} = 2
+, \mbox{\hyperlink{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3cadfa42aea7afbedb3b9336dab65f43a47}{CHANGE\+\_\+\+STATUS}} = 3
+, \newline
+\mbox{\hyperlink{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3ca813461e0c58e7ad59a2fd83ca2237fec}{CLEAR}} = 4
+, \mbox{\hyperlink{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3caccc0377a8afbf50e7094f5c23a8af223}{INVALID}} = 5
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespace_todo_a4c42c87eab3e0bde6142a3beb62feffd}{BOOST\+\_\+\+DESCRIBE\+\_\+\+ENUM}} (\mbox{\hyperlink{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35}{Status}}, NOT\+\_\+\+STARTED, IN\+\_\+\+PROGRESS, COMPLETED)
+\item 
+\mbox{\hyperlink{namespace_todo_adaca29275cc9a35835e041c541e6e794}{BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT}} (\mbox{\hyperlink{struct_todo_1_1_task}{Task}},(),(desc, child\+\_\+tasks, status))
+\end{DoxyCompactItemize}
+
+
+\label{doc-enum-members}
+\Hypertarget{namespace_todo_doc-enum-members}
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3c}\index{Todo@{Todo}!MenuOptions@{MenuOptions}}
+\index{MenuOptions@{MenuOptions}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{MenuOptions}{MenuOptions}}
+{\footnotesize\ttfamily \label{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3c} 
+enum class \mbox{\hyperlink{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3c}{Todo\+::\+Menu\+Options}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXIT@{EXIT}!Todo@{Todo}}\index{Todo@{Todo}!EXIT@{EXIT}}}\Hypertarget{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3caa42b2fb0e720a080e79a92f4ca97d927}\label{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3caa42b2fb0e720a080e79a92f4ca97d927} 
+EXIT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADD@{ADD}!Todo@{Todo}}\index{Todo@{Todo}!ADD@{ADD}}}\Hypertarget{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3ca9eeb52badb613229884838847294b90d}\label{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3ca9eeb52badb613229884838847294b90d} 
+ADD&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{REMOVE@{REMOVE}!Todo@{Todo}}\index{Todo@{Todo}!REMOVE@{REMOVE}}}\Hypertarget{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3ca78baf367c4626442174307cdf41c6538}\label{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3ca78baf367c4626442174307cdf41c6538} 
+REMOVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CHANGE\_STATUS@{CHANGE\_STATUS}!Todo@{Todo}}\index{Todo@{Todo}!CHANGE\_STATUS@{CHANGE\_STATUS}}}\Hypertarget{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3cadfa42aea7afbedb3b9336dab65f43a47}\label{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3cadfa42aea7afbedb3b9336dab65f43a47} 
+CHANGE\+\_\+\+STATUS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLEAR@{CLEAR}!Todo@{Todo}}\index{Todo@{Todo}!CLEAR@{CLEAR}}}\Hypertarget{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3ca813461e0c58e7ad59a2fd83ca2237fec}\label{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3ca813461e0c58e7ad59a2fd83ca2237fec} 
+CLEAR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INVALID@{INVALID}!Todo@{Todo}}\index{Todo@{Todo}!INVALID@{INVALID}}}\Hypertarget{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3caccc0377a8afbf50e7094f5c23a8af223}\label{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3caccc0377a8afbf50e7094f5c23a8af223} 
+INVALID&\\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35}\index{Todo@{Todo}!Status@{Status}}
+\index{Status@{Status}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily \label{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35} 
+enum class \mbox{\hyperlink{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35}{Todo\+::\+Status}} \+: uint8\+\_\+t\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NOT\_STARTED@{NOT\_STARTED}!Todo@{Todo}}\index{Todo@{Todo}!NOT\_STARTED@{NOT\_STARTED}}}\Hypertarget{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35a06972acc3aafeb3a65dbd996c8dedc73}\label{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35a06972acc3aafeb3a65dbd996c8dedc73} 
+NOT\+\_\+\+STARTED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IN\_PROGRESS@{IN\_PROGRESS}!Todo@{Todo}}\index{Todo@{Todo}!IN\_PROGRESS@{IN\_PROGRESS}}}\Hypertarget{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35aca69f96c768067fbff6c911ca87bccc9}\label{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35aca69f96c768067fbff6c911ca87bccc9} 
+IN\+\_\+\+PROGRESS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPLETED@{COMPLETED}!Todo@{Todo}}\index{Todo@{Todo}!COMPLETED@{COMPLETED}}}\Hypertarget{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35a8f7afecbc8fbc4cd0f50a57d1172482e}\label{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35a8f7afecbc8fbc4cd0f50a57d1172482e} 
+COMPLETED&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\label{doc-func-members}
+\Hypertarget{namespace_todo_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{namespace_todo_a4c42c87eab3e0bde6142a3beb62feffd}\index{Todo@{Todo}!BOOST\_DESCRIBE\_ENUM@{BOOST\_DESCRIBE\_ENUM}}
+\index{BOOST\_DESCRIBE\_ENUM@{BOOST\_DESCRIBE\_ENUM}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{BOOST\_DESCRIBE\_ENUM()}{BOOST\_DESCRIBE\_ENUM()}}
+{\footnotesize\ttfamily \label{namespace_todo_a4c42c87eab3e0bde6142a3beb62feffd} 
+Todo\+::\+BOOST\+\_\+\+DESCRIBE\+\_\+\+ENUM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_todo_a6f0eae131c5da4bc408d1f8109790a35}{Status}}}]{}{, }\item[{NOT\+\_\+\+STARTED}]{}{, }\item[{IN\+\_\+\+PROGRESS}]{}{, }\item[{COMPLETED}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespace_todo_adaca29275cc9a35835e041c541e6e794}\index{Todo@{Todo}!BOOST\_DESCRIBE\_STRUCT@{BOOST\_DESCRIBE\_STRUCT}}
+\index{BOOST\_DESCRIBE\_STRUCT@{BOOST\_DESCRIBE\_STRUCT}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{BOOST\_DESCRIBE\_STRUCT()}{BOOST\_DESCRIBE\_STRUCT()}}
+{\footnotesize\ttfamily \label{namespace_todo_adaca29275cc9a35835e041c541e6e794} 
+Todo\+::\+BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_todo_1_1_task}{Task}}}]{}{, }\item[{()}]{}{, }\item[{(desc, child\+\_\+tasks, status)}]{}{}\end{DoxyParamCaption})}
+

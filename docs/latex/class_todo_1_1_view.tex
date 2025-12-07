@@ -1,0 +1,118 @@
+\doxysection{Todo\+::View Class Reference}
+\hypertarget{class_todo_1_1_view}{}\label{class_todo_1_1_view}\index{Todo::View@{Todo::View}}
+
+
+{\ttfamily \#include $<$view.\+h$>$}
+
+
+
+Inheritance diagram for Todo\+::View\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_todo_1_1_view__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{class_todo_1_1_view_af0fd76b852f039fb6445894080f8086d}{\texorpdfstring{$\sim$}{\string~}\+View}} ()=default
+\item 
+virtual std\+::string \mbox{\hyperlink{class_todo_1_1_view_a23d42a726090b73b7ec7029b6dcca9bc}{get\+\_\+input}} (const std\+::string \&msg)=0
+\begin{DoxyCompactList}\small\item\em Gets input from the user. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_todo_1_1_view_a0e73623fc4934765ad94f0fecbf80395}{display\+\_\+list}} (const std\+::vector$<$ \mbox{\hyperlink{struct_todo_1_1_task}{Todo\+::\+Task}} $>$ \&todo\+\_\+list, size\+\_\+t level=0)=0
+\begin{DoxyCompactList}\small\item\em Display {\ttfamily task} list to screen. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_todo_1_1_view_a98e04233fdab66c1cee1d07358b93dc8}{display\+\_\+msg}} (const std\+::string \&msg)=0
+\begin{DoxyCompactList}\small\item\em Display {\ttfamily message} to screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_todo_1_1_view_a033493cc302c13f05d8b93a2745c2472}{View}} ()=default
+\end{DoxyCompactItemize}
+
+
+\label{doc-constructors}
+\Hypertarget{class_todo_1_1_view_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_todo_1_1_view_a033493cc302c13f05d8b93a2745c2472}\index{Todo::View@{Todo::View}!View@{View}}
+\index{View@{View}!Todo::View@{Todo::View}}
+\doxysubsubsection{\texorpdfstring{View()}{View()}}
+{\footnotesize\ttfamily \label{class_todo_1_1_view_a033493cc302c13f05d8b93a2745c2472} 
+Todo\+::\+View\+::\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [default]}}
+
+\Hypertarget{class_todo_1_1_view_af0fd76b852f039fb6445894080f8086d}\index{Todo::View@{Todo::View}!````~View@{\texorpdfstring{$\sim$}{\string~}View}}
+\index{````~View@{\texorpdfstring{$\sim$}{\string~}View}!Todo::View@{Todo::View}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}View()}{\string~View()}}
+{\footnotesize\ttfamily \label{class_todo_1_1_view_af0fd76b852f039fb6445894080f8086d} 
+virtual Todo\+::\+View\+::\texorpdfstring{$\sim$}{\string~}\+View (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{class_todo_1_1_view_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_todo_1_1_view_a0e73623fc4934765ad94f0fecbf80395}\index{Todo::View@{Todo::View}!display\_list@{display\_list}}
+\index{display\_list@{display\_list}!Todo::View@{Todo::View}}
+\doxysubsubsection{\texorpdfstring{display\_list()}{display\_list()}}
+{\footnotesize\ttfamily \label{class_todo_1_1_view_a0e73623fc4934765ad94f0fecbf80395} 
+virtual void Todo\+::\+View\+::display\+\_\+list (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{struct_todo_1_1_task}{Todo\+::\+Task}} $>$ \&}]{todo\+\_\+list}{, }\item[{size\+\_\+t}]{level}{ = {\ttfamily 0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Display {\ttfamily task} list to screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em todo\+\_\+list} & Const reference to a vector. \\
+\hline
+{\em level} & Recursion depth. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_todo_1_1_basic_view_a835fa2003b50f26554f097ca851c4fbb}{Todo\+::\+Basic\+View}}, and \mbox{\hyperlink{class_todo_1_1_i_view_ac32d0ceecf7c57768ae724da0a932675}{Todo\+::\+IView}}.
+
+\Hypertarget{class_todo_1_1_view_a98e04233fdab66c1cee1d07358b93dc8}\index{Todo::View@{Todo::View}!display\_msg@{display\_msg}}
+\index{display\_msg@{display\_msg}!Todo::View@{Todo::View}}
+\doxysubsubsection{\texorpdfstring{display\_msg()}{display\_msg()}}
+{\footnotesize\ttfamily \label{class_todo_1_1_view_a98e04233fdab66c1cee1d07358b93dc8} 
+virtual void Todo\+::\+View\+::display\+\_\+msg (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Display {\ttfamily message} to screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & String to display. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_todo_1_1_basic_view_ae45b27e6b5f67177c3738a238670af0c}{Todo\+::\+Basic\+View}}, and \mbox{\hyperlink{class_todo_1_1_i_view_ae7713072a95a3b637f6b5760b5264622}{Todo\+::\+IView}}.
+
+\Hypertarget{class_todo_1_1_view_a23d42a726090b73b7ec7029b6dcca9bc}\index{Todo::View@{Todo::View}!get\_input@{get\_input}}
+\index{get\_input@{get\_input}!Todo::View@{Todo::View}}
+\doxysubsubsection{\texorpdfstring{get\_input()}{get\_input()}}
+{\footnotesize\ttfamily \label{class_todo_1_1_view_a23d42a726090b73b7ec7029b6dcca9bc} 
+virtual std\+::string Todo\+::\+View\+::get\+\_\+input (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{msg}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Gets input from the user. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em msg} & String to display. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_todo_1_1_basic_view_af00abc1d3e78478ace865ced37844cfb}{Todo\+::\+Basic\+View}}, and \mbox{\hyperlink{class_todo_1_1_i_view_ac733a402fff28fdb8aa1c17e547a37c0}{Todo\+::\+IView}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{view_8h}{view.\+h}}\end{DoxyCompactItemize}

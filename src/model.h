@@ -46,14 +46,14 @@ public:
    *
    * @param task_desc Description of task to add.
    */
-  bool add(const std::string &item_desc, const std::vector<size_t> &path);
+  void add(const std::string &item_desc, const std::vector<size_t> &path);
 
   /**
    * @brief Remove @p index task from the todo list.
    *
    * @param index Index of task to remove.
    */
-  bool remove(const std::vector<size_t> &path);
+  void remove(const std::vector<size_t> &path);
 
   /**
    * @brief Clears (empties) the list.
@@ -77,7 +77,7 @@ public:
    *
    * @param index Index of task to change.
    */
-  bool change_task_status(const std::vector<size_t> &path, int status);
+  void change_task_status(const std::vector<size_t> &path, int status);
 
   /**
    * @brief Returns a const reference of the todo list vector.

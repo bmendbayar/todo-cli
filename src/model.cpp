@@ -83,12 +83,12 @@ void Model::dir_init()
   }
 }
 
-bool Model::add(const std::string &task_desc, const std::vector<size_t> &path)
+void Model::add(const std::string &task_desc, const std::vector<size_t> &path)
 {
   if (path.empty())
   {
     todo_list_.emplace_back(Task{task_desc, {}, Status::NOT_STARTED});
-    return true;
+    return;
   }
 
   Task *curr = &(todo_list_.at(path[0]));
@@ -98,20 +98,20 @@ bool Model::add(const std::string &task_desc, const std::vector<size_t> &path)
   }
 
   curr->child_tasks.emplace_back(Task{task_desc, {}, Status::NOT_STARTED});
-  return true;
+  return;
 }
 
-bool Model::remove(const std::vector<size_t> &path)
+void Model::remove(const std::vector<size_t> &path)
 {
   if (path.empty())
   {
-    return false;
+    return;
   }
 
   if (path.size() == 1)
   {
     todo_list_.erase(todo_list_.begin() + path[0]);
-    return true;
+    return;
   }
 
   Task *curr = &(todo_list_.at(path[0]));
@@ -121,7 +121,7 @@ bool Model::remove(const std::vector<size_t> &path)
   }
   curr->child_tasks.erase(curr->child_tasks.begin() + *(path.end() - 1));
 
-  return true;
+  return;
 }
 
 void Model::clear()
@@ -129,11 +129,11 @@ void Model::clear()
   todo_list_.clear();
 }
 
-bool Model::change_task_status(const std::vector<size_t> &path, int status)
+void Model::change_task_status(const std::vector<size_t> &path, int status)
 {
   if (path.empty())
   {
-    return false;
+    return;
   }
 
   Task *curr = &(todo_list_.at(path[0]));
@@ -142,7 +142,7 @@ bool Model::change_task_status(const std::vector<size_t> &path, int status)
     curr = &(curr->child_tasks.at(*it));
   }
   curr->status = static_cast<Status>(status);
-  return true;
+  return;
 }
 
 const std::vector<Task> &Model::get_list()

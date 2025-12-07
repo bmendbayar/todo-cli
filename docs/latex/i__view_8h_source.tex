@@ -1,0 +1,41 @@
+\doxysection{i\+\_\+view.\+h}
+\hypertarget{i__view_8h_source}{}\label{i__view_8h_source}\index{src/i\_view.h@{src/i\_view.h}}
+\mbox{\hyperlink{i__view_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <ncurses.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{view_8h}{view.h}}"{}}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_todo}{Todo}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_todo_1_1_i_view_a795309fefaa321508e8037cb78dbfde8}{IView}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_todo_1_1_view_a033493cc302c13f05d8b93a2745c2472}{View}}}
+\DoxyCodeLine{00010\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ WINDOW\ *menu\_win\_;}
+\DoxyCodeLine{00013\ \ \ WINDOW\ *list\_win\_;}
+\DoxyCodeLine{00014\ \ \ WINDOW\ *list\_pad\_;}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \textcolor{keywordtype}{int}\ scroll\_offset\_;}
+\DoxyCodeLine{00017\ \ \ \textcolor{keywordtype}{int}\ list\_height\_;}
+\DoxyCodeLine{00018\ \ \ \textcolor{keywordtype}{int}\ list\_width\_;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00024\ \ \ \mbox{\hyperlink{class_todo_1_1_i_view_a795309fefaa321508e8037cb78dbfde8}{IView}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{class_todo_1_1_i_view_a76390ce3cd6b7c935ffe92f53bd7cb32}{\string~IView}}();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00036\ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_todo_1_1_i_view_ac733a402fff28fdb8aa1c17e547a37c0}{get\_input}}(\textcolor{keyword}{const}\ std::string\ \&msg)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_todo_1_1_i_view_ac32d0ceecf7c57768ae724da0a932675}{display\_list}}(\textcolor{keyword}{const}\ std::vector<Todo::Task>\ \&todo\_list,}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ level\ =\ 0)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00052\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_todo_1_1_i_view_ae7713072a95a3b637f6b5760b5264622}{display\_msg}}(\textcolor{keyword}{const}\ std::string\ \&msg)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00058\ \ \ \textcolor{keywordtype}{void}\ refresh\_list\_view();}
+\DoxyCodeLine{00059\ \};}
+\DoxyCodeLine{00060\ \}\ \ \textcolor{comment}{//\ namespace\ Todo}}
+
+\end{DoxyCode}
