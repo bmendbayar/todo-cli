@@ -1,6 +1,6 @@
 # CLI Todo
 
-A persistent, hierarchical command-line To-Do application allowing infinite subtasks, built with a flexible architecture to support both rich (Ncurses) and standard text interfaces.
+A persistent, hierarchical command-line To-Do application allowing infinite subtasks, built with a flexible architecture to support both rich (Ncurses) and standard text interfaces. See documentation [here](https://yuchyahav.github.io/cli-todo/).
 
 ## Demo
 
