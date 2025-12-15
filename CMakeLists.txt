@@ -12,14 +12,17 @@ find_package(Curses REQUIRED)
 
 set(SRC_FILES
     src/main.cpp
-    src/basic_view.cpp
-    src/model.cpp
-    src/controller.cpp
-    src/i_view.cpp
+    src/model/model.cpp
+    src/view/basic_view.cpp
+    src/view/i_view.cpp
+    src/controller/controller.cpp
 )
 
 include_directories(
     src
+    src/model
+    src/view
+    src/controller
 )
 
 add_executable(todo ${SRC_FILES})
