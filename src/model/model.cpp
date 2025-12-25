@@ -26,7 +26,7 @@ void Model::load_file()
     std::exit(EXIT_FAILURE);
   }
 
-  size_t size = std::filesystem::file_size(TODO_DIR / TODO_FILE);
+  U64 size = std::filesystem::file_size(TODO_DIR / TODO_FILE);
   std::string buf(size, ' ');
   infile.read(&buf[0], size);
   infile.close();
@@ -85,7 +85,7 @@ void Model::dir_init()
 }
 
 void Model::add(const std::string &task_desc, const int prio,
-                const std::vector<size_t> &path)
+                const std::vector<U16> &path)
 {
   if (path.empty())
   {
@@ -103,12 +103,10 @@ void Model::add(const std::string &task_desc, const int prio,
   return;
 }
 
-void Model::remove(const std::vector<size_t> &path)
+void Model::remove(const std::vector<U16> &path)
 {
   if (path.empty())
-  {
     return;
-  }
 
   if (path.size() == 1)
   {
@@ -118,11 +116,9 @@ void Model::remove(const std::vector<size_t> &path)
 
   Task *curr = &(todo_list_.at(path[0]));
   for (auto it = path.begin() + 1; it < path.end() - 1; ++it)
-  {
     curr = &(curr->child_tasks.at(*it));
-  }
-  curr->child_tasks.erase(curr->child_tasks.begin() + *(path.end() - 1));
 
+  curr->child_tasks.erase(curr->child_tasks.begin() + *(path.end() - 1));
   return;
 }
 
@@ -148,7 +144,7 @@ void Model::change_child_task_status(Task &task, const Status status)
   }
 }
 
-void Model::change_task_status(const std::vector<size_t> &path, const int status)
+void Model::change_task_status(const std::vector<U16> &path, const int status)
 {
   if (path.empty())
   {
@@ -175,7 +171,7 @@ void Model::change_task_status(const std::vector<size_t> &path, const int status
   return;
 }
 
-void Model::change_task_prio(const std::vector<size_t> &path, const int prio)
+void Model::change_task_prio(const std::vector<U16> &path, const int prio)
 {
   if (path.empty())
   {

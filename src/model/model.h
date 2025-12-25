@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "task.h"
+#include "types.h"
 
 namespace Todo
 {
@@ -34,14 +35,14 @@ public:
    * @param prio Priority of task to add.
    * @param path Path of task to add.
    */
-  void add(const std::string &item_desc, const int prio, const std::vector<size_t> &path);
+  void add(const std::string &item_desc, const int prio, const std::vector<U16> &path);
 
   /**
    * @brief Remove @p index task from the todo list.
    *
    * @param path Path of the task to remove.
    */
-  void remove(const std::vector<size_t> &path);
+  void remove(const std::vector<U16> &path);
 
   /**
    * @brief Clears (empties) the list.
@@ -66,7 +67,7 @@ public:
    * @param path Path of the task to change.
    * @param status Status to change to.
    */
-  void change_task_status(const std::vector<size_t> &path, const int status);
+  void change_task_status(const std::vector<U16> &path, const int status);
 
   /**
    * @brief Changes the completion status of @p index task.
@@ -74,7 +75,7 @@ public:
    * @param path Path of the task to change.
    * @param prio Priority to change to.
    */
-  void change_task_prio(const std::vector<size_t> &path, const int prio);
+  void change_task_prio(const std::vector<U16> &path, const int prio);
 
   /**
    * @brief Returns a const reference of the todo list vector.

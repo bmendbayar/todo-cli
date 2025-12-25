@@ -5,10 +5,8 @@
 #include "model.h"
 #include "view.h"
 
-namespace Todo
-{
-class Controller
-{
+namespace Todo {
+class Controller {
 private:
   Model model_;  ///< The [M]odel of the MVC.
   View *view_;   ///< The [V]iew of the MVC.
@@ -57,11 +55,11 @@ private:
   void handle_prio_change();
 
   /**
-   * @brief Parses a string of numbers to a vector.
+   * @brief Parses a char number to a path vector.
    *
-   * @param spath The string to parse.
-   * @return A vector of positive integers.
+   * @param user_input The user_input to parse.
+   * @return A vector of non-negative integers.
    */
-  std::vector<size_t> parse_path(const std::string &spath);
+  std::vector<U16> parse_path(const UserInput &user_input);
 };
 }  // namespace Todo

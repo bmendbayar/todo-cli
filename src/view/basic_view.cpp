@@ -6,10 +6,10 @@
 
 #include "basic_view.h"
 #include "task.h"
+#include "types.h"
 #include "user_input.h"
 
-namespace Todo
-{
+namespace Todo {
 void clear_input_buf()
 {
   std::cin.clear();
@@ -25,15 +25,12 @@ UserInput BasicView::get_input(const std::string &msg)
   return {buffer, false};
 }
 
-void BasicView::display_list(const std::vector<Task> &todo_list, size_t level)
+void BasicView::display_list(const std::vector<Task> &todo_list, U16 level)
 {
-  size_t id = 1;
-  for (const auto &t : todo_list)
-  {
-    std::string status = [&t]() -> std::string
-    {
-      switch (t.status)
-      {
+  U16 id = 1;
+  for (const auto &t : todo_list) {
+    std::string status = [&t]() -> std::string {
+      switch (t.status) {
         case Status::NOT_STARTED:
           return "[ ]";
         case Status::IN_PROGRESS:
@@ -47,8 +44,7 @@ void BasicView::display_list(const std::vector<Task> &todo_list, size_t level)
 
     std::cout << std::string(level, ' ') << id << ". " << status << ' ' << t.desc << '\n';
 
-    if (todo_list[id - 1].child_tasks.size() != 0)
-    {
+    if (todo_list[id - 1].child_tasks.size() != 0) {
       display_list(todo_list[id - 1].child_tasks, level + 1);
     }
 

@@ -42,7 +42,7 @@ public:
    * @param level Recursion depth.
    */
   virtual void display_list(const std::vector<Task> &todo_list,
-                            size_t level = 0) override;
+                            U16 level = 0) override;
 
   /**
    * @brief Display @p message to screen.

@@ -117,15 +117,15 @@ UserInput IView::get_input(const std::string &msg)
   return {buffer, false};
 }
 
-void IView::display_list(const std::vector<Task> &todo_list, size_t level)
+void IView::display_list(const std::vector<Task> &todo_list, U16 level)
 {
   if (level == 0)
   {
     wclear(list_pad_);
   }
 
-  size_t lsize = todo_list.size();
-  for (size_t i = 0; i < lsize; ++i)
+  U16 lsize = todo_list.size();
+  for (U16 i = 0; i < lsize; ++i)
   {
     const auto &t = todo_list[i];
     std::string status = [&t]() -> std::string

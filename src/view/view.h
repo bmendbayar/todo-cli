@@ -1,21 +1,25 @@
 #pragma once
 
 #include <string>
-#include <utility>
 #include <vector>
 
 #include "task.h"
+#include "types.h"
 #include "user_input.h"
 
-namespace Todo
-{
-class View
-{
-private:
-  View() = delete;
-  virtual ~View() = 0;
-
+namespace Todo {
+class View {
 public:
+  /**
+   * @brief Default Constructor.
+   */
+  View() = default;
+
+  /**
+   * @brief Destructor
+   */
+  virtual ~View() = default;
+
   /**
    * @brief Gets input from the user.
    *
@@ -29,7 +33,7 @@ public:
    * @param todo_list Const reference to a vector.
    * @param level Recursion depth.
    */
-  virtual void display_list(const std::vector<Task> &todo_list, size_t level = 0) = 0;
+  virtual void display_list(const std::vector<Task> &todo_list, U16 level = 0) = 0;
 
   /**
    * @brief Display @p message to screen.

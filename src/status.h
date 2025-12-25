@@ -2,10 +2,10 @@
 
 #include <boost/describe.hpp>
 
-namespace Todo
-{
-enum class Status : uint8_t
-{
+#include "types.h"
+
+namespace Todo {
+enum class Status : U8 {
   NOT_STARTED = 1,
   IN_PROGRESS = 2,
   COMPLETED = 3
