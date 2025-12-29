@@ -15,6 +15,7 @@ set(SRC_FILES
     src/model/model.cpp
     src/view/basic_view.cpp
     src/view/i_view.cpp
+    src/view/vi_view.cpp
     src/controller/controller.cpp
 )
 
@@ -23,6 +24,7 @@ include_directories(
     src/model
     src/view
     src/controller
+    src/misc
 )
 
 add_executable(todo ${SRC_FILES})
