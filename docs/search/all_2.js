@@ -8,7 +8,7 @@ var searchData=
   ['clear_5',['CLEAR',['../namespace_todo.html#a1e8c06410e6dedcc2b8bd5c4d1145a3ca813461e0c58e7ad59a2fd83ca2237fec',1,'Todo']]],
   ['clear_6',['clear',['../class_todo_1_1_model.html#a7679bf3b9aa98c25c5a69e18cd98aaa9',1,'Todo::Model']]],
   ['clear_5finput_5fbuf_7',['clear_input_buf',['../namespace_todo.html#a55a5df34f84fbef3cf918b3b7a175c79',1,'Todo']]],
-  ['completed_8',['COMPLETED',['../namespace_todo.html#a83cf0624dcf41c74f122b20799a844f6a8f7afecbc8fbc4cd0f50a57d1172482e',1,'Todo']]],
+  ['completed_8',['COMPLETED',['../struct_todo_1_1_task.html#a0dc2492f114687879f5a40951ed832e6a8f7afecbc8fbc4cd0f50a57d1172482e',1,'Todo::Task']]],
   ['controller_9',['Controller',['../class_todo_1_1_controller.html',1,'Todo::Controller'],['../class_todo_1_1_controller.html#a8746f4f166f57a6cc5e32259c69f04de',1,'Todo::Controller::Controller()']]],
   ['controller_2ecpp_10',['controller.cpp',['../controller_8cpp.html',1,'']]],
   ['controller_2eh_11',['controller.h',['../controller_8h.html',1,'']]]

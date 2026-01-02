@@ -5,36 +5,37 @@
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
-\DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{model_8h}{model.h}}"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{view_8h}{view.h}}"{}}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_todo}{Todo}}\ \{}
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_todo_1_1_controller_a8746f4f166f57a6cc5e32259c69f04de}{Controller}}\ \{}
-\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00011\ \ \ \ \ \mbox{\hyperlink{class_todo_1_1_model}{Model}}\ model\_;\ \ }
-\DoxyCodeLine{00012\ \ \ \ \ \mbox{\hyperlink{class_todo_1_1_view}{View}}\ *view\_;\ \ \ }
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_todo_1_1_controller_a8746f4f166f57a6cc5e32259c69f04de}{Controller}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ **argv);}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_todo_1_1_controller_acc3b72e113aaf34452133b0cb4160fd6}{run}}();}
-\DoxyCodeLine{00021\ }
-\DoxyCodeLine{00022\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{void}\ handle\_add(\textcolor{keywordtype}{int}\ ch);}
-\DoxyCodeLine{00026\ }
-\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ handle\_remove();}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ handle\_display();}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{void}\ handle\_clear();}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ handle\_status\_change();}
-\DoxyCodeLine{00038\ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{void}\ handle\_prio\_change();}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00045\ \ \ \ \ std::vector<u16>\ parse\_path(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_todo_1_1_user_input}{UserInput}}\ \&user\_input);}
-\DoxyCodeLine{00046\ \};}
-\DoxyCodeLine{00047\ \}\ \ \textcolor{comment}{//\ namespace\ Todo}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{model_8h}{model.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{view_8h}{view.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_todo}{Todo}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_todo_1_1_controller_a8746f4f166f57a6cc5e32259c69f04de}{Controller}}\ \{}
+\DoxyCodeLine{00011\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00012\ \ \ \mbox{\hyperlink{class_todo_1_1_model}{Model}}\ model\_;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00013\ \ \ std::unique\_ptr<View>\ view\_;\ \ }
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{class_todo_1_1_controller_a8746f4f166f57a6cc5e32259c69f04de}{Controller}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}\ **argv);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_todo_1_1_controller_acc3b72e113aaf34452133b0cb4160fd6}{run}}();}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ handle\_add(\textcolor{keywordtype}{int}\ ch);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00029\ \ \ \textcolor{keywordtype}{void}\ handle\_remove();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00032\ \ \ \textcolor{keywordtype}{void}\ handle\_display();}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00035\ \ \ \textcolor{keywordtype}{void}\ handle\_clear();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ \ \ \textcolor{keywordtype}{void}\ handle\_status\_change();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ handle\_prio\_change();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00046\ \ \ std::vector<u16>\ parse\_path(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_todo_1_1_user_input}{UserInput}}\ \&user\_input);}
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ \}\ \ \textcolor{comment}{//\ namespace\ Todo}}
 
 \end{DoxyCode}

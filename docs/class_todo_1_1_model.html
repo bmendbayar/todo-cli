@@ -100,10 +100,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a8841ad8e5ec2bc99cb485d89fc9664dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an object by reading from a JSON file.  <br /></td></tr>
 <tr class="memitem:ab09056d9c1ef4c457dfef12e6456b918" id="r_ab09056d9c1ef4c457dfef12e6456b918"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab09056d9c1ef4c457dfef12e6456b918">dir_init</a> ()</td></tr>
 <tr class="memdesc:ab09056d9c1ef4c457dfef12e6456b918"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the .todo directory and its contents.  <br /></td></tr>
-<tr class="memitem:ac0942ecea5ec835067a5c9207a56a2f1" id="r_ac0942ecea5ec835067a5c9207a56a2f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0942ecea5ec835067a5c9207a56a2f1">add</a> (const std::string &amp;item_desc, const int prio, const std::vector&lt; <a class="el" href="namespace_todo.html#a0f033048846c82ded9882f3706ba4dc5">u16</a> &gt; &amp;path)</td></tr>
-<tr class="memdesc:ac0942ecea5ec835067a5c9207a56a2f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds task with description <code class="param">task_desc</code> to todo list.  <br /></td></tr>
+<tr class="memitem:adf6412942b84b0f09bb8668e1dd1f46a" id="r_adf6412942b84b0f09bb8668e1dd1f46a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf6412942b84b0f09bb8668e1dd1f46a">add</a> (const std::string &amp;item_desc, const <a class="el" href="namespace_todo.html#a0f033048846c82ded9882f3706ba4dc5">u16</a> priority, const std::vector&lt; <a class="el" href="namespace_todo.html#a0f033048846c82ded9882f3706ba4dc5">u16</a> &gt; &amp;path)</td></tr>
 <tr class="memitem:afb2a642878a1b92cc475168a3844c8fa" id="r_afb2a642878a1b92cc475168a3844c8fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb2a642878a1b92cc475168a3844c8fa">remove</a> (const std::vector&lt; <a class="el" href="namespace_todo.html#a0f033048846c82ded9882f3706ba4dc5">u16</a> &gt; &amp;path)</td></tr>
-<tr class="memdesc:afb2a642878a1b92cc475168a3844c8fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove <code class="param">index</code> task from the todo list.  <br /></td></tr>
 <tr class="memitem:a7679bf3b9aa98c25c5a69e18cd98aaa9" id="r_a7679bf3b9aa98c25c5a69e18cd98aaa9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7679bf3b9aa98c25c5a69e18cd98aaa9">clear</a> ()</td></tr>
 <tr class="memdesc:a7679bf3b9aa98c25c5a69e18cd98aaa9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears (empties) the list.  <br /></td></tr>
 <tr class="memitem:a49807a73c39106f4b5e148f02fa363a7" id="r_a49807a73c39106f4b5e148f02fa363a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49807a73c39106f4b5e148f02fa363a7">load_file</a> ()</td></tr>
@@ -138,8 +136,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="ac0942ecea5ec835067a5c9207a56a2f1" name="ac0942ecea5ec835067a5c9207a56a2f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0942ecea5ec835067a5c9207a56a2f1">&#9670;&#160;</a></span>add()</h2>
+<a id="adf6412942b84b0f09bb8668e1dd1f46a" name="adf6412942b84b0f09bb8668e1dd1f46a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf6412942b84b0f09bb8668e1dd1f46a">&#9670;&#160;</a></span>add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -152,7 +150,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const int</td>          <td class="paramname"><span class="paramname"><em>prio</em></span>, </td>
+          <td class="paramtype">const <a class="el" href="namespace_todo.html#a0f033048846c82ded9882f3706ba4dc5">u16</a></td>          <td class="paramname"><span class="paramname"><em>priority</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -161,16 +159,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Adds task with description <code class="param">task_desc</code> to todo list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">task_desc</td><td>Description of task to add. </td></tr>
-    <tr><td class="paramname">prio</td><td>Priority of task to add. </td></tr>
-    <tr><td class="paramname">path</td><td>Path of task to add. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>/brief Adds task with description <code class="param">task_desc</code> to todo list. /param task_desc Description of task to add. /param priority Priority of task to add. /param path Path of task to add. </p>
 
 </div>
 </div>
@@ -227,7 +216,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td>Path of the task to change. </td></tr>
-    <tr><td class="paramname">status</td><td><a class="el" href="namespace_todo.html#a83cf0624dcf41c74f122b20799a844f6">Status</a> to change to. </td></tr>
+    <tr><td class="paramname">status</td><td><a class="el" href="namespace_todo.html#a135f94559dbddd8dd90cb9fd3bcec604">Status</a> to change to. </td></tr>
   </table>
   </dd>
 </dl>
@@ -325,14 +314,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Remove <code class="param">index</code> task from the todo list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">path</td><td>Path of the task to remove. </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>/brief Remove <code class="param">index</code> task from the todo list. /param path Path of the task to remove. </p>
 
 </div>
 </div>

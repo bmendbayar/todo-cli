@@ -12,6 +12,7 @@ var namespace_todo =
     [ "i32", "namespace_todo.html#a563eb338d2492390470b62c97725f5e3", null ],
     [ "i64", "namespace_todo.html#a971b6615cbbbe5414b79a5340feeda24", null ],
     [ "i8", "namespace_todo.html#a058fb89c7da9a964e57a03a90b7ded80", null ],
+    [ "Status", "namespace_todo.html#a135f94559dbddd8dd90cb9fd3bcec604", null ],
     [ "u16", "namespace_todo.html#a0f033048846c82ded9882f3706ba4dc5", null ],
     [ "u32", "namespace_todo.html#a3b77bdac100a12793978789c7afcd1b4", null ],
     [ "u64", "namespace_todo.html#a2ec92f9087d1f887d2ad57b5cb00b186", null ],
@@ -25,13 +26,8 @@ var namespace_todo =
       [ "CLEAR", "namespace_todo.html#a1e8c06410e6dedcc2b8bd5c4d1145a3ca813461e0c58e7ad59a2fd83ca2237fec", null ],
       [ "INVALID", "namespace_todo.html#a1e8c06410e6dedcc2b8bd5c4d1145a3caccc0377a8afbf50e7094f5c23a8af223", null ]
     ] ],
-    [ "Status", "namespace_todo.html#a83cf0624dcf41c74f122b20799a844f6", [
-      [ "NOT_STARTED", "namespace_todo.html#a83cf0624dcf41c74f122b20799a844f6a06972acc3aafeb3a65dbd996c8dedc73", null ],
-      [ "IN_PROGRESS", "namespace_todo.html#a83cf0624dcf41c74f122b20799a844f6aca69f96c768067fbff6c911ca87bccc9", null ],
-      [ "COMPLETED", "namespace_todo.html#a83cf0624dcf41c74f122b20799a844f6a8f7afecbc8fbc4cd0f50a57d1172482e", null ]
-    ] ],
-    [ "BOOST_DESCRIBE_ENUM", "namespace_todo.html#a4c42c87eab3e0bde6142a3beb62feffd", null ],
-    [ "BOOST_DESCRIBE_STRUCT", "namespace_todo.html#aba2f17597df6e908f1c24c14b3b14eb5", null ],
+    [ "BOOST_DESCRIBE_ENUM", "namespace_todo.html#a006d055d0f6f09b9e8325e33b9f7cf05", null ],
+    [ "BOOST_DESCRIBE_STRUCT", "namespace_todo.html#a48f512be13d05d888b975ee28427d7cd", null ],
     [ "clear_input_buf", "namespace_todo.html#a55a5df34f84fbef3cf918b3b7a175c79", null ],
     [ "pre_order_trav", "namespace_todo.html#a42f6ee3e71cc2e80081e5983e742a92f", null ],
     [ "SEN", "namespace_todo.html#aa63f219aa3f7adcccb98d3e6429b9355", null ]

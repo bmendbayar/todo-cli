@@ -94,13 +94,52 @@ $(function(){initNavTree('struct_todo_1_1_task.html','','struct_todo_1_1_task-me
 
 <p><code>#include &lt;<a class="el" href="task_8h_source.html">task.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a0dc2492f114687879f5a40951ed832e6" id="r_a0dc2492f114687879f5a40951ed832e6"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0dc2492f114687879f5a40951ed832e6">Status</a> : char { <a class="el" href="#a0dc2492f114687879f5a40951ed832e6a06972acc3aafeb3a65dbd996c8dedc73">NOT_STARTED</a> = 1
+, <a class="el" href="#a0dc2492f114687879f5a40951ed832e6aca69f96c768067fbff6c911ca87bccc9">IN_PROGRESS</a> = 2
+, <a class="el" href="#a0dc2492f114687879f5a40951ed832e6a8f7afecbc8fbc4cd0f50a57d1172482e">COMPLETED</a> = 3
+ }</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a854772d87122caf5a24e6485d9f76243" id="r_a854772d87122caf5a24e6485d9f76243"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a854772d87122caf5a24e6485d9f76243">desc</a></td></tr>
+<tr class="memdesc:a854772d87122caf5a24e6485d9f76243"><td class="mdescLeft">&#160;</td><td class="mdescRight">Description of the task.  <br /></td></tr>
 <tr class="memitem:a833b66e773aaf760f6afc6a7a7c4a2af" id="r_a833b66e773aaf760f6afc6a7a7c4a2af"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_todo_1_1_task.html">Task</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a833b66e773aaf760f6afc6a7a7c4a2af">child_tasks</a></td></tr>
-<tr class="memitem:a78e1eac4400a1c649bd627f258acdb01" id="r_a78e1eac4400a1c649bd627f258acdb01"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78e1eac4400a1c649bd627f258acdb01">prio</a></td></tr>
-<tr class="memitem:ada7c8bbfa711c17f41c599c91d4c5a50" id="r_ada7c8bbfa711c17f41c599c91d4c5a50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_todo.html#a83cf0624dcf41c74f122b20799a844f6">Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada7c8bbfa711c17f41c599c91d4c5a50">status</a></td></tr>
+<tr class="memdesc:a833b66e773aaf760f6afc6a7a7c4a2af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Child tasks.  <br /></td></tr>
+<tr class="memitem:aa86b5177a3351fd559525e8cb276d3e7" id="r_aa86b5177a3351fd559525e8cb276d3e7"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa86b5177a3351fd559525e8cb276d3e7">priority</a></td></tr>
+<tr class="memdesc:aa86b5177a3351fd559525e8cb276d3e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Priority of the task.  <br /></td></tr>
+<tr class="memitem:aaf136e6b7faac0047fe6fe6c9d71103f" id="r_aaf136e6b7faac0047fe6fe6c9d71103f"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="#a0dc2492f114687879f5a40951ed832e6">Todo::Task::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaf136e6b7faac0047fe6fe6c9d71103f">status</a></td></tr>
+<tr class="memdesc:aaf136e6b7faac0047fe6fe6c9d71103f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Completion status of the task.  <br /></td></tr>
 </table>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="a0dc2492f114687879f5a40951ed832e6" name="a0dc2492f114687879f5a40951ed832e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc2492f114687879f5a40951ed832e6">&#9670;&#160;</a></span>Status</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a0dc2492f114687879f5a40951ed832e6">Todo::Task::Status</a> : char</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0dc2492f114687879f5a40951ed832e6a06972acc3aafeb3a65dbd996c8dedc73" name="a0dc2492f114687879f5a40951ed832e6a06972acc3aafeb3a65dbd996c8dedc73"></a>NOT_STARTED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0dc2492f114687879f5a40951ed832e6aca69f96c768067fbff6c911ca87bccc9" name="a0dc2492f114687879f5a40951ed832e6aca69f96c768067fbff6c911ca87bccc9"></a>IN_PROGRESS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0dc2492f114687879f5a40951ed832e6a8f7afecbc8fbc4cd0f50a57d1172482e" name="a0dc2492f114687879f5a40951ed832e6a8f7afecbc8fbc4cd0f50a57d1172482e"></a>COMPLETED&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="a833b66e773aaf760f6afc6a7a7c4a2af" name="a833b66e773aaf760f6afc6a7a7c4a2af"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a833b66e773aaf760f6afc6a7a7c4a2af">&#9670;&#160;</a></span>child_tasks</h2>
@@ -113,6 +152,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Child tasks. </p>
 
 </div>
 </div>
@@ -128,33 +169,39 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Description of the task. </p>
+
 </div>
 </div>
-<a id="a78e1eac4400a1c649bd627f258acdb01" name="a78e1eac4400a1c649bd627f258acdb01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a78e1eac4400a1c649bd627f258acdb01">&#9670;&#160;</a></span>prio</h2>
+<a id="aa86b5177a3351fd559525e8cb276d3e7" name="aa86b5177a3351fd559525e8cb276d3e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa86b5177a3351fd559525e8cb276d3e7">&#9670;&#160;</a></span>priority</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Todo::Task::prio</td>
+          <td class="memname">uint16_t Todo::Task::priority</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Priority of the task. </p>
+
 </div>
 </div>
-<a id="ada7c8bbfa711c17f41c599c91d4c5a50" name="ada7c8bbfa711c17f41c599c91d4c5a50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada7c8bbfa711c17f41c599c91d4c5a50">&#9670;&#160;</a></span>status</h2>
+<a id="aaf136e6b7faac0047fe6fe6c9d71103f" name="aaf136e6b7faac0047fe6fe6c9d71103f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf136e6b7faac0047fe6fe6c9d71103f">&#9670;&#160;</a></span>status</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespace_todo.html#a83cf0624dcf41c74f122b20799a844f6">Status</a> Todo::Task::status</td>
+          <td class="memname">enum <a class="el" href="#a0dc2492f114687879f5a40951ed832e6">Todo::Task::Status</a> Todo::Task::status</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Completion status of the task. </p>
 
 </div>
 </div>

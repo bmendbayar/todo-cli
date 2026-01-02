@@ -8,16 +8,21 @@
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
 \DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{status_8h}{status.h}}"{}}}
-\DoxyCodeLine{00008\ }
-\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_todo}{Todo}}\ \{}
-\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_todo_1_1_task}{Task}}\ \{}
-\DoxyCodeLine{00011\ \ \ \ \ std::string\ \mbox{\hyperlink{struct_todo_1_1_task_a854772d87122caf5a24e6485d9f76243}{desc}};}
-\DoxyCodeLine{00012\ \ \ \ \ std::vector<Task>\ \mbox{\hyperlink{struct_todo_1_1_task_a833b66e773aaf760f6afc6a7a7c4a2af}{child\_tasks}};}
-\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_todo_1_1_task_a78e1eac4400a1c649bd627f258acdb01}{prio}};}
-\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{namespace_todo_a83cf0624dcf41c74f122b20799a844f6}{Status}}\ \mbox{\hyperlink{struct_todo_1_1_task_ada7c8bbfa711c17f41c599c91d4c5a50}{status}};}
-\DoxyCodeLine{00015\ \};}
-\DoxyCodeLine{00016\ \mbox{\hyperlink{namespace_todo_aba2f17597df6e908f1c24c14b3b14eb5}{BOOST\_DESCRIBE\_STRUCT}}(\mbox{\hyperlink{struct_todo_1_1_task}{Task}},\ (),\ (desc,\ child\_tasks,\ prio,\ status));}
-\DoxyCodeLine{00017\ \}\ \ \textcolor{comment}{//\ namespace\ Todo}}
+\DoxyCodeLine{00007\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespace_todo}{Todo}}\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_todo_1_1_task}{Task}}\ \{}
+\DoxyCodeLine{00009\ \ \ std::string\ \mbox{\hyperlink{struct_todo_1_1_task_a854772d87122caf5a24e6485d9f76243}{desc}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00010\ \ \ std::vector<Task>\ \mbox{\hyperlink{struct_todo_1_1_task_a833b66e773aaf760f6afc6a7a7c4a2af}{child\_tasks}};\ \ }
+\DoxyCodeLine{00011\ \ \ uint16\_t\ \mbox{\hyperlink{struct_todo_1_1_task_aa86b5177a3351fd559525e8cb276d3e7}{priority}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{struct_todo_1_1_task_a0dc2492f114687879f5a40951ed832e6}{Status}}\ :\ \textcolor{keywordtype}{char}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \mbox{\hyperlink{struct_todo_1_1_task_a0dc2492f114687879f5a40951ed832e6a06972acc3aafeb3a65dbd996c8dedc73}{NOT\_STARTED}}\ =\ 1,}
+\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{struct_todo_1_1_task_a0dc2492f114687879f5a40951ed832e6aca69f96c768067fbff6c911ca87bccc9}{IN\_PROGRESS}}\ =\ 2,}
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{struct_todo_1_1_task_a0dc2492f114687879f5a40951ed832e6a8f7afecbc8fbc4cd0f50a57d1172482e}{COMPLETED}}\ =\ 3}
+\DoxyCodeLine{00017\ \ \ \}\ \mbox{\hyperlink{struct_todo_1_1_task_aaf136e6b7faac0047fe6fe6c9d71103f}{status}};\ \ }
+\DoxyCodeLine{00018\ \};}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \mbox{\hyperlink{namespace_todo_a006d055d0f6f09b9e8325e33b9f7cf05}{BOOST\_DESCRIBE\_ENUM}}(\mbox{\hyperlink{struct_todo_1_1_task_a0dc2492f114687879f5a40951ed832e6}{Task::Status}},\ NOT\_STARTED,\ IN\_PROGRESS,\ COMPLETED);}
+\DoxyCodeLine{00021\ \mbox{\hyperlink{namespace_todo_a48f512be13d05d888b975ee28427d7cd}{BOOST\_DESCRIBE\_STRUCT}}(\mbox{\hyperlink{struct_todo_1_1_task}{Task}},\ (),\ (desc,\ child\_tasks,\ priority,\ status));}
+\DoxyCodeLine{00022\ \}\ \ \textcolor{comment}{//\ namespace\ Todo}}
 
 \end{DoxyCode}

@@ -37,6 +37,8 @@ using \mbox{\hyperlink{namespace_todo_a0f033048846c82ded9882f3706ba4dc5}{u16}} =
 using \mbox{\hyperlink{namespace_todo_a3b77bdac100a12793978789c7afcd1b4}{u32}} = uint32\+\_\+t
 \item 
 using \mbox{\hyperlink{namespace_todo_a2ec92f9087d1f887d2ad57b5cb00b186}{u64}} = uint64\+\_\+t
+\item 
+using \mbox{\hyperlink{namespace_todo_a135f94559dbddd8dd90cb9fd3bcec604}{Status}} = \mbox{\hyperlink{struct_todo_1_1_task_a0dc2492f114687879f5a40951ed832e6}{Todo\+::\+Task\+::\+Status}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -51,20 +53,15 @@ enum class \mbox{\hyperlink{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3c}{Me
 , \mbox{\hyperlink{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3ca813461e0c58e7ad59a2fd83ca2237fec}{CLEAR}} = 5
 , \mbox{\hyperlink{namespace_todo_a1e8c06410e6dedcc2b8bd5c4d1145a3caccc0377a8afbf50e7094f5c23a8af223}{INVALID}} = 6
  \}
-\item 
-enum class \mbox{\hyperlink{namespace_todo_a83cf0624dcf41c74f122b20799a844f6}{Status}} \+: u8 \{ \mbox{\hyperlink{namespace_todo_a83cf0624dcf41c74f122b20799a844f6a06972acc3aafeb3a65dbd996c8dedc73}{NOT\+\_\+\+STARTED}} = 1
-, \mbox{\hyperlink{namespace_todo_a83cf0624dcf41c74f122b20799a844f6aca69f96c768067fbff6c911ca87bccc9}{IN\+\_\+\+PROGRESS}} = 2
-, \mbox{\hyperlink{namespace_todo_a83cf0624dcf41c74f122b20799a844f6a8f7afecbc8fbc4cd0f50a57d1172482e}{COMPLETED}} = 3
- \}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 bool \mbox{\hyperlink{namespace_todo_a42f6ee3e71cc2e80081e5983e742a92f}{pre\+\_\+order\+\_\+trav}} (const std\+::vector$<$ \mbox{\hyperlink{struct_todo_1_1_task}{Task}} $>$ \&list, int \&curr, const int target, std\+::vector$<$ \mbox{\hyperlink{namespace_todo_a0f033048846c82ded9882f3706ba4dc5}{u16}} $>$ \&path)
 \item 
-\mbox{\hyperlink{namespace_todo_a4c42c87eab3e0bde6142a3beb62feffd}{BOOST\+\_\+\+DESCRIBE\+\_\+\+ENUM}} (\mbox{\hyperlink{namespace_todo_a83cf0624dcf41c74f122b20799a844f6}{Status}}, NOT\+\_\+\+STARTED, IN\+\_\+\+PROGRESS, COMPLETED)
+\mbox{\hyperlink{namespace_todo_a006d055d0f6f09b9e8325e33b9f7cf05}{BOOST\+\_\+\+DESCRIBE\+\_\+\+ENUM}} (\mbox{\hyperlink{struct_todo_1_1_task_a0dc2492f114687879f5a40951ed832e6}{Task\+::\+Status}}, NOT\+\_\+\+STARTED, IN\+\_\+\+PROGRESS, COMPLETED)
 \item 
-\mbox{\hyperlink{namespace_todo_aba2f17597df6e908f1c24c14b3b14eb5}{BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT}} (\mbox{\hyperlink{struct_todo_1_1_task}{Task}},(),(desc, child\+\_\+tasks, prio, status))
+\mbox{\hyperlink{namespace_todo_a48f512be13d05d888b975ee28427d7cd}{BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT}} (\mbox{\hyperlink{struct_todo_1_1_task}{Task}},(),(desc, child\+\_\+tasks, priority, status))
 \item 
 void \mbox{\hyperlink{namespace_todo_a55a5df34f84fbef3cf918b3b7a175c79}{clear\+\_\+input\+\_\+buf}} ()
 \end{DoxyCompactItemize}
@@ -101,6 +98,12 @@ using \mbox{\hyperlink{namespace_todo_a971b6615cbbbe5414b79a5340feeda24}{Todo\+:
 \doxysubsubsection{\texorpdfstring{i8}{i8}}
 {\footnotesize\ttfamily \label{namespace_todo_a058fb89c7da9a964e57a03a90b7ded80} 
 using \mbox{\hyperlink{namespace_todo_a058fb89c7da9a964e57a03a90b7ded80}{Todo\+::i8}} = int8\+\_\+t}
+
+\Hypertarget{namespace_todo_a135f94559dbddd8dd90cb9fd3bcec604}\index{Todo@{Todo}!Status@{Status}}
+\index{Status@{Status}!Todo@{Todo}}
+\doxysubsubsection{\texorpdfstring{Status}{Status}}
+{\footnotesize\ttfamily \label{namespace_todo_a135f94559dbddd8dd90cb9fd3bcec604} 
+using \mbox{\hyperlink{struct_todo_1_1_task_a0dc2492f114687879f5a40951ed832e6}{Todo\+::\+Status}} = \mbox{\hyperlink{struct_todo_1_1_task_a0dc2492f114687879f5a40951ed832e6}{Todo\+::\+Task\+::\+Status}}}
 
 \Hypertarget{namespace_todo_a0f033048846c82ded9882f3706ba4dc5}\index{Todo@{Todo}!u16@{u16}}
 \index{u16@{u16}!Todo@{Todo}}
@@ -167,42 +170,22 @@ INVALID&\\
 \hline
 
 \end{DoxyEnumFields}
-\Hypertarget{namespace_todo_a83cf0624dcf41c74f122b20799a844f6}\index{Todo@{Todo}!Status@{Status}}
-\index{Status@{Status}!Todo@{Todo}}
-\doxysubsubsection{\texorpdfstring{Status}{Status}}
-{\footnotesize\ttfamily \label{namespace_todo_a83cf0624dcf41c74f122b20799a844f6} 
-enum class \mbox{\hyperlink{namespace_todo_a83cf0624dcf41c74f122b20799a844f6}{Todo\+::\+Status}} \+: \mbox{\hyperlink{namespace_todo_a6bf1a7e8c46fa7e85101f3f48f33b373}{u8}}\hspace{0.3cm}{\ttfamily [strong]}}
-
-\begin{DoxyEnumFields}[2]{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{NOT\_STARTED@{NOT\_STARTED}!Todo@{Todo}}\index{Todo@{Todo}!NOT\_STARTED@{NOT\_STARTED}}}\Hypertarget{namespace_todo_a83cf0624dcf41c74f122b20799a844f6a06972acc3aafeb3a65dbd996c8dedc73}\label{namespace_todo_a83cf0624dcf41c74f122b20799a844f6a06972acc3aafeb3a65dbd996c8dedc73} 
-NOT\+\_\+\+STARTED&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{IN\_PROGRESS@{IN\_PROGRESS}!Todo@{Todo}}\index{Todo@{Todo}!IN\_PROGRESS@{IN\_PROGRESS}}}\Hypertarget{namespace_todo_a83cf0624dcf41c74f122b20799a844f6aca69f96c768067fbff6c911ca87bccc9}\label{namespace_todo_a83cf0624dcf41c74f122b20799a844f6aca69f96c768067fbff6c911ca87bccc9} 
-IN\+\_\+\+PROGRESS&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{COMPLETED@{COMPLETED}!Todo@{Todo}}\index{Todo@{Todo}!COMPLETED@{COMPLETED}}}\Hypertarget{namespace_todo_a83cf0624dcf41c74f122b20799a844f6a8f7afecbc8fbc4cd0f50a57d1172482e}\label{namespace_todo_a83cf0624dcf41c74f122b20799a844f6a8f7afecbc8fbc4cd0f50a57d1172482e} 
-COMPLETED&\\
-\hline
-
-\end{DoxyEnumFields}
 
 
 \label{doc-func-members}
 \Hypertarget{namespace_todo_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{namespace_todo_a4c42c87eab3e0bde6142a3beb62feffd}\index{Todo@{Todo}!BOOST\_DESCRIBE\_ENUM@{BOOST\_DESCRIBE\_ENUM}}
+\Hypertarget{namespace_todo_a006d055d0f6f09b9e8325e33b9f7cf05}\index{Todo@{Todo}!BOOST\_DESCRIBE\_ENUM@{BOOST\_DESCRIBE\_ENUM}}
 \index{BOOST\_DESCRIBE\_ENUM@{BOOST\_DESCRIBE\_ENUM}!Todo@{Todo}}
 \doxysubsubsection{\texorpdfstring{BOOST\_DESCRIBE\_ENUM()}{BOOST\_DESCRIBE\_ENUM()}}
-{\footnotesize\ttfamily \label{namespace_todo_a4c42c87eab3e0bde6142a3beb62feffd} 
-Todo\+::\+BOOST\+\_\+\+DESCRIBE\+\_\+\+ENUM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_todo_a83cf0624dcf41c74f122b20799a844f6}{Status}}}]{}{, }\item[{NOT\+\_\+\+STARTED}]{}{, }\item[{IN\+\_\+\+PROGRESS}]{}{, }\item[{COMPLETED}]{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespace_todo_a006d055d0f6f09b9e8325e33b9f7cf05} 
+Todo\+::\+BOOST\+\_\+\+DESCRIBE\+\_\+\+ENUM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_todo_1_1_task_a0dc2492f114687879f5a40951ed832e6}{Task\+::\+Status}}}]{}{, }\item[{NOT\+\_\+\+STARTED}]{}{, }\item[{IN\+\_\+\+PROGRESS}]{}{, }\item[{COMPLETED}]{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{namespace_todo_aba2f17597df6e908f1c24c14b3b14eb5}\index{Todo@{Todo}!BOOST\_DESCRIBE\_STRUCT@{BOOST\_DESCRIBE\_STRUCT}}
+\Hypertarget{namespace_todo_a48f512be13d05d888b975ee28427d7cd}\index{Todo@{Todo}!BOOST\_DESCRIBE\_STRUCT@{BOOST\_DESCRIBE\_STRUCT}}
 \index{BOOST\_DESCRIBE\_STRUCT@{BOOST\_DESCRIBE\_STRUCT}!Todo@{Todo}}
 \doxysubsubsection{\texorpdfstring{BOOST\_DESCRIBE\_STRUCT()}{BOOST\_DESCRIBE\_STRUCT()}}
-{\footnotesize\ttfamily \label{namespace_todo_aba2f17597df6e908f1c24c14b3b14eb5} 
-Todo\+::\+BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_todo_1_1_task}{Task}}}]{}{, }\item[{()}]{}{, }\item[{(desc, child\+\_\+tasks, prio, status)}]{}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{namespace_todo_a48f512be13d05d888b975ee28427d7cd} 
+Todo\+::\+BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_todo_1_1_task}{Task}}}]{}{, }\item[{()}]{}{, }\item[{(desc, child\+\_\+tasks, priority, status)}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{namespace_todo_a55a5df34f84fbef3cf918b3b7a175c79}\index{Todo@{Todo}!clear\_input\_buf@{clear\_input\_buf}}
 \index{clear\_input\_buf@{clear\_input\_buf}!Todo@{Todo}}
