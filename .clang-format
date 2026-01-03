@@ -126,7 +126,7 @@ BreakBeforeInlineASMColon: OnlyMultiline
 BreakBeforeTemplateCloser: false
 BreakBeforeTernaryOperators: true
 BreakBinaryOperations: Never
-BreakConstructorInitializers: BeforeColon
+BreakConstructorInitializers: BeforeComma
 BreakFunctionDefinitionParameters: false
 BreakInheritanceList: BeforeColon
 BreakStringLiterals: true
@@ -210,7 +210,7 @@ ObjCBreakBeforeNestedBlockParam: true
 ObjCSpaceAfterProperty: false
 ObjCSpaceBeforeProtocolList: true
 OneLineFormatOffRegex: ''
-PackConstructorInitializers: NextLine
+PackConstructorInitializers: Never
 PenaltyBreakAssignment: 2
 PenaltyBreakBeforeFirstCallParameter: 1
 PenaltyBreakBeforeMemberAccess: 150

@@ -3,7 +3,7 @@ project(cli-todo VERSION 0.1)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Release)
 
 find_package(Boost REQUIRED COMPONENTS json CONFIG)
 
@@ -17,10 +17,12 @@ set(SRC_FILES
     src/view/i_view.cpp
     src/view/vi_view.cpp
     src/controller/controller.cpp
+    src/actions/actions.cpp
 )
 
 include_directories(
     src
+    src/actions
     src/model
     src/view
     src/controller
