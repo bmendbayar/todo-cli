@@ -29,8 +29,8 @@ public:
 
 class RemoveAction : public Action {
 private:
-  std::vector<u16> undo_path_;  ///< Path of undo.
-  Task task_;                   ///< Removed task.
+  std::vector<u16> undo_path_{};  ///< Path of undo.
+  Task task_{};                   ///< Removed task.
 
 public:
   /// \brief Parameterized constructor.
@@ -47,8 +47,8 @@ public:
 
 class AddAction : public Action {
 private:
-  std::vector<u16> undo_path_;  ///< Path of undo.
-  Task task_;                   ///< Added task.
+  std::vector<u16> undo_path_{};  ///< Path of undo.
+  Task task_{};                   ///< Added task.
 
 public:
   /// \brief Parameterized constructor.
@@ -66,8 +66,8 @@ public:
 
 class StatusChangeAction : public Action {
 private:
-  Status new_status_;  ///< New status of task.
-  Status old_status_;  ///< Old status of task.
+  Status new_status_{};  ///< New status of task.
+  Status old_status_{};  ///< Old status of task.
 
 public:
   /// \brief Parameterized constructor.
@@ -85,8 +85,8 @@ public:
 
 class PriorityChangeAction : public Action {
 private:
-  u16 new_priority_;  ///< New priority of task.
-  u16 old_priority_;  ///< Old priority of task.
+  u16 new_priority_{};  ///< New priority of task.
+  u16 old_priority_{};  ///< Old priority of task.
 
 public:
   /// \brief Parameterized constructor.

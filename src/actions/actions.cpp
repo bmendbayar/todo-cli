@@ -11,24 +11,33 @@ RemoveAction::RemoveAction(Model &model, std::vector<u16> path)
   : Action(model, path)
   , undo_path_(path)
 {
-  undo_path_.pop_back();
-
-  const auto &local_list = model_->get_list();
-  const Task *curr_t = &local_list[exe_path_[0]];
-  auto size = exe_path_.size();
-  for (u64 i{1}; i < size; ++i) {
-    curr_t = &curr_t->child_tasks[exe_path_[i]];
+  if (path.empty() == false) {
+    undo_path_.pop_back();
+    const auto &local_list = model_->get_list();
+    const Task *curr_t = &local_list[exe_path_[0]];
+    auto size = exe_path_.size();
+    for (u64 i{1}; i < size; ++i) {
+      curr_t = &curr_t->child_tasks[exe_path_[i]];
+    }
+    task_ = *curr_t;
+  } else {
+    task_ = {};
   }
-  task_ = *curr_t;
 }
 
 void RemoveAction::execute()
 {
+  if (task_.desc.empty()) {
+    return;
+  }
   model_->remove(exe_path_);
 }
 
 void RemoveAction::undo()
 {
+  if (task_.desc.empty()) {
+    return;
+  }
   model_->add(task_, undo_path_);
 }
 
@@ -37,13 +46,17 @@ AddAction::AddAction(Model &model, std::vector<u16> path, Task task)
   , undo_path_(path)
   , task_(task)
 {
-  const auto &local_list = model_->get_list();
-  const Task *curr_t = &local_list[exe_path_[0]];
-  auto size = exe_path_.size();
-  for (u64 i{1}; i < size; ++i) {
-    curr_t = &curr_t->child_tasks[exe_path_[i]];
+  if (path.empty() == false) {
+    const auto &local_list = model_->get_list();
+    const Task *curr_t = &local_list[exe_path_[0]];
+    auto size = exe_path_.size();
+    for (u64 i{1}; i < size; ++i) {
+      curr_t = &curr_t->child_tasks[exe_path_[i]];
+    }
+    undo_path_.push_back(curr_t->child_tasks.size());
+  } else {
+    undo_path_ = {0};
   }
-  undo_path_.push_back(curr_t->child_tasks.size());
 }
 
 void AddAction::execute()
@@ -61,13 +74,15 @@ StatusChangeAction::StatusChangeAction(Model &model, std::vector<u16> path,
   : Action(model, path)
   , new_status_(new_status)
 {
-  const auto &local_list = model_->get_list();
-  const Task *curr_t = &local_list[exe_path_[0]];
-  u64 size = exe_path_.size();
-  for (u64 i{1}; i < size; ++i) {
-    curr_t = &curr_t->child_tasks[exe_path_[i]];
+  if (path.empty() == false) {
+    const auto &local_list = model_->get_list();
+    const Task *curr_t = &local_list[exe_path_[0]];
+    u64 size = exe_path_.size();
+    for (u64 i{1}; i < size; ++i) {
+      curr_t = &curr_t->child_tasks[exe_path_[i]];
+    }
+    old_status_ = curr_t->status;
   }
-  old_status_ = curr_t->status;
 }
 
 void StatusChangeAction::execute()
@@ -85,13 +100,15 @@ PriorityChangeAction::PriorityChangeAction(Model &model, std::vector<u16> path,
   : Action(model, path)
   , new_priority_(new_priority)
 {
-  const auto &local_list = model_->get_list();
-  const Task *curr_t = &local_list[exe_path_[0]];
-  u64 size = exe_path_.size();
-  for (u64 i{1}; i < size; ++i) {
-    curr_t = &curr_t->child_tasks[exe_path_[i]];
+  if (path.empty() == false) {
+    const auto &local_list = model_->get_list();
+    const Task *curr_t = &local_list[exe_path_[0]];
+    u64 size = exe_path_.size();
+    for (u64 i{1}; i < size; ++i) {
+      curr_t = &curr_t->child_tasks[exe_path_[i]];
+    }
+    old_priority_ = curr_t->priority;
   }
-  old_priority_ = curr_t->priority;
 }
 
 void PriorityChangeAction::execute()
