@@ -110,7 +110,9 @@ inline bool pre_order_trav(const std::vector<Task> &list, int &curr, const int t
 {
   for (u16 i{}; i < list.size(); i++) {
     path.push_back(i);
-    curr++;
+    if (list[i].status != Status::COMPLETED) {
+      ++curr;
+    }
 
     if (curr == target) {
       return true;
