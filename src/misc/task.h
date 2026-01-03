@@ -1,6 +1,7 @@
 #pragma once
 
 #include <boost/describe.hpp>
+#include <boost/json.hpp>
 #include <string>
 #include <vector>
 
