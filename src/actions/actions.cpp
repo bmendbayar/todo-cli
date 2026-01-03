@@ -7,10 +7,19 @@ Action::Action(Model &model, std::vector<u16> path)
 {
 }
 
-RemoveAction::RemoveAction(Model &model, std::vector<u16> path, Task task)
+RemoveAction::RemoveAction(Model &model, std::vector<u16> path)
   : Action(model, path)
-  , task_(task)
+  , undo_path_(path)
 {
+  undo_path_.pop_back();
+
+  const auto &local_list = model_->get_list();
+  const Task *curr_t = &local_list[exe_path_[0]];
+  auto size = exe_path_.size();
+  for (u64 i{1}; i < size; ++i) {
+    curr_t = &curr_t->child_tasks[exe_path_[i]];
+  }
+  task_ = *curr_t;
 }
 
 void RemoveAction::execute()
@@ -20,10 +29,7 @@ void RemoveAction::execute()
 
 void RemoveAction::undo()
 {
-  u16 x = exe_path_.front();
-  exe_path_.pop_back();
-  model_->add(task_, exe_path_);
-  exe_path_.push_back(x);
+  model_->add(task_, undo_path_);
 }
 
 AddAction::AddAction(Model &model, std::vector<u16> path, Task task)

@@ -7,7 +7,9 @@ enum class MenuOptions {
   REMOVE = 2,
   CHANGE_STATUS = 3,
   CHANGE_PRIO = 4,
-  CLEAR = 5,
-  INVALID = 6
+  UNDO = 5,
+  REDO = 6,
+  CLEAR = 7,
+  INVALID = 8
 };
 }  // namespace Todo

@@ -86,6 +86,12 @@ UserInput ViView::handle_normal()
         }
         break;
 
+      case 'g':
+        return {std::string(1, ch), true};
+
+      case 'u':
+        return {std::string(1, ch), true};
+
       case 'O':
         mode_ = Mode::SINSERT;
         return {std::string(1, ch), true};

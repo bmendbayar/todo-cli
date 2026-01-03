@@ -24,7 +24,7 @@ private:
   Task task_;
 
 public:
-  RemoveAction(Model &model, std::vector<u16> path, Task task);
+  RemoveAction(Model &model, std::vector<u16> path);
   virtual void execute() override;
   virtual void undo() override;
 };

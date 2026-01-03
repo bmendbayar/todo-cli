@@ -22,14 +22,12 @@ public:
   /// \brief Sets up the .todo directory and its contents.
   void dir_init();
 
-  /// /brief Adds task with description @p task_desc to todo list.
-  /// /param task_desc Description of task to add.
-  /// /param priority Priority of task to add.
+  /// /brief Adds task with description to todo list.
+  /// /param task The task to add.
   /// /param path Path of task to add.
-  void add(const std::string &item_desc, const u16 priority,
-           const std::vector<u16> &path);
+  void add(Task task, const std::vector<u16> &path);
 
-  /// /brief Remove @p index task from the todo list.
+  /// /brief Remove task from the todo list.
   /// /param path Path of the task to remove.
   void remove(const std::vector<u16> &path);
 
@@ -44,15 +42,15 @@ public:
   /// \note Uses boost.JSON to serialize data.
   void save_file();
 
-  /// \brief Changes the completion status of @p index task.
+  /// \brief Changes the completion status of a task.
   /// \param path Path of the task to change.
   /// \param status Status to change to.
-  void change_task_status(const std::vector<u16> &path, const int status);
+  void change_task_status(const std::vector<u16> &path, const Status status);
 
-  /// \brief Changes the completion status of @p index task.
+  /// \brief Changes the completion status of a task.
   /// \param path Path of the task to change.
   /// \param prio Priority to change to.
-  void change_task_prio(const std::vector<u16> &path, const int prio);
+  void change_task_priority(const std::vector<u16> &path, const int priority);
 
   /// \brief Returns a const reference of the todo list vector.
   const std::vector<Task> &get_list();

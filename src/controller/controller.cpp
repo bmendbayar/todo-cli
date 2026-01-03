@@ -4,6 +4,7 @@
 #include <stdexcept>
 #include <string>
 
+#include "actions.h"
 #include "basic_view.h"
 #include "controller.h"
 #include "i_view.h"
@@ -51,6 +52,10 @@ void Controller::run()
         opt = MenuOptions::EXIT;
       } else if (str_opt.text == "o" || str_opt.text == "O") {
         opt = MenuOptions::ADD;
+      } else if (str_opt.text == "u") {
+        opt = MenuOptions::UNDO;
+      } else if (str_opt.text == "g") {
+        opt = MenuOptions::REDO;
       } else {
         opt = MenuOptions::INVALID;
       }
@@ -73,6 +78,14 @@ void Controller::run()
 
       case MenuOptions::CHANGE_PRIO:
         handle_prio_change();
+        break;
+
+      case MenuOptions::UNDO:
+        handle_undo();
+        break;
+
+      case MenuOptions::REDO:
+        handle_redo();
         break;
 
       case MenuOptions::CLEAR:
@@ -157,7 +170,14 @@ void Controller::handle_add(int ch)
       return;
     }
 
-    model_.add(desc.text, std::stoul(prio.text), vpath);
+    Task task{desc.text, {}, (u16)std::stoul(prio.text), {}};
+    auto action = std::make_unique<AddAction>(model_, vpath, task);
+    action->execute();
+    undo_stack_.push(std::move(action));
+
+    while (redo_stack_.empty() == false) {
+      redo_stack_.pop();
+    }
   } catch (const std::out_of_range &e) {
     view_->display_msg("Error: Out of range access");
   } catch (const std::exception &e) {
@@ -173,7 +193,13 @@ void Controller::handle_remove()
       return;
     }
 
-    model_.remove(parse_path(path_str));
+    auto action = std::make_unique<RemoveAction>(model_, parse_path(path_str));
+    action->execute();
+    undo_stack_.push(std::move(action));
+
+    while (redo_stack_.empty() == false) {
+      redo_stack_.pop();
+    }
   } catch (const std::out_of_range &e) {
     view_->display_msg("Error: Out of range access");
   } catch (const std::exception &e) {
@@ -200,7 +226,14 @@ void Controller::handle_status_change()
       return;
     }
 
-    model_.change_task_status(parse_path(path_str), std::stoul(status.text));
+    auto action = std::make_unique<StatusChangeAction>(
+      model_, parse_path(path_str), static_cast<Status>(std::stoul(status.text)));
+    action->execute();
+    undo_stack_.push(std::move(action));
+
+    while (redo_stack_.empty() == false) {
+      redo_stack_.pop();
+    }
   } catch (const std::out_of_range &e) {
     view_->display_msg("Error: Out of range access");
   } catch (const std::exception &e) {
@@ -217,11 +250,40 @@ void Controller::handle_prio_change()
       return;
     }
 
-    model_.change_task_prio(parse_path(path_str), std::stoul(prio.text));
+    auto action = std::make_unique<PriorityChangeAction>(model_, parse_path(path_str),
+                                                         std::stoul(prio.text));
+    action->execute();
+    undo_stack_.push(std::move(action));
+
+    while (redo_stack_.empty() == false) {
+      redo_stack_.pop();
+    }
   } catch (const std::out_of_range &e) {
     view_->display_msg("Error: Out of range access");
   } catch (const std::exception &e) {
     view_->display_msg("Error: " + std::string(e.what()));
   }
+}
+
+void Controller::handle_undo()
+{
+  if (undo_stack_.empty() == true) {
+    return;
+  }
+
+  undo_stack_.top()->undo();
+  redo_stack_.push(std::move(undo_stack_.top()));
+  undo_stack_.pop();
+}
+
+void Controller::handle_redo()
+{
+  if (redo_stack_.empty() == true) {
+    return;
+  }
+
+  redo_stack_.top()->execute();
+  undo_stack_.push(std::move(redo_stack_.top()));
+  redo_stack_.pop();
 }
 }  // namespace Todo

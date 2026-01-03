@@ -72,11 +72,10 @@ void Model::dir_init()
   }
 }
 
-void Model::add(const std::string &task_desc, const u16 priority,
-                const std::vector<u16> &path)
+void Model::add(Task task, const std::vector<u16> &path)
 {
   if (path.empty()) {
-    todo_list_.emplace_back(Task{task_desc, {}, priority, Status::NOT_STARTED});
+    todo_list_.emplace_back(std::move(task));
     return;
   }
 
@@ -85,7 +84,7 @@ void Model::add(const std::string &task_desc, const u16 priority,
     curr = &(curr->child_tasks.at(*it));
   }
 
-  curr->child_tasks.emplace_back(Task{task_desc, {}, priority, Status::NOT_STARTED});
+  curr->child_tasks.emplace_back(std::move(task));
   return;
 }
 
@@ -128,7 +127,7 @@ void Model::change_child_task_status(Task &task, const Status status)
   }
 }
 
-void Model::change_task_status(const std::vector<u16> &path, const int status)
+void Model::change_task_status(const std::vector<u16> &path, const Status status)
 {
   if (path.empty()) {
     return;
@@ -136,26 +135,26 @@ void Model::change_task_status(const std::vector<u16> &path, const int status)
 
   Task *curr = &(todo_list_.at(path[0]));
   for (auto it = path.begin() + 1; it < path.end(); ++it) {
-    if (static_cast<Status>(status) == Status::IN_PROGRESS) {
+    if (status == Status::IN_PROGRESS) {
       curr->status = Status::IN_PROGRESS;
     }
 
     curr = &(curr->child_tasks.at(*it));
   }
-  curr->status = static_cast<Status>(status);
+  curr->status = status;
 
   if (curr->child_tasks.empty() == true) {
     return;
   }
 
   if (curr->status == Status::COMPLETED) {
-    change_child_task_status(*curr, static_cast<Status>(status));
+    change_child_task_status(*curr, status);
   }
 
   return;
 }
 
-void Model::change_task_prio(const std::vector<u16> &path, const int prio)
+void Model::change_task_priority(const std::vector<u16> &path, const int priority)
 {
   if (path.empty()) {
     return;
@@ -165,7 +164,7 @@ void Model::change_task_prio(const std::vector<u16> &path, const int prio)
   for (auto it = path.begin() + 1; it < path.end(); ++it) {
     curr = &(curr->child_tasks.at(*it));
   }
-  curr->priority = prio;
+  curr->priority = priority;
 
   return;
 }

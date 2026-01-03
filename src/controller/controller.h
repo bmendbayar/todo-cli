@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <memory>
 
+#include "actions.h"
 #include "model.h"
 #include "view.h"
 
@@ -12,9 +13,12 @@ private:
   Model model_;                 ///< The [M]odel of the MVC.
   std::unique_ptr<View> view_;  ///< The [V]iew of the MVC.
 
+  std::stack<std::unique_ptr<Action>> undo_stack_;  ///< Undo stack.
+  std::stack<std::unique_ptr<Action>> redo_stack_;  ///< Redo stack.
+
 public:
   /// \brief Default constructor.
-  /// \note based on args the view will be different.
+  /// \note Based on args the view will be different.
   Controller(int argc, char **argv);
 
   /// \brief Starting point for program.
@@ -39,6 +43,12 @@ private:
 
   /// \brief Handles the priority change of a task.
   void handle_prio_change();
+
+  /// \brief Handles the undo of an action.
+  void handle_undo();
+
+  /// \brief Handles the redo of an action.
+  void handle_redo();
 
   /// \brief Parses a char number to a path vector.
   /// \param user_input The user_input to parse.
