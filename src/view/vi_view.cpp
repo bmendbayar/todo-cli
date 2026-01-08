@@ -1,4 +1,5 @@
 #include <cctype>
+#include <chrono>
 #include <string>
 
 #include "vi_view.h"
@@ -197,6 +198,7 @@ UserInput ViView::handle_insert()
 
   if (curr_event_ == InsertChain::DATE) {
     curr_event_ = InsertChain::DESC;
+    cursor_.x = 0;
     mode_ = Mode::NORMAL;
   }
 
@@ -292,8 +294,30 @@ void ViView::display_list(const std::vector<Task> &todo_list, u16 level)
         break;
     }
 
-    mvwprintw(list_pad_, y, x, "[%s] %s (%d/%d/%d)\n", status.c_str(), task.desc.c_str(),
-              task.due_date.day, task.due_date.month, task.due_date.year);
+    auto const now = std::chrono::system_clock::now();
+    std::chrono::year_month_day today{std::chrono::floor<std::chrono::days>(now)};
+
+    std::string overdue = [&task, &today]() -> std::string {
+      if ((int)today.year() > task.due_date.year) {
+        return std::string("OVERDUE");
+      }
+
+      if ((int)today.year() == task.due_date.year &&
+          (unsigned)today.month() > task.due_date.month) {
+        return std::string("OVERDUE");
+      }
+
+      if ((int)today.year() == task.due_date.year &&
+          (unsigned)today.month() == task.due_date.month &&
+          (unsigned)today.day() > task.due_date.day) {
+        return std::string("OVERDUE");
+      }
+
+      return std::string("");
+    }();
+
+    mvwprintw(list_pad_, y, x, "[%s] %s %s (%d/%d/%d)\n", status.c_str(), task.desc.c_str(),
+              overdue.c_str(), task.due_date.month, task.due_date.day, task.due_date.year);
 
     if (!task.child_tasks.empty()) {
       display_list(task.child_tasks, level + 1);

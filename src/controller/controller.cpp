@@ -161,7 +161,7 @@ inline Task::Date parse_date(std::string &due_date)
   u16 month{};
   u16 day{};
   char delim;
-  ss >> day >> delim >> month >> delim >> year;
+  ss >> month >> delim >> day >> delim >> year;
   return Task::Date{year, month, day};
 }
 
@@ -173,19 +173,23 @@ void Controller::handle_add(int ch)
     UserInput priority = view_->get_input("Enter the priority of the task (1-100): ");
     UserInput due_date = view_->get_input("Enter the due date of the task (dd/mm/yyyy): ");
 
-    // parse_date() move construct stringstream from the input string!
+    // parse_date() move constructs a stringstream from the input string!
     Task::Date date = parse_date(due_date.text);
 
     auto const now = std::chrono::system_clock::now();
     std::chrono::year_month_day today{std::chrono::floor<std::chrono::days>(now)};
 
-    if ((int)today.year() >= date.year) {
-      if ((unsigned)today.month() >= date.month) {
-        if ((unsigned)today.day() > date.day) {
-          view_->display_msg("due date cannot be earlier than today");
-          return;
-        }
-      }
+    if ((int)today.year() > date.year) {
+      return;
+    }
+
+    if ((int)today.year() == date.year && (unsigned)today.month() > date.month) {
+      return;
+    }
+
+    if ((int)today.year() == date.year && (unsigned)today.month() == date.month &&
+        (unsigned)today.day() > date.day) {
+      return;
     }
 
     std::vector<u16> vpath = parse_path(path);
