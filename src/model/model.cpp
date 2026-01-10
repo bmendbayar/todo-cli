@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <boost/json.hpp>
 #include <cstdlib>
 #include <filesystem>
@@ -71,19 +72,30 @@ void Model::dir_init()
   }
 }
 
-void Model::add(Task task, const std::vector<u64> &path)
+Task *Model::find_task(const std::vector<u64> &path, bool parent)
+{
+  u16 flag{};
+  if (parent == true) {
+    flag = 1;
+  }
+
+  Task *curr = &(todo_list_.at(path[0]));
+  for (auto it = path.begin() + 1; it < path.end() - flag; ++it) {
+    curr = &(curr->child_tasks.at(*it));
+  }
+
+  return curr;
+}
+
+void Model::add(Task &task, const std::vector<u64> &path)
 {
   if (path.empty()) {
     todo_list_.emplace_back(std::move(task));
     return;
   }
 
-  Task *curr = &(todo_list_.at(path[0]));
-  for (auto it = path.begin() + 1; it < path.end(); ++it) {
-    curr = &(curr->child_tasks.at(*it));
-  }
-
-  curr->child_tasks.emplace_back(std::move(task));
+  Task *parent_task = find_task(path);
+  parent_task->child_tasks.emplace_back(std::move(task));
   return;
 }
 
@@ -98,12 +110,9 @@ void Model::remove(const std::vector<u64> &path)
     return;
   }
 
-  Task *curr = &(todo_list_.at(path[0]));
-  for (auto it = path.begin() + 1; it < path.end() - 1; ++it) {
-    curr = &(curr->child_tasks.at(*it));
-  }
+  Task *task = find_task(path, true);
+  task->child_tasks.erase(task->child_tasks.begin() + *(path.end() - 1));
 
-  curr->child_tasks.erase(curr->child_tasks.begin() + *(path.end() - 1));
   return;
 }
 
@@ -132,12 +141,12 @@ void Model::change_task_status(const std::vector<u64> &path, const Status status
     return;
   }
 
+  // necessary duplicate code for task inheritance.
   Task *curr = &(todo_list_.at(path[0]));
   for (auto it = path.begin() + 1; it < path.end(); ++it) {
     if (status == Status::IN_PROGRESS) {
       curr->status = Status::IN_PROGRESS;
     }
-
     curr = &(curr->child_tasks.at(*it));
   }
   curr->status = status;
@@ -159,12 +168,8 @@ void Model::change_task_priority(const std::vector<u64> &path, const int priorit
     return;
   }
 
-  Task *curr = &(todo_list_.at(path[0]));
-  for (auto it = path.begin() + 1; it < path.end(); ++it) {
-    curr = &(curr->child_tasks.at(*it));
-  }
-  curr->priority = priority;
-
+  Task *task = find_task(path);
+  task->priority = priority;
   return;
 }
 

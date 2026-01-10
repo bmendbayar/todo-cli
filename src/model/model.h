@@ -20,13 +20,13 @@ public:
   /// \brief Sets up the .todo directory and its contents.
   void dir_init();
 
-  /// /brief Adds task with description to todo list.
-  /// /param task The task to add.
-  /// /param path Path of task to add.
-  void add(Task task, const std::vector<u64> &path);
+  /// \brief Adds task with description to todo list.
+  /// \param task A reference to the task to add.
+  /// \param path Path of task to add.
+  void add(Task &task, const std::vector<u64> &path);
 
-  /// /brief Remove task from the todo list.
-  /// /param path Path of the task to remove.
+  /// \brief Remove task from the todo list.
+  /// \param path Path of the task to remove.
   void remove(const std::vector<u64> &path);
 
   /// \brief Clears (empties) the list.
@@ -56,6 +56,11 @@ public:
 private:
   std::vector<Task> todo_list_;  ///< Container to hold todo list tasks
                                  ///< while program is running.
+
+  /// \brief Finds task via path
+  /// \param path Path to the task.
+  /// \param parent Flag for finding the parent.
+  Task *find_task(const std::vector<u64> &path, bool parent = false);
 
   /// \brief Changes all child tasks' status according to parent.
   void change_child_task_status(Task &task, const Status status);
