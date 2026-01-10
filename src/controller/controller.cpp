@@ -109,7 +109,7 @@ void Controller::run()
 }
 
 inline bool pre_order_trav(const std::vector<Task> &list, int &curr, const int target,
-                           std::vector<u16> &path)
+                           std::vector<u64> &path)
 {
   for (u16 i{}; i < list.size(); i++) {
     path.push_back(i);
@@ -133,9 +133,9 @@ inline bool pre_order_trav(const std::vector<Task> &list, int &curr, const int t
   return false;
 }
 
-std::vector<u16> Controller::parse_path(const UserInput &user_input)
+std::vector<u64> Controller::parse_path(const UserInput &user_input)
 {
-  std::vector<u16> path;
+  std::vector<u64> path;
 
   if (user_input.vi_mode == false) {
     for (const char &c : user_input.text) {
@@ -192,7 +192,7 @@ void Controller::handle_add(int ch)
       return;
     }
 
-    std::vector<u16> vpath = parse_path(path);
+    std::vector<u64> vpath = parse_path(path);
     if (ch == 'O' && vpath.empty() == false) {
       vpath.pop_back();
     }

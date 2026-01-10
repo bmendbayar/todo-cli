@@ -53,6 +53,6 @@ private:
   /// \brief Parses a char number to a path vector.
   /// \param user_input The user_input to parse.
   /// \return A vector of non-negative integers.
-  std::vector<u16> parse_path(const UserInput &user_input);
+  std::vector<u64> parse_path(const UserInput &user_input);
 };
 }  // namespace todo

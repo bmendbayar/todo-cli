@@ -1,13 +1,13 @@
 #include "actions/actions.h"
 
 namespace todo {
-Action::Action(Model &model, std::vector<u16> path)
+Action::Action(Model &model, std::vector<u64> path)
   : model_(&model)
   , exe_path_(std::move(path))
 {
 }
 
-RemoveAction::RemoveAction(Model &model, std::vector<u16> path)
+RemoveAction::RemoveAction(Model &model, std::vector<u64> path)
   : Action(model, path)
   , undo_path_(path)
 {
@@ -41,7 +41,7 @@ void RemoveAction::undo()
   model_->add(task_, undo_path_);
 }
 
-AddAction::AddAction(Model &model, std::vector<u16> path, Task task)
+AddAction::AddAction(Model &model, std::vector<u64> path, Task task)
   : Action(model, path)
   , undo_path_(path)
   , task_(task)
@@ -69,7 +69,7 @@ void AddAction::undo()
   model_->remove(undo_path_);
 }
 
-StatusChangeAction::StatusChangeAction(Model &model, std::vector<u16> path, Status new_status)
+StatusChangeAction::StatusChangeAction(Model &model, std::vector<u64> path, Status new_status)
   : Action(model, path)
   , new_status_(new_status)
 {
@@ -94,7 +94,7 @@ void StatusChangeAction::undo()
   model_->change_task_status(exe_path_, old_status_);
 }
 
-PriorityChangeAction::PriorityChangeAction(Model &model, std::vector<u16> path, u16 new_priority)
+PriorityChangeAction::PriorityChangeAction(Model &model, std::vector<u64> path, u16 new_priority)
   : Action(model, path)
   , new_priority_(new_priority)
 {

@@ -71,7 +71,7 @@ void Model::dir_init()
   }
 }
 
-void Model::add(Task task, const std::vector<u16> &path)
+void Model::add(Task task, const std::vector<u64> &path)
 {
   if (path.empty()) {
     todo_list_.emplace_back(std::move(task));
@@ -87,7 +87,7 @@ void Model::add(Task task, const std::vector<u16> &path)
   return;
 }
 
-void Model::remove(const std::vector<u16> &path)
+void Model::remove(const std::vector<u64> &path)
 {
   if (path.empty()) {
     return;
@@ -126,7 +126,7 @@ void Model::change_child_task_status(Task &task, const Status status)
   }
 }
 
-void Model::change_task_status(const std::vector<u16> &path, const Status status)
+void Model::change_task_status(const std::vector<u64> &path, const Status status)
 {
   if (path.empty()) {
     return;
@@ -153,7 +153,7 @@ void Model::change_task_status(const std::vector<u16> &path, const Status status
   return;
 }
 
-void Model::change_task_priority(const std::vector<u16> &path, const int priority)
+void Model::change_task_priority(const std::vector<u64> &path, const int priority)
 {
   if (path.empty()) {
     return;
