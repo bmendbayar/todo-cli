@@ -157,9 +157,7 @@ std::vector<u64> Controller::parse_path(const UserInput &user_input)
 inline Task::Date parse_date(std::string &due_date)
 {
   std::stringstream ss(std::move(due_date));
-  u16 year{};
-  u16 month{};
-  u16 day{};
+  u16 year{}, month{}, day{};
   char delim;
   ss >> month >> delim >> day >> delim >> year;
   return Task::Date{year, month, day};
@@ -173,28 +171,30 @@ void Controller::handle_add(int ch)
     UserInput priority = view_->get_input("Enter the priority of the task (1-100): ");
     UserInput due_date = view_->get_input("Enter the due date of the task (dd/mm/yyyy): ");
 
-    // parse_date() move constructs a stringstream from the input string!
+    // parse_date() move constructs a stringstream from the input string
     Task::Date date = parse_date(due_date.text);
 
     auto const now = std::chrono::system_clock::now();
     std::chrono::year_month_day today{std::chrono::floor<std::chrono::days>(now)};
 
+    // date validation
     if ((int)today.year() > date.year) {
       return;
     }
-
     if ((int)today.year() == date.year && (unsigned)today.month() > date.month) {
       return;
     }
-
     if ((int)today.year() == date.year && (unsigned)today.month() == date.month &&
         (unsigned)today.day() > date.day) {
       return;
     }
 
-    std::vector<u64> vpath = parse_path(path);
-    if (ch == 'O' && vpath.empty() == false) {
-      vpath.pop_back();
+    std::vector<u64> path_vec = parse_path(path);
+    if (ch == 'O') {
+      if (path_vec.empty() == true) {
+        return;
+      }
+      path_vec.pop_back();
     }
 
     if (path.text == SEN || priority.text == SEN || desc.text == SEN) {
@@ -207,7 +207,7 @@ void Controller::handle_add(int ch)
     }
 
     Task task{desc.text, {}, (u16)std::stoul(priority.text), {}, date};
-    auto action = std::make_unique<AddAction>(model_, vpath, task);
+    auto action = std::make_unique<AddAction>(model_, std::move(path_vec), std::move(task));
     action->execute();
     undo_stack_.push(std::move(action));
 
@@ -224,12 +224,17 @@ void Controller::handle_add(int ch)
 void Controller::handle_remove()
 {
   try {
-    UserInput path_str = view_->get_input("Enter the path of the task: ");
-    if (path_str.text == SEN) {
+    UserInput path = view_->get_input("Enter the path of the task: ");
+    if (path.text == SEN) {
       return;
     }
 
-    auto action = std::make_unique<RemoveAction>(model_, parse_path(path_str));
+    auto path_vec = parse_path(path);
+    if (path_vec.empty() == true) {
+      return;
+    }
+
+    auto action = std::make_unique<RemoveAction>(model_, std::move(path_vec));
     action->execute();
     undo_stack_.push(std::move(action));
 
@@ -256,14 +261,23 @@ void Controller::handle_clear()
 void Controller::handle_status_change()
 {
   try {
-    UserInput path_str = view_->get_input("Enter the path of the task: ");
+    UserInput path = view_->get_input("Enter the path of the task: ");
     UserInput status = view_->get_input("Which status (1-NS, 2-IP, 3-FIN): ");
-    if (path_str.text == SEN || status.text == SEN) {
+    if (path.text == SEN || status.text == SEN) {
       return;
     }
 
-    auto action = std::make_unique<StatusChangeAction>(
-      model_, parse_path(path_str), static_cast<Status>(std::stoul(status.text)));
+    auto path_vec = parse_path(path);
+    if (path_vec.empty() == true) {
+      return;
+    }
+
+    Status tmp_status = static_cast<Status>(std::stoul(status.text));
+    if (tmp_status == Status::INVALID) {
+      return;
+    }
+
+    auto action = std::make_unique<StatusChangeAction>(model_, std::move(path_vec), tmp_status);
     action->execute();
     undo_stack_.push(std::move(action));
 
@@ -280,14 +294,23 @@ void Controller::handle_status_change()
 void Controller::handle_prio_change()
 {
   try {
-    UserInput path_str = view_->get_input("Enter the path of the task: ");
-    UserInput prio = view_->get_input("Which priority (1-L, 2-M, 3-H): ");
-    if (path_str.text == SEN || prio.text == SEN) {
+    UserInput path = view_->get_input("Enter the path of the task: ");
+    UserInput prio = view_->get_input("Which priority (1-100): ");
+    if (path.text == SEN || prio.text == SEN) {
       return;
     }
 
-    auto action =
-      std::make_unique<PriorityChangeAction>(model_, parse_path(path_str), std::stoul(prio.text));
+    auto path_vec = parse_path(path);
+    if (path_vec.empty() == true) {
+      return;
+    }
+
+    u16 tmp_prio = std::stoul(prio.text);
+    if (tmp_prio > 100) {
+      return;
+    }
+
+    auto action = std::make_unique<PriorityChangeAction>(model_, std::move(path_vec), tmp_prio);
     action->execute();
     undo_stack_.push(std::move(action));
 

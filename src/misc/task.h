@@ -15,7 +15,8 @@ struct Task {
   enum class Status : char {
     NOT_STARTED = 1,
     IN_PROGRESS = 2,
-    COMPLETED = 3
+    COMPLETED = 3,
+    INVALID = 4
   } status;  ///< Completion status of the task.
 
   struct Date {

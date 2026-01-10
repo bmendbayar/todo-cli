@@ -37,6 +37,8 @@ void BasicView::display_list(const std::vector<Task> &todo_list, u16 level)
           return "~";
         case Status::COMPLETED:
           return "X";
+        default:
+          return "";
       }
     }();
 
