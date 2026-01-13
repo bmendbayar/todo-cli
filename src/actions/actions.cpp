@@ -3,19 +3,8 @@
 namespace todo {
 Action::Action(Model &model, std::vector<u64> &&path)
   : model_(&model)
-  , exe_path_(path)
+  , exe_path_(std::move(path))
 {
-}
-
-Task *Action::find_task()
-{
-  std::vector<Task> local_list = model_->get_list();
-  Task *curr_task = &local_list[exe_path_[0]];
-  u64 size = exe_path_.size();
-  for (u64 i{1}; i < size; ++i) {
-    curr_task = &curr_task->child_tasks[exe_path_[i]];
-  }
-  return curr_task;
 }
 
 RemoveAction::RemoveAction(Model &model, std::vector<u64> &&path)
@@ -23,7 +12,7 @@ RemoveAction::RemoveAction(Model &model, std::vector<u64> &&path)
   , undo_path_(exe_path_)  // exe_path_ is initialized already
 {
   undo_path_.pop_back();
-  Task *curr_task = find_task();
+  Task *curr_task = model_->find_task(exe_path_);
   task_ = *curr_task;
 }
 
@@ -40,9 +29,9 @@ void RemoveAction::undo()
 AddAction::AddAction(Model &model, std::vector<u64> &&path, Task &&task)
   : Action(model, std::move(path))
   , undo_path_(exe_path_)
-  , task_(task)
+  , task_(std::move(task))
 {
-  Task *curr_task = find_task();
+  Task *curr_task = model_->find_task(exe_path_);
   undo_path_.push_back(curr_task->child_tasks.size());
 }
 
@@ -60,7 +49,7 @@ StatusChangeAction::StatusChangeAction(Model &model, std::vector<u64> &&path, St
   : Action(model, std::move(path))
   , new_status_(new_status)
 {
-  Task *curr_task = find_task();
+  Task *curr_task = model_->find_task(exe_path_);
   old_status_ = curr_task->status;
 }
 
@@ -78,7 +67,7 @@ PriorityChangeAction::PriorityChangeAction(Model &model, std::vector<u64> &&path
   : Action(model, std::move(path))
   , new_priority_(new_priority)
 {
-  Task *curr_task = find_task();
+  Task *curr_task = model_->find_task(exe_path_);
   old_priority_ = curr_task->priority;
 }
 

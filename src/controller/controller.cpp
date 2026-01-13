@@ -111,7 +111,7 @@ void Controller::run()
 inline bool pre_order_trav(const std::vector<Task> &list, int &curr, const int target,
                            std::vector<u64> &path)
 {
-  for (u16 i{}; i < list.size(); i++) {
+  for (u64 i{}; i < list.size(); i++) {
     path.push_back(i);
     if (list[i].status != Status::COMPLETED) {
       ++curr;
@@ -206,8 +206,9 @@ void Controller::handle_add(int ch)
       return;
     }
 
-    Task task{desc.text, {}, (u16)std::stoul(priority.text), {}, date};
-    auto action = std::make_unique<AddAction>(model_, std::move(path_vec), std::move(task));
+    Task task{std::move(desc.text), (u16)std::stoul(priority.text), {}, std::move(date)};
+    std::unique_ptr<Action> action =
+      std::make_unique<AddAction>(model_, std::move(path_vec), std::move(task));
     action->execute();
     undo_stack_.push(std::move(action));
 

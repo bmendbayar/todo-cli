@@ -23,6 +23,11 @@ ViView::ViView()
   list_pad_ = newpad(1000, COLS);
   keypad(list_pad_, true);
   set_escdelay(25);
+
+  init_pair(1, COLOR_GREEN, COLOR_BLACK);   // low
+  init_pair(2, COLOR_YELLOW, COLOR_BLACK);  // medium
+  init_pair(3, COLOR_RED, COLOR_BLACK);     // high
+  init_pair(4, COLOR_WHITE, COLOR_BLACK);   // regular text
 }
 
 ViView::~ViView()
@@ -155,7 +160,6 @@ UserInput ViView::handle_insert()
     curr_event_ = InsertChain::PATH;
   }
 
-  init_pair(4, COLOR_WHITE, COLOR_BLACK);
   wattron(list_pad_, COLOR_PAIR(4));
 
   i16 buf_size{};
@@ -268,9 +272,6 @@ void ViView::display_list(const std::vector<Task> &todo_list, u16 level)
     int y = getcury(list_pad_);
     int x = 1 + (level * 2);
 
-    init_pair(1, COLOR_GREEN, COLOR_BLACK);   // low
-    init_pair(2, COLOR_YELLOW, COLOR_BLACK);  // medium
-    init_pair(3, COLOR_RED, COLOR_BLACK);     // high
     if (task.priority < 30) {
       wattron(list_pad_, COLOR_PAIR(1));
     } else if (task.priority < 70) {

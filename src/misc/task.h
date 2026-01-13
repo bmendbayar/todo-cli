@@ -25,6 +25,20 @@ struct Task {
     uint16_t day{};
   } due_date;  ///< Due date of the task.
 
+  Task() = default;
+  Task(const Task &) = default;
+  Task(Task &&) = default;
+  Task &operator=(const Task &) = default;
+  Task &operator=(Task &&) = default;
+
+  Task(std::string &&desc, uint16_t prio, Status completion, Date &&date)
+    : desc(std::move(desc))
+    , priority(prio)
+    , status(completion)
+    , due_date(std::move(date))
+  {
+  }
+
   bool operator==(const Task &other) const
   {
     if (desc != other.desc) {

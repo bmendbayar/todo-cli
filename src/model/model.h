@@ -53,14 +53,14 @@ public:
   /// \brief Returns a const reference of the todo list vector.
   const std::vector<Task> &get_list();
 
-private:
-  std::vector<Task> todo_list_;  ///< Container to hold todo list tasks
-                                 ///< while program is running.
-
   /// \brief Finds task via path
   /// \param path Path to the task.
   /// \param parent Flag for finding the parent.
   Task *find_task(const std::vector<u64> &path, bool parent = false);
+
+private:
+  std::vector<Task> todo_list_;  ///< Container to hold todo list tasks
+                                 ///< while program is running.
 
   /// \brief Changes all child tasks' status according to parent.
   void change_child_task_status(Task &task, const Status status);
