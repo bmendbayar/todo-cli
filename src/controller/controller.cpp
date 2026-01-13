@@ -152,7 +152,7 @@ std::vector<u64> Controller::parse_path(const UserInput &user_input)
   return path;
 }
 
-inline Task::Date parse_date(std::string &due_date)
+inline Task::Date parse_date(std::string &&due_date)
 {
   std::stringstream ss(std::move(due_date));
   u16 year{}, month{}, day{};
@@ -165,28 +165,26 @@ void Controller::handle_add(int ch)
 {
   try {
     UserInput desc = view_->get_input("Enter the description of your task: ");
-    UserInput path = view_->get_input("Enter the path of the new task: ");
-    UserInput priority = view_->get_input("Enter the priority of the task (1-100): ");
-    UserInput due_date = view_->get_input("Enter the due date of the task (dd/mm/yyyy): ");
-
     if (desc.is_cancelled == true) {
       return;
     }
 
+    UserInput path = view_->get_input("Enter the path of the new task: ");
     if (path.is_cancelled == true) {
       return;
     }
 
+    UserInput priority = view_->get_input("Enter the priority of the task (1-100): ");
     if (priority.is_cancelled == true) {
       return;
     }
 
+    UserInput due_date = view_->get_input("Enter the due date of the task (dd/mm/yyyy): ");
     if (due_date.is_cancelled == true) {
       return;
     }
 
-    // parse_date() move constructs a stringstream from the input string
-    Task::Date date = parse_date(due_date.text);
+    Task::Date date = parse_date(std::move(due_date.text));
 
     auto const now = std::chrono::system_clock::now();
     std::chrono::year_month_day today{std::chrono::floor<std::chrono::days>(now)};
@@ -273,12 +271,11 @@ void Controller::handle_status_change()
 {
   try {
     UserInput path = view_->get_input("Enter the path of the task: ");
-    UserInput status = view_->get_input("Which status (1-NS, 2-IP, 3-FIN): ");
-
     if (path.is_cancelled == true) {
       return;
     }
 
+    UserInput status = view_->get_input("Which status (1-NS, 2-IP, 3-FIN): ");
     if (status.is_cancelled == true) {
       return;
     }
@@ -311,11 +308,11 @@ void Controller::handle_prio_change()
 {
   try {
     UserInput path = view_->get_input("Enter the path of the task: ");
-    UserInput priority = view_->get_input("Which priority (1-100): ");
     if (path.is_cancelled == true) {
       return;
     }
 
+    UserInput priority = view_->get_input("Which priority (1-100): ");
     if (priority.is_cancelled == true) {
       return;
     }
