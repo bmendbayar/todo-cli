@@ -1,4 +1,5 @@
 #include <cctype>
+#include <chrono>
 #include <string>
 
 #include "vi_view.h"
@@ -134,29 +135,11 @@ UserInput ViView::handle_normal()
 
 UserInput ViView::handle_insert()
 {
-  std::string buffer;
+  std::string buf;
   int ch;
 
-  if (ichain_ == InsertChain::PRIO) {
-    ichain_ = InsertChain::DESC;
-    mode_ = Mode::NORMAL;
-
-    std::string buffer;
-    buffer.reserve(3);
-    int lch;
-    for (int i{}; i < 3; ++i) {
-      lch = wgetch(list_pad_);
-      if (lch == KEY_ENTER || lch == '\n') {
-        return {buffer, true};
-      }
-      buffer.push_back(lch);
-    }
-
-    return {buffer, true};
-  }
-
-  if (ichain_ == InsertChain::PATH) {
-    ichain_ = InsertChain::PRIO;
+  if (curr_event_ == InsertChain::PATH) {
+    curr_event_ = InsertChain::PRIORITY;
     if (mode_ == Mode::CHILD_INSERT) {
       return {std::to_string(cursor_.y), true};
     } else {
@@ -164,41 +147,67 @@ UserInput ViView::handle_insert()
     }
   }
 
-  if (mode_ == Mode::CHILD_INSERT && ichain_ == InsertChain::DESC) {
+  if (mode_ == Mode::CHILD_INSERT && curr_event_ == InsertChain::DESC) {
     handle_child_insert();
-  } else if (mode_ == Mode::SIBLING_INSERT && ichain_ == InsertChain::DESC) {
+    curr_event_ = InsertChain::PATH;
+  } else if (mode_ == Mode::SIBLING_INSERT && curr_event_ == InsertChain::DESC) {
     handle_sibling_insert();
+    curr_event_ = InsertChain::PATH;
   }
-  ichain_ = InsertChain::PATH;
 
   init_pair(4, COLOR_WHITE, COLOR_BLACK);
   wattron(list_pad_, COLOR_PAIR(4));
-  while (true) {
-    mvwprintw(list_pad_, cursor_.y, 0, "%s",
-              std::string(buffer.length() + 5, ' ').c_str());
-    mvwprintw(list_pad_, cursor_.y, 0, "%s", buffer.c_str());
-    refresh_list_view();
+
+  i16 buf_size{};
+  if (curr_event_ == InsertChain::DATE) {
+    buf_size = 10;
+  } else if (curr_event_ == InsertChain::PRIORITY) {
+    buf_size = 3;
+  } else {
+    buf_size = 50;
+  }
+  buf.reserve(buf_size);
+
+  i16 ini_cursor_x = cursor_.x;
+  for (i16 i{}; i < buf_size; ++i) {
+    if (curr_event_ != InsertChain::PRIORITY) {
+      mvwprintw(list_pad_, cursor_.y, ini_cursor_x + 1, "%s",
+                std::string(buf.length() + 5, ' ').c_str());
+      mvwprintw(list_pad_, cursor_.y, ini_cursor_x + 1, "%s", buf.c_str());
+      refresh_list_view();
+    }
 
     ch = wgetch(list_pad_);
     if (ch == '\n' || ch == KEY_ENTER) {
       break;
     } else if (ch == 27) {  // 27 == esc
+      curr_event_ = InsertChain::DESC;
       mode_ = Mode::NORMAL;
       return {SEN, true};
     } else if (ch == KEY_BACKSPACE || ch == 127 || ch == '\b') {
-      if (!buffer.empty()) {
-        buffer.pop_back();
+      if (!buf.empty()) {
+        buf.pop_back();
         --cursor_.x;
+        i -= 2;
       }
     } else if (isprint(ch)) {
-      buffer.push_back(ch);
+      buf.push_back(ch);
       ++cursor_.x;
     }
   }
 
-  cursor_.x -= buffer.size();
+  if (curr_event_ == InsertChain::DATE) {
+    curr_event_ = InsertChain::DESC;
+    cursor_.x = 0;
+    mode_ = Mode::NORMAL;
+  }
+
+  if (curr_event_ == InsertChain::PRIORITY) {
+    curr_event_ = InsertChain::DATE;
+  }
+
   wclear(notif_);
-  return {buffer, true};
+  return {buf, true};
 }
 
 void ViView::handle_sibling_insert()
@@ -250,9 +259,9 @@ void ViView::display_list(const std::vector<Task> &todo_list, u16 level)
 
   u16 lsize = todo_list.size();
   for (u16 i = 0; i < lsize; ++i) {
-    const auto &t = todo_list[i];
+    const auto &task = todo_list[i];
     // omit completed tasks
-    if (t.status == Status::COMPLETED) {
+    if (task.status == Status::COMPLETED) {
       continue;
     }
 
@@ -262,16 +271,16 @@ void ViView::display_list(const std::vector<Task> &todo_list, u16 level)
     init_pair(1, COLOR_GREEN, COLOR_BLACK);   // low
     init_pair(2, COLOR_YELLOW, COLOR_BLACK);  // medium
     init_pair(3, COLOR_RED, COLOR_BLACK);     // high
-    if (t.priority < 30) {
+    if (task.priority < 30) {
       wattron(list_pad_, COLOR_PAIR(1));
-    } else if (t.priority < 70) {
+    } else if (task.priority < 70) {
       wattron(list_pad_, COLOR_PAIR(2));
     } else {
       wattron(list_pad_, COLOR_PAIR(3));
     }
 
     std::string status;
-    switch (t.status) {
+    switch (task.status) {
       case Status::NOT_STARTED:
         status = " ";
         break;
@@ -285,10 +294,33 @@ void ViView::display_list(const std::vector<Task> &todo_list, u16 level)
         break;
     }
 
-    mvwprintw(list_pad_, y, x, "[%s] %s\n", status.c_str(), t.desc.c_str());
+    auto const now = std::chrono::system_clock::now();
+    std::chrono::year_month_day today{std::chrono::floor<std::chrono::days>(now)};
 
-    if (!t.child_tasks.empty()) {
-      display_list(t.child_tasks, level + 1);
+    std::string overdue = [&task, &today]() -> std::string {
+      if ((int)today.year() > task.due_date.year) {
+        return std::string("OVERDUE");
+      }
+
+      if ((int)today.year() == task.due_date.year &&
+          (unsigned)today.month() > task.due_date.month) {
+        return std::string("OVERDUE");
+      }
+
+      if ((int)today.year() == task.due_date.year &&
+          (unsigned)today.month() == task.due_date.month &&
+          (unsigned)today.day() > task.due_date.day) {
+        return std::string("OVERDUE");
+      }
+
+      return std::string("");
+    }();
+
+    mvwprintw(list_pad_, y, x, "[%s] %s %s (%d/%d/%d)\n", status.c_str(), task.desc.c_str(),
+              overdue.c_str(), task.due_date.month, task.due_date.day, task.due_date.year);
+
+    if (!task.child_tasks.empty()) {
+      display_list(task.child_tasks, level + 1);
     }
   }
 

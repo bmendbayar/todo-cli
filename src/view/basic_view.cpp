@@ -40,8 +40,7 @@ void BasicView::display_list(const std::vector<Task> &todo_list, u16 level)
       }
     }();
 
-    std::cout << std::string(level, ' ') << id << ". [" << status << "] " << t.desc
-              << '\n';
+    std::cout << std::string(level, ' ') << id << ". [" << status << "] " << t.desc << '\n';
 
     if (todo_list[id - 1].child_tasks.size() != 0) {
       display_list(todo_list[id - 1].child_tasks, level + 1);

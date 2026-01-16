@@ -31,8 +31,9 @@ private:
   enum class InsertChain : u8 {
     DESC = 0,
     PATH = 1,
-    PRIO = 2
-  } ichain_{InsertChain::DESC};  ///< The chain of events for a task insertion.
+    PRIORITY = 2,
+    DATE = 3,
+  } curr_event_{InsertChain::DESC};  ///< The chain of events for a task insertion.
 
 public:
   /// \brief Default constructor.

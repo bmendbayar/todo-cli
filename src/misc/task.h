@@ -2,6 +2,7 @@
 
 #include <boost/describe.hpp>
 #include <boost/json.hpp>
+#include <cstdint>
 #include <string>
 #include <vector>
 
@@ -16,6 +17,12 @@ struct Task {
     IN_PROGRESS = 2,
     COMPLETED = 3
   } status;  ///< Completion status of the task.
+
+  struct Date {
+    uint16_t year{};
+    uint16_t month{};
+    uint16_t day{};
+  } due_date;  ///< Due date of the task.
 
   bool operator==(const Task &other) const
   {
@@ -32,6 +39,18 @@ struct Task {
     }
 
     if (child_tasks != other.child_tasks) {
+      return false;
+    }
+
+    if (due_date.year != other.due_date.year) {
+      return false;
+    }
+
+    if (due_date.month != other.due_date.month) {
+      return false;
+    }
+
+    if (due_date.day != other.due_date.day) {
       return false;
     }
 
@@ -57,5 +76,6 @@ inline todo::Task::Status tag_invoke(boost::json::value_to_tag<todo::Task::Statu
 }
 
 BOOST_DESCRIBE_ENUM(Task::Status, NOT_STARTED, IN_PROGRESS, COMPLETED);
-BOOST_DESCRIBE_STRUCT(Task, (), (desc, child_tasks, priority, status));
+BOOST_DESCRIBE_STRUCT(Task::Date, (), (year, month, day));
+BOOST_DESCRIBE_STRUCT(Task, (), (desc, child_tasks, priority, status, due_date));
 }  // namespace todo

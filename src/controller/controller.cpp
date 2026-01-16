@@ -1,6 +1,8 @@
+#include <chrono>
 #include <cstdlib>
 #include <exception>
 #include <memory>
+#include <sstream>
 #include <stdexcept>
 #include <string>
 
@@ -9,6 +11,7 @@
 #include "controller.h"
 #include "i_view.h"
 #include "menu_opts.h"
+#include "user_input.h"
 #include "vi_view.h"
 #include "view.h"
 
@@ -151,28 +154,59 @@ std::vector<u16> Controller::parse_path(const UserInput &user_input)
   return path;
 }
 
+inline Task::Date parse_date(std::string &due_date)
+{
+  std::stringstream ss(std::move(due_date));
+  u16 year{};
+  u16 month{};
+  u16 day{};
+  char delim;
+  ss >> month >> delim >> day >> delim >> year;
+  return Task::Date{year, month, day};
+}
+
 void Controller::handle_add(int ch)
 {
   try {
-    auto desc = view_->get_input("Enter the description of your task: ");
-    auto path = view_->get_input("Enter the path of the new task: ");
-    auto prio = view_->get_input("Enter the priority of the task (1-100): ");
+    UserInput desc = view_->get_input("Enter the description of your task: ");
+    UserInput path = view_->get_input("Enter the path of the new task: ");
+    UserInput priority = view_->get_input("Enter the priority of the task (1-100): ");
+    UserInput due_date = view_->get_input("Enter the due date of the task (dd/mm/yyyy): ");
+
+    // parse_date() move constructs a stringstream from the input string!
+    Task::Date date = parse_date(due_date.text);
+
+    auto const now = std::chrono::system_clock::now();
+    std::chrono::year_month_day today{std::chrono::floor<std::chrono::days>(now)};
+
+    if ((int)today.year() > date.year) {
+      return;
+    }
+
+    if ((int)today.year() == date.year && (unsigned)today.month() > date.month) {
+      return;
+    }
+
+    if ((int)today.year() == date.year && (unsigned)today.month() == date.month &&
+        (unsigned)today.day() > date.day) {
+      return;
+    }
 
     std::vector<u16> vpath = parse_path(path);
     if (ch == 'O' && vpath.empty() == false) {
       vpath.pop_back();
     }
 
-    if (path.text == SEN || prio.text == SEN || desc.text == SEN) {
+    if (path.text == SEN || priority.text == SEN || desc.text == SEN) {
       return;
     }
 
-    if (std::stoul(prio.text) > 100) {
+    if (std::stoul(priority.text) > 100) {
       view_->display_msg("priority can only be 1-100");
       return;
     }
 
-    Task task{desc.text, {}, (u16)std::stoul(prio.text), {}};
+    Task task{desc.text, {}, (u16)std::stoul(priority.text), {}, date};
     auto action = std::make_unique<AddAction>(model_, vpath, task);
     action->execute();
     undo_stack_.push(std::move(action));
@@ -252,8 +286,8 @@ void Controller::handle_prio_change()
       return;
     }
 
-    auto action = std::make_unique<PriorityChangeAction>(model_, parse_path(path_str),
-                                                         std::stoul(prio.text));
+    auto action =
+      std::make_unique<PriorityChangeAction>(model_, parse_path(path_str), std::stoul(prio.text));
     action->execute();
     undo_stack_.push(std::move(action));
 

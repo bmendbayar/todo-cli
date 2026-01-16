@@ -79,8 +79,7 @@ UserInput IView::get_input(const std::string &msg)
 
   while (true) {
     mvwprintw(menu_win_, curr_y + 1, 2, "> ");
-    mvwprintw(menu_win_, curr_y + 1, 4, "%s",
-              std::string(buffer.length() + 5, ' ').c_str());
+    mvwprintw(menu_win_, curr_y + 1, 4, "%s", std::string(buffer.length() + 5, ' ').c_str());
     mvwprintw(menu_win_, curr_y + 1, 4, "%s", buffer.c_str());
     wrefresh(menu_win_);
 

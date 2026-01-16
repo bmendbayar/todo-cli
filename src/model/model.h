@@ -10,7 +10,7 @@
 namespace todo {
 class Model {
 private:
-  const static inline std::filesystem::path TODO_DIR = ".todo";  ///< Directory name.
+  const static inline std::filesystem::path TODO_DIR = ".todo";            ///< Directory name.
   const static inline std::filesystem::path TODO_FILE = "todo_list.json";  ///< File name.
 
 public:
