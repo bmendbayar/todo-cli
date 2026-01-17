@@ -1,6 +1,6 @@
 # CLI Todo
 
-A persistent, hierarchical command-line To-Do application allowing infinite subtasks, built with a flexible architecture to support both rich (Ncurses) and standard text interfaces. See documentation [here](https://bmendbayar.github.io/cli-todo/).
+A persistent, hierarchical command-line To-Do application allowing infinite subtasks, built with a flexible architecture to support both rich (Ncurses) and standard text interfaces. See documentation [here](https://bmendbayar.github.io/todo-cli/).
 
 ## Demo
 
@@ -44,8 +44,8 @@ Clone the repository and install dependencies:
 * C compiler
 
 ```bash
-git clone https://github.com/bmendbayar/cli-todo.git
-cd cli-todo
+git clone https://github.com/bmendbayar/todo-cli.git
+cd todo-cli
 mkdir build
 cd build
 cmake ..
