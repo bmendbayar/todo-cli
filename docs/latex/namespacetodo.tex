@@ -70,7 +70,11 @@ enum class \mbox{\hyperlink{namespacetodo_aa00270ee171d6975cd933235f656bd6f}{Men
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{namespacetodo_a6b92b80d95281e58507863197f0a9fff}{pre\+\_\+order\+\_\+trav}} (const std\+::vector$<$ \mbox{\hyperlink{structtodo_1_1_task}{Task}} $>$ \&list, int \&curr, const int target, std\+::vector$<$ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} $>$ \&path)
+bool \mbox{\hyperlink{namespacetodo_ae69ca8e48f18909a6c18b5b70fb2138a}{pre\+\_\+order\+\_\+trav}} (const std\+::vector$<$ \mbox{\hyperlink{structtodo_1_1_task}{Task}} $>$ \&list, int \&curr, const int target, std\+::vector$<$ \mbox{\hyperlink{namespacetodo_ab22bc1beb51bff792d48b6f9057d50f7}{u64}} $>$ \&path)
+\item 
+\mbox{\hyperlink{structtodo_1_1_task_1_1_date}{Task\+::\+Date}} \mbox{\hyperlink{namespacetodo_ab94729ff4d457c99c08660bb34a2c724}{parse\+\_\+date}} (std\+::string \&\&due\+\_\+date)
+\item 
+bool \mbox{\hyperlink{namespacetodo_a49d179276874d62b3c447e59938733dd}{validate\+\_\+date}} (const std\+::chrono\+::year\+\_\+month\+\_\+day \&today, const \mbox{\hyperlink{structtodo_1_1_task_1_1_date}{Task\+::\+Date}} \&due)
 \item 
 void \mbox{\hyperlink{namespacetodo_a7addf6598bab78a42b278dee9a53da64}{tag\+\_\+invoke}} (boost\+::json\+::value\+\_\+from\+\_\+tag, boost\+::json\+::value \&v, \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{todo\+::\+Task\+::\+Status}} const \&s)
 \item 
@@ -78,14 +82,17 @@ void \mbox{\hyperlink{namespacetodo_a7addf6598bab78a42b278dee9a53da64}{tag\+\_\+
 \item 
 \mbox{\hyperlink{namespacetodo_a386debfede5a25e398519c28774ff1c8}{BOOST\+\_\+\+DESCRIBE\+\_\+\+ENUM}} (\mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{Task\+::\+Status}}, NOT\+\_\+\+STARTED, IN\+\_\+\+PROGRESS, COMPLETED)
 \item 
-\mbox{\hyperlink{namespacetodo_a20c7807c8fc67c15695fc6e75fb67c24}{BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT}} (\mbox{\hyperlink{structtodo_1_1_task}{Task}},(),(desc, child\+\_\+tasks, priority, status))
+\mbox{\hyperlink{namespacetodo_abdb4faa43aeab12fe6b0ce350d884dc1}{BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT}} (\mbox{\hyperlink{structtodo_1_1_task_1_1_date}{Task\+::\+Date}},(),(year, month, day))
+\item 
+\mbox{\hyperlink{namespacetodo_a140e48a66fd314800fedea7b8cb9913b}{BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT}} (\mbox{\hyperlink{structtodo_1_1_task}{Task}},(),(desc, child\+\_\+tasks, priority, id, status, due\+\_\+date))
+\item 
+void \mbox{\hyperlink{namespacetodo_a7e8641c8f8d3675f280919ebcfa59cd3}{adjust\+\_\+ids\+\_\+add}} (std\+::vector$<$ \mbox{\hyperlink{structtodo_1_1_task}{Task}} $>$ \&vector, \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} id)
+\item 
+void \mbox{\hyperlink{namespacetodo_a5fceada30c64e3e888d3f4778577d235}{adjust\+\_\+ids\+\_\+rm}} (std\+::vector$<$ \mbox{\hyperlink{structtodo_1_1_task}{Task}} $>$ \&vector, \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} id)
 \item 
 void \mbox{\hyperlink{namespacetodo_a50a4fc4f1d2d77683b5c8ecbc8248e7d}{clear\+\_\+input\+\_\+buf}} ()
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
-\begin{DoxyCompactItemize}
 \item 
-constexpr std\+::string \mbox{\hyperlink{namespacetodo_aeb31537c10c76dc10160d77411e7f524}{SEN}} = "{}deadbeef"{}
+\mbox{\hyperlink{namespacetodo_a41aa58835386ed2bad852619eb98a7e4}{i32}} \mbox{\hyperlink{namespacetodo_a257cac1b9ae860067a1116f7ee5de4fd}{find\+\_\+indent\+\_\+lvl}} (WINDOW \texorpdfstring{$\ast$}{*}win, int cursor\+\_\+y)
 \end{DoxyCompactItemize}
 
 
@@ -200,17 +207,35 @@ INVALID&\\
 \label{doc-func-members}
 \Hypertarget{namespacetodo_doc-func-members}
 \doxysubsection{Function Documentation}
+\Hypertarget{namespacetodo_a7e8641c8f8d3675f280919ebcfa59cd3}\index{todo@{todo}!adjust\_ids\_add@{adjust\_ids\_add}}
+\index{adjust\_ids\_add@{adjust\_ids\_add}!todo@{todo}}
+\doxysubsubsection{\texorpdfstring{adjust\_ids\_add()}{adjust\_ids\_add()}}
+{\footnotesize\ttfamily \label{namespacetodo_a7e8641c8f8d3675f280919ebcfa59cd3} 
+void todo\+::adjust\+\_\+ids\+\_\+add (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structtodo_1_1_task}{Task}} $>$ \&}]{vector}{, }\item[{\mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacetodo_a5fceada30c64e3e888d3f4778577d235}\index{todo@{todo}!adjust\_ids\_rm@{adjust\_ids\_rm}}
+\index{adjust\_ids\_rm@{adjust\_ids\_rm}!todo@{todo}}
+\doxysubsubsection{\texorpdfstring{adjust\_ids\_rm()}{adjust\_ids\_rm()}}
+{\footnotesize\ttfamily \label{namespacetodo_a5fceada30c64e3e888d3f4778577d235} 
+void todo\+::adjust\+\_\+ids\+\_\+rm (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structtodo_1_1_task}{Task}} $>$ \&}]{vector}{, }\item[{\mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}}]{id}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
 \Hypertarget{namespacetodo_a386debfede5a25e398519c28774ff1c8}\index{todo@{todo}!BOOST\_DESCRIBE\_ENUM@{BOOST\_DESCRIBE\_ENUM}}
 \index{BOOST\_DESCRIBE\_ENUM@{BOOST\_DESCRIBE\_ENUM}!todo@{todo}}
 \doxysubsubsection{\texorpdfstring{BOOST\_DESCRIBE\_ENUM()}{BOOST\_DESCRIBE\_ENUM()}}
 {\footnotesize\ttfamily \label{namespacetodo_a386debfede5a25e398519c28774ff1c8} 
 todo\+::\+BOOST\+\_\+\+DESCRIBE\+\_\+\+ENUM (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{Task\+::\+Status}}}]{}{, }\item[{NOT\+\_\+\+STARTED}]{}{, }\item[{IN\+\_\+\+PROGRESS}]{}{, }\item[{COMPLETED}]{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{namespacetodo_a20c7807c8fc67c15695fc6e75fb67c24}\index{todo@{todo}!BOOST\_DESCRIBE\_STRUCT@{BOOST\_DESCRIBE\_STRUCT}}
+\Hypertarget{namespacetodo_a140e48a66fd314800fedea7b8cb9913b}\index{todo@{todo}!BOOST\_DESCRIBE\_STRUCT@{BOOST\_DESCRIBE\_STRUCT}}
 \index{BOOST\_DESCRIBE\_STRUCT@{BOOST\_DESCRIBE\_STRUCT}!todo@{todo}}
-\doxysubsubsection{\texorpdfstring{BOOST\_DESCRIBE\_STRUCT()}{BOOST\_DESCRIBE\_STRUCT()}}
-{\footnotesize\ttfamily \label{namespacetodo_a20c7807c8fc67c15695fc6e75fb67c24} 
-todo\+::\+BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtodo_1_1_task}{Task}}}]{}{, }\item[{()}]{}{, }\item[{(desc, child\+\_\+tasks, priority, status)}]{}{}\end{DoxyParamCaption})}
+\doxysubsubsection{\texorpdfstring{BOOST\_DESCRIBE\_STRUCT()}{BOOST\_DESCRIBE\_STRUCT()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{namespacetodo_a140e48a66fd314800fedea7b8cb9913b} 
+todo\+::\+BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtodo_1_1_task}{Task}}}]{}{, }\item[{()}]{}{, }\item[{(desc, child\+\_\+tasks, priority, id, status, due\+\_\+date)}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{namespacetodo_abdb4faa43aeab12fe6b0ce350d884dc1}\index{todo@{todo}!BOOST\_DESCRIBE\_STRUCT@{BOOST\_DESCRIBE\_STRUCT}}
+\index{BOOST\_DESCRIBE\_STRUCT@{BOOST\_DESCRIBE\_STRUCT}!todo@{todo}}
+\doxysubsubsection{\texorpdfstring{BOOST\_DESCRIBE\_STRUCT()}{BOOST\_DESCRIBE\_STRUCT()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{namespacetodo_abdb4faa43aeab12fe6b0ce350d884dc1} 
+todo\+::\+BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structtodo_1_1_task_1_1_date}{Task\+::\+Date}}}]{}{, }\item[{()}]{}{, }\item[{(year, month, day)}]{}{}\end{DoxyParamCaption})}
 
 \Hypertarget{namespacetodo_a50a4fc4f1d2d77683b5c8ecbc8248e7d}\index{todo@{todo}!clear\_input\_buf@{clear\_input\_buf}}
 \index{clear\_input\_buf@{clear\_input\_buf}!todo@{todo}}
@@ -218,11 +243,23 @@ todo\+::\+BOOST\+\_\+\+DESCRIBE\+\_\+\+STRUCT (\begin{DoxyParamCaption}\item[{\m
 {\footnotesize\ttfamily \label{namespacetodo_a50a4fc4f1d2d77683b5c8ecbc8248e7d} 
 void todo\+::clear\+\_\+input\+\_\+buf (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-\Hypertarget{namespacetodo_a6b92b80d95281e58507863197f0a9fff}\index{todo@{todo}!pre\_order\_trav@{pre\_order\_trav}}
+\Hypertarget{namespacetodo_a257cac1b9ae860067a1116f7ee5de4fd}\index{todo@{todo}!find\_indent\_lvl@{find\_indent\_lvl}}
+\index{find\_indent\_lvl@{find\_indent\_lvl}!todo@{todo}}
+\doxysubsubsection{\texorpdfstring{find\_indent\_lvl()}{find\_indent\_lvl()}}
+{\footnotesize\ttfamily \label{namespacetodo_a257cac1b9ae860067a1116f7ee5de4fd} 
+\mbox{\hyperlink{namespacetodo_a41aa58835386ed2bad852619eb98a7e4}{i32}} todo\+::find\+\_\+indent\+\_\+lvl (\begin{DoxyParamCaption}\item[{WINDOW \texorpdfstring{$\ast$}{*}}]{win}{, }\item[{int}]{cursor\+\_\+y}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacetodo_ab94729ff4d457c99c08660bb34a2c724}\index{todo@{todo}!parse\_date@{parse\_date}}
+\index{parse\_date@{parse\_date}!todo@{todo}}
+\doxysubsubsection{\texorpdfstring{parse\_date()}{parse\_date()}}
+{\footnotesize\ttfamily \label{namespacetodo_ab94729ff4d457c99c08660bb34a2c724} 
+\mbox{\hyperlink{structtodo_1_1_task_1_1_date}{Task\+::\+Date}} todo\+::parse\+\_\+date (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{due\+\_\+date}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{namespacetodo_ae69ca8e48f18909a6c18b5b70fb2138a}\index{todo@{todo}!pre\_order\_trav@{pre\_order\_trav}}
 \index{pre\_order\_trav@{pre\_order\_trav}!todo@{todo}}
 \doxysubsubsection{\texorpdfstring{pre\_order\_trav()}{pre\_order\_trav()}}
-{\footnotesize\ttfamily \label{namespacetodo_a6b92b80d95281e58507863197f0a9fff} 
-bool todo\+::pre\+\_\+order\+\_\+trav (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structtodo_1_1_task}{Task}} $>$ \&}]{list}{, }\item[{int \&}]{curr}{, }\item[{const int}]{target}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} $>$ \&}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \label{namespacetodo_ae69ca8e48f18909a6c18b5b70fb2138a} 
+bool todo\+::pre\+\_\+order\+\_\+trav (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{structtodo_1_1_task}{Task}} $>$ \&}]{list}{, }\item[{int \&}]{curr}{, }\item[{const int}]{target}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{namespacetodo_ab22bc1beb51bff792d48b6f9057d50f7}{u64}} $>$ \&}]{path}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \Hypertarget{namespacetodo_a7addf6598bab78a42b278dee9a53da64}\index{todo@{todo}!tag\_invoke@{tag\_invoke}}
 \index{tag\_invoke@{tag\_invoke}!todo@{todo}}
@@ -236,14 +273,9 @@ void todo\+::tag\+\_\+invoke (\begin{DoxyParamCaption}\item[{boost\+::json\+::va
 {\footnotesize\ttfamily \label{namespacetodo_a9ac1312fe48d3e24a607fabf5875ec5c} 
 \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{todo\+::\+Task\+::\+Status}} todo\+::tag\+\_\+invoke (\begin{DoxyParamCaption}\item[{boost\+::json\+::value\+\_\+to\+\_\+tag$<$ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{todo\+::\+Task\+::\+Status}} $>$}]{}{, }\item[{boost\+::json\+::value const \&}]{v}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-
-
-\label{doc-var-members}
-\Hypertarget{namespacetodo_doc-var-members}
-\doxysubsection{Variable Documentation}
-\Hypertarget{namespacetodo_aeb31537c10c76dc10160d77411e7f524}\index{todo@{todo}!SEN@{SEN}}
-\index{SEN@{SEN}!todo@{todo}}
-\doxysubsubsection{\texorpdfstring{SEN}{SEN}}
-{\footnotesize\ttfamily \label{namespacetodo_aeb31537c10c76dc10160d77411e7f524} 
-std\+::string todo\+::\+SEN = "{}deadbeef"{}\hspace{0.3cm}{\ttfamily [constexpr]}}
+\Hypertarget{namespacetodo_a49d179276874d62b3c447e59938733dd}\index{todo@{todo}!validate\_date@{validate\_date}}
+\index{validate\_date@{validate\_date}!todo@{todo}}
+\doxysubsubsection{\texorpdfstring{validate\_date()}{validate\_date()}}
+{\footnotesize\ttfamily \label{namespacetodo_a49d179276874d62b3c447e59938733dd} 
+bool todo\+::validate\+\_\+date (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::year\+\_\+month\+\_\+day \&}]{today}{, }\item[{const \mbox{\hyperlink{structtodo_1_1_task_1_1_date}{Task\+::\+Date}} \&}]{due}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 

@@ -1,0 +1,22 @@
+var NAVTREEINDEX1 =
+{
+"structtodo_1_1_user_input.html":[0,0,0,7],
+"structtodo_1_1_user_input.html":[1,0,0,7],
+"structtodo_1_1_user_input.html#a08a094355fede0a58a79285a922d1788":[0,0,0,7,2],
+"structtodo_1_1_user_input.html#a08a094355fede0a58a79285a922d1788":[1,0,0,7,2],
+"structtodo_1_1_user_input.html#a2208d9f07174d8f1443e1b723427a12a":[0,0,0,7,0],
+"structtodo_1_1_user_input.html#a2208d9f07174d8f1443e1b723427a12a":[1,0,0,7,0],
+"structtodo_1_1_user_input.html#a3e8f2efe4928dce77bfb5a83bc6b528e":[0,0,0,7,1],
+"structtodo_1_1_user_input.html#a3e8f2efe4928dce77bfb5a83bc6b528e":[1,0,0,7,1],
+"task_8h.html":[2,0,0,2,1],
+"task_8h_source.html":[2,0,0,2,1],
+"types_8h.html":[2,0,0,2,2],
+"types_8h_source.html":[2,0,0,2,2],
+"user__input_8h.html":[2,0,0,2,3],
+"user__input_8h_source.html":[2,0,0,2,3],
+"vi__view_8cpp.html":[2,0,0,4,4],
+"vi__view_8h.html":[2,0,0,4,5],
+"vi__view_8h_source.html":[2,0,0,4,5],
+"view_8h.html":[2,0,0,4,6],
+"view_8h_source.html":[2,0,0,4,6]
+};

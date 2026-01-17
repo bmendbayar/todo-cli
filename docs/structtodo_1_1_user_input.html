@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cli-todo: todo::UserInput Struct Reference</title>
+<title>todo-cli: todo::UserInput Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cli-todo
+   <div id="projectname">todo-cli
    </div>
   </td>
  </tr>
@@ -98,10 +98,44 @@ $(function(){initNavTree('structtodo_1_1_user_input.html','','structtodo_1_1_use
 Public Attributes</h2></td></tr>
 <tr class="memitem:a08a094355fede0a58a79285a922d1788" id="r_a08a094355fede0a58a79285a922d1788"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08a094355fede0a58a79285a922d1788">text</a></td></tr>
 <tr class="memdesc:a08a094355fede0a58a79285a922d1788"><td class="mdescLeft">&#160;</td><td class="mdescRight">User's raw string input.  <br /></td></tr>
-<tr class="memitem:a6f74eefdd4183b6ae4dd514c3685807e" id="r_a6f74eefdd4183b6ae4dd514c3685807e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f74eefdd4183b6ae4dd514c3685807e">vi_mode</a></td></tr>
-<tr class="memdesc:a6f74eefdd4183b6ae4dd514c3685807e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag for differentiating <a class="el" href="classtodo_1_1_vi_view.html">ViView</a> input.  <br /></td></tr>
+<tr class="memitem:a3e8f2efe4928dce77bfb5a83bc6b528e" id="r_a3e8f2efe4928dce77bfb5a83bc6b528e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e8f2efe4928dce77bfb5a83bc6b528e">is_vi_mode</a></td></tr>
+<tr class="memdesc:a3e8f2efe4928dce77bfb5a83bc6b528e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag for differentiating <a class="el" href="classtodo_1_1_vi_view.html">ViView</a> input.  <br /></td></tr>
+<tr class="memitem:a2208d9f07174d8f1443e1b723427a12a" id="r_a2208d9f07174d8f1443e1b723427a12a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2208d9f07174d8f1443e1b723427a12a">is_cancelled</a></td></tr>
+<tr class="memdesc:a2208d9f07174d8f1443e1b723427a12a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag for validating <a class="el" href="classtodo_1_1_vi_view.html">ViView</a> input.  <br /></td></tr>
 </table>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
+<a id="a2208d9f07174d8f1443e1b723427a12a" name="a2208d9f07174d8f1443e1b723427a12a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2208d9f07174d8f1443e1b723427a12a">&#9670;&#160;</a></span>is_cancelled</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool todo::UserInput::is_cancelled</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flag for validating <a class="el" href="classtodo_1_1_vi_view.html">ViView</a> input. </p>
+
+</div>
+</div>
+<a id="a3e8f2efe4928dce77bfb5a83bc6b528e" name="a3e8f2efe4928dce77bfb5a83bc6b528e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e8f2efe4928dce77bfb5a83bc6b528e">&#9670;&#160;</a></span>is_vi_mode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool todo::UserInput::is_vi_mode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Flag for differentiating <a class="el" href="classtodo_1_1_vi_view.html">ViView</a> input. </p>
+
+</div>
+</div>
 <a id="a08a094355fede0a58a79285a922d1788" name="a08a094355fede0a58a79285a922d1788"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a08a094355fede0a58a79285a922d1788">&#9670;&#160;</a></span>text</h2>
 
@@ -115,22 +149,6 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>User's raw string input. </p>
-
-</div>
-</div>
-<a id="a6f74eefdd4183b6ae4dd514c3685807e" name="a6f74eefdd4183b6ae4dd514c3685807e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f74eefdd4183b6ae4dd514c3685807e">&#9670;&#160;</a></span>vi_mode</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool todo::UserInput::vi_mode</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Flag for differentiating <a class="el" href="classtodo_1_1_vi_view.html">ViView</a> input. </p>
 
 </div>
 </div>

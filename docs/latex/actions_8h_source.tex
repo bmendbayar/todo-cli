@@ -10,72 +10,74 @@
 \DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{types_8h}{types.h}}"{}}}
 \DoxyCodeLine{00007\ }
 \DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetodo}{todo}}\ \{}
-\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtodo_1_1_action_a08cdef6732ee7a68a8b7b218ac8f6817}{Action}}\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtodo_1_1_action_aec9ece2691afb50775f7433dac570e02}{Action}}\ \{}
 \DoxyCodeLine{00010\ \textcolor{keyword}{protected}:}
 \DoxyCodeLine{00011\ \ \ \mbox{\hyperlink{classtodo_1_1_model}{Model}}\ *\mbox{\hyperlink{classtodo_1_1_action_a22d1bc9a843775d05d58aaf34cc7a824}{model\_}}\{\textcolor{keyword}{nullptr}\};\ \ \ \ \ \ }
-\DoxyCodeLine{00012\ \ \ std::vector<u16>\ \mbox{\hyperlink{classtodo_1_1_action_a76ea42e0334d953ec95e45d772912782}{exe\_path\_}};\ \ }
+\DoxyCodeLine{00012\ \ \ std::vector<u64>\ \mbox{\hyperlink{classtodo_1_1_action_a9d7eeeb14fc0d95fb8ce64fd06f38206}{exe\_path\_}};\ \ }
 \DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00018\ \ \ \mbox{\hyperlink{classtodo_1_1_action_a08cdef6732ee7a68a8b7b218ac8f6817}{Action}}(\mbox{\hyperlink{classtodo_1_1_model}{Model}}\ \&model,\ std::vector<u16>\ path);}
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00021\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtodo_1_1_action_aec002564fb8bd9c4e705d40bd3e30355}{\string~Action}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00015\ \ \ \mbox{\hyperlink{structtodo_1_1_task}{Task}}\ *\mbox{\hyperlink{classtodo_1_1_action_a5ff3556b2f853bef9be057df98f692fc}{find\_task}}();}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{classtodo_1_1_action_aec9ece2691afb50775f7433dac570e02}{Action}}(\mbox{\hyperlink{classtodo_1_1_model}{Model}}\ \&model,\ std::vector<u64>\ \&\&path);}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_action_aacf9de44fea7054f2e9019a7eabecf53}{execute}}()\ =\ 0;}
+\DoxyCodeLine{00024\ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classtodo_1_1_action_aec002564fb8bd9c4e705d40bd3e30355}{\string~Action}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00025\ }
-\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_action_a5845c7352b8f938fe3844adcc76e90ae}{undo}}()\ =\ 0;}
-\DoxyCodeLine{00028\ \};}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtodo_1_1_remove_action_af4a8dd753ed1d6ea1c132a36b42fb34d}{RemoveAction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtodo_1_1_action_a08cdef6732ee7a68a8b7b218ac8f6817}{Action}}\ \{}
-\DoxyCodeLine{00031\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00032\ \ \ std::vector<u16>\ undo\_path\_\{\};\ \ }
-\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{structtodo_1_1_task}{Task}}\ task\_\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{classtodo_1_1_remove_action_af4a8dd753ed1d6ea1c132a36b42fb34d}{RemoveAction}}(\mbox{\hyperlink{classtodo_1_1_model}{Model}}\ \&model,\ std::vector<u16>\ path);}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00042\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_remove_action_ab15bdf0a1284aa5088d2d2e8bff86a30}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00027\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_action_aacf9de44fea7054f2e9019a7eabecf53}{execute}}()\ =\ 0;}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00030\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_action_a5845c7352b8f938fe3844adcc76e90ae}{undo}}()\ =\ 0;}
+\DoxyCodeLine{00031\ \};}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtodo_1_1_remove_action_aee232a7f0ae3f8a3c2e1808ffb4645fb}{RemoveAction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtodo_1_1_action_aec9ece2691afb50775f7433dac570e02}{Action}}\ \{}
+\DoxyCodeLine{00034\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00035\ \ \ std::vector<u64>\ undo\_path\_\{\};\ \ }
+\DoxyCodeLine{00036\ \ \ \mbox{\hyperlink{structtodo_1_1_task}{Task}}\ task\_\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{classtodo_1_1_remove_action_aee232a7f0ae3f8a3c2e1808ffb4645fb}{RemoveAction}}(\mbox{\hyperlink{classtodo_1_1_model}{Model}}\ \&model,\ std::vector<u64>\ \&\&path);}
 \DoxyCodeLine{00043\ }
-\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_remove_action_a8a5fbcd5d60dd6dcb1f8cf2dd41f5164}{undo}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00046\ \};}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtodo_1_1_add_action_a81f4bc6f693b8b6f33b65a23ed32a2f5}{AddAction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtodo_1_1_action_a08cdef6732ee7a68a8b7b218ac8f6817}{Action}}\ \{}
-\DoxyCodeLine{00049\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00050\ \ \ std::vector<u16>\ undo\_path\_\{\};\ \ }
-\DoxyCodeLine{00051\ \ \ \mbox{\hyperlink{structtodo_1_1_task}{Task}}\ task\_\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00058\ \ \ \mbox{\hyperlink{classtodo_1_1_add_action_a81f4bc6f693b8b6f33b65a23ed32a2f5}{AddAction}}(\mbox{\hyperlink{classtodo_1_1_model}{Model}}\ \&model,\ std::vector<u16>\ path,\ \mbox{\hyperlink{structtodo_1_1_task}{Task}}\ task);}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00061\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_add_action_a8cded10e408dda273764c2d81eed1f6d}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00045\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_remove_action_ab15bdf0a1284aa5088d2d2e8bff86a30}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00048\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_remove_action_a8a5fbcd5d60dd6dcb1f8cf2dd41f5164}{undo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtodo_1_1_add_action_aa9bfa52f9c7034a662234a44d9a76e38}{AddAction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtodo_1_1_action_aec9ece2691afb50775f7433dac570e02}{Action}}\ \{}
+\DoxyCodeLine{00052\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00053\ \ \ std::vector<u64>\ undo\_path\_\{\};\ \ }
+\DoxyCodeLine{00054\ \ \ \mbox{\hyperlink{structtodo_1_1_task}{Task}}\ task\_\{\};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00061\ \ \ \mbox{\hyperlink{classtodo_1_1_add_action_aa9bfa52f9c7034a662234a44d9a76e38}{AddAction}}(\mbox{\hyperlink{classtodo_1_1_model}{Model}}\ \&model,\ std::vector<u64>\ \&\&path,\ \mbox{\hyperlink{structtodo_1_1_task}{Task}}\ \&\&task);}
 \DoxyCodeLine{00062\ }
-\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_add_action_a9b1baac07722d54171bfec364cc99578}{undo}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00065\ \};}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtodo_1_1_status_change_action_a6d188a221edc1645ad6a7b2b83ef122e}{StatusChangeAction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtodo_1_1_action_a08cdef6732ee7a68a8b7b218ac8f6817}{Action}}\ \{}
-\DoxyCodeLine{00068\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{namespacetodo_a7d93fd77405c9eb5daf19213f0e6cb6a}{Status}}\ new\_status\_\{\};\ \ }
-\DoxyCodeLine{00070\ \ \ \mbox{\hyperlink{namespacetodo_a7d93fd77405c9eb5daf19213f0e6cb6a}{Status}}\ old\_status\_\{\};\ \ }
-\DoxyCodeLine{00071\ }
-\DoxyCodeLine{00072\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00077\ \ \ \mbox{\hyperlink{classtodo_1_1_status_change_action_a6d188a221edc1645ad6a7b2b83ef122e}{StatusChangeAction}}(\mbox{\hyperlink{classtodo_1_1_model}{Model}}\ \&model,\ std::vector<u16>\ path,\ \mbox{\hyperlink{namespacetodo_a7d93fd77405c9eb5daf19213f0e6cb6a}{Status}}\ new\_status);}
-\DoxyCodeLine{00078\ }
-\DoxyCodeLine{00080\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_status_change_action_aa30e5cb277db3632fd311b598dbf72cb}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00064\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_add_action_a8cded10e408dda273764c2d81eed1f6d}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_add_action_a9b1baac07722d54171bfec364cc99578}{undo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00068\ \};}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtodo_1_1_status_change_action_ac143acf961126582f5fefc741eacac92}{StatusChangeAction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtodo_1_1_action_aec9ece2691afb50775f7433dac570e02}{Action}}\ \{}
+\DoxyCodeLine{00071\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00072\ \ \ \mbox{\hyperlink{namespacetodo_a7d93fd77405c9eb5daf19213f0e6cb6a}{Status}}\ new\_status\_\{\};\ \ }
+\DoxyCodeLine{00073\ \ \ \mbox{\hyperlink{namespacetodo_a7d93fd77405c9eb5daf19213f0e6cb6a}{Status}}\ old\_status\_\{\};\ \ }
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{classtodo_1_1_status_change_action_ac143acf961126582f5fefc741eacac92}{StatusChangeAction}}(\mbox{\hyperlink{classtodo_1_1_model}{Model}}\ \&model,\ std::vector<u64>\ \&\&path,\ \mbox{\hyperlink{namespacetodo_a7d93fd77405c9eb5daf19213f0e6cb6a}{Status}}\ new\_status);}
 \DoxyCodeLine{00081\ }
-\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_status_change_action_a9ba34ac8aff4a33e06c921d5ba48706b}{undo}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00084\ \};}
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtodo_1_1_priority_change_action_a65e752327f74c495a79903d44db33716}{PriorityChangeAction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtodo_1_1_action_a08cdef6732ee7a68a8b7b218ac8f6817}{Action}}\ \{}
-\DoxyCodeLine{00087\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00088\ \ \ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}\ new\_priority\_\{\};\ \ }
-\DoxyCodeLine{00089\ \ \ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}\ old\_priority\_\{\};\ \ }
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00096\ \ \ \mbox{\hyperlink{classtodo_1_1_priority_change_action_a65e752327f74c495a79903d44db33716}{PriorityChangeAction}}(\mbox{\hyperlink{classtodo_1_1_model}{Model}}\ \&model,\ std::vector<u16>\ path,\ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}\ new\_priority);}
-\DoxyCodeLine{00097\ }
-\DoxyCodeLine{00099\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_priority_change_action_ad4cb1de1b49fab1e8ce1b873854ce85c}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00083\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_status_change_action_aa30e5cb277db3632fd311b598dbf72cb}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_status_change_action_a9ba34ac8aff4a33e06c921d5ba48706b}{undo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtodo_1_1_priority_change_action_a319eddcca91f821a6f2e741d5a9d4cbd}{PriorityChangeAction}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classtodo_1_1_action_aec9ece2691afb50775f7433dac570e02}{Action}}\ \{}
+\DoxyCodeLine{00090\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}\ new\_priority\_\{\};\ \ }
+\DoxyCodeLine{00092\ \ \ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}\ old\_priority\_\{\};\ \ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00099\ \ \ \mbox{\hyperlink{classtodo_1_1_priority_change_action_a319eddcca91f821a6f2e741d5a9d4cbd}{PriorityChangeAction}}(\mbox{\hyperlink{classtodo_1_1_model}{Model}}\ \&model,\ std::vector<u64>\ \&\&path,\ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}\ new\_priority);}
 \DoxyCodeLine{00100\ }
-\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_priority_change_action_a0998b7fa5878b000fc2c35cc95c2d948}{undo}}()\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00103\ \};}
-\DoxyCodeLine{00104\ \}\ \ \textcolor{comment}{//\ namespace\ todo}}
+\DoxyCodeLine{00102\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_priority_change_action_ad4cb1de1b49fab1e8ce1b873854ce85c}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00105\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_priority_change_action_a0998b7fa5878b000fc2c35cc95c2d948}{undo}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00106\ \};}
+\DoxyCodeLine{00107\ \}\ \ \textcolor{comment}{//\ namespace\ todo}}
 
 \end{DoxyCode}

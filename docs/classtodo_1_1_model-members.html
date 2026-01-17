@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cli-todo: Member List</title>
+<title>todo-cli: Member List</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cli-todo
+   <div id="projectname">todo-cli
    </div>
   </td>
  </tr>
@@ -94,16 +94,17 @@ $(function(){initNavTree('classtodo_1_1_model.html','',''); });
 
 <p>This is the complete list of members for <a class="el" href="classtodo_1_1_model.html">todo::Model</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classtodo_1_1_model.html#aab839700a992af197cfbd3d5d5762e45">add</a>(Task task, const std::vector&lt; u16 &gt; &amp;path)</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classtodo_1_1_model.html#a0ca09008eeb9034af659914fff2e0d3f">change_task_priority</a>(const std::vector&lt; u16 &gt; &amp;path, const int priority)</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classtodo_1_1_model.html#a74aae297d52923deb67f70325199263c">change_task_status</a>(const std::vector&lt; u16 &gt; &amp;path, const Status status)</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classtodo_1_1_model.html#a8defc20e5ca62b14a6771cc018bd7c9d">add</a>(Task &amp;task, const std::vector&lt; u64 &gt; &amp;path)</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classtodo_1_1_model.html#a80e8165d189e69c870354ce27f9c2ee7">change_task_priority</a>(const std::vector&lt; u64 &gt; &amp;path, const u16 priority)</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classtodo_1_1_model.html#ab7b3dcf2cc3832166e6fb6429f26f233">change_task_status</a>(const std::vector&lt; u64 &gt; &amp;path, const Status status)</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classtodo_1_1_model.html#ace3a3bd53595d9f59c8de11c9598fbda">clear</a>()</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classtodo_1_1_model.html#a9a2b55d1dca034b956ec8f2e8b34138d">dir_init</a>()</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classtodo_1_1_model.html#a51bc1b5b4f58b21324f0c5a9cbd77fc1">get_list</a>()</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classtodo_1_1_model.html#afd1fc965ed45c72608bd47c5a2fd701e">load_file</a>()</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classtodo_1_1_model.html#a71a983e0e658a36147187cf8e271e8ba">Model</a>()</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classtodo_1_1_model.html#a7ba2b5799d90c111df7c6df299eaa37a">remove</a>(const std::vector&lt; u16 &gt; &amp;path)</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classtodo_1_1_model.html#ad52b94f101290513f2b081ef8670bf46">save_file</a>()</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classtodo_1_1_model.html#ad26c84e05667ad679c24272426d0c11d">find_task</a>(const std::vector&lt; u64 &gt; &amp;path, bool parent=false)</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classtodo_1_1_model.html#a51bc1b5b4f58b21324f0c5a9cbd77fc1">get_list</a>()</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classtodo_1_1_model.html#afd1fc965ed45c72608bd47c5a2fd701e">load_file</a>()</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classtodo_1_1_model.html#a71a983e0e658a36147187cf8e271e8ba">Model</a>()</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classtodo_1_1_model.html#a54586efb346cd90618a4f65e231eec3d">remove</a>(const std::vector&lt; u64 &gt; &amp;path)</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classtodo_1_1_model.html#ad52b94f101290513f2b081ef8670bf46">save_file</a>()</td><td class="entry"><a class="el" href="classtodo_1_1_model.html">todo::Model</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->

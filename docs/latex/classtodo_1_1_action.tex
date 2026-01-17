@@ -27,7 +27,7 @@ Collaboration diagram for todo\+::Action\+:
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classtodo_1_1_action_a08cdef6732ee7a68a8b7b218ac8f6817}{Action}} (\mbox{\hyperlink{classtodo_1_1_model}{Model}} \&model, std\+::vector$<$ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} $>$ path)
+\mbox{\hyperlink{classtodo_1_1_action_aec9ece2691afb50775f7433dac570e02}{Action}} (\mbox{\hyperlink{classtodo_1_1_model}{Model}} \&model, std\+::vector$<$ \mbox{\hyperlink{namespacetodo_ab22bc1beb51bff792d48b6f9057d50f7}{u64}} $>$ \&\&path)
 \begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classtodo_1_1_action_aec002564fb8bd9c4e705d40bd3e30355}{\texorpdfstring{$\sim$}{\string~}\+Action}} ()=default
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
@@ -35,23 +35,28 @@ virtual void \mbox{\hyperlink{classtodo_1_1_action_aacf9de44fea7054f2e9019a7eabe
 \begin{DoxyCompactList}\small\item\em Execute action. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classtodo_1_1_action_a5845c7352b8f938fe3844adcc76e90ae}{undo}} ()=0
 \begin{DoxyCompactList}\small\item\em Undo action. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtodo_1_1_task}{Task}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtodo_1_1_action_a5ff3556b2f853bef9be057df98f692fc}{find\+\_\+task}} ()
+\begin{DoxyCompactList}\small\item\em Finds specified task. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classtodo_1_1_model}{Model}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtodo_1_1_action_a22d1bc9a843775d05d58aaf34cc7a824}{model\+\_\+}} \{nullptr\}
 \begin{DoxyCompactList}\small\item\em \doxylink{classtodo_1_1_model}{Model} to perform actions on. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} $>$ \mbox{\hyperlink{classtodo_1_1_action_a76ea42e0334d953ec95e45d772912782}{exe\+\_\+path\+\_\+}}
+std\+::vector$<$ \mbox{\hyperlink{namespacetodo_ab22bc1beb51bff792d48b6f9057d50f7}{u64}} $>$ \mbox{\hyperlink{classtodo_1_1_action_a9d7eeeb14fc0d95fb8ce64fd06f38206}{exe\+\_\+path\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Path of execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \label{doc-constructors}
 \Hypertarget{classtodo_1_1_action_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classtodo_1_1_action_a08cdef6732ee7a68a8b7b218ac8f6817}\index{todo::Action@{todo::Action}!Action@{Action}}
+\Hypertarget{classtodo_1_1_action_aec9ece2691afb50775f7433dac570e02}\index{todo::Action@{todo::Action}!Action@{Action}}
 \index{Action@{Action}!todo::Action@{todo::Action}}
 \doxysubsubsection{\texorpdfstring{Action()}{Action()}}
-{\footnotesize\ttfamily \label{classtodo_1_1_action_a08cdef6732ee7a68a8b7b218ac8f6817} 
-todo\+::\+Action\+::\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtodo_1_1_model}{Model}} \&}]{model}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} $>$}]{path}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classtodo_1_1_action_aec9ece2691afb50775f7433dac570e02} 
+todo\+::\+Action\+::\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtodo_1_1_model}{Model}} \&}]{model}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{namespacetodo_ab22bc1beb51bff792d48b6f9057d50f7}{u64}} $>$ \&\&}]{path}{}\end{DoxyParamCaption})}
 
 
 
@@ -61,7 +66,7 @@ Parameterized constructor.
 \begin{DoxyParams}{Parameters}
 {\em model} & Reference to the model to work with. \\
 \hline
-{\em path} & Path (execution) of action. \\
+{\em path} & R-\/value reference to the path (execution) of action. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classtodo_1_1_action_aec002564fb8bd9c4e705d40bd3e30355}\index{todo::Action@{todo::Action}!````~Action@{\texorpdfstring{$\sim$}{\string~}Action}}
@@ -93,6 +98,16 @@ Execute action.
 
 Implemented in \mbox{\hyperlink{classtodo_1_1_add_action_a8cded10e408dda273764c2d81eed1f6d}{todo\+::\+Add\+Action}}, \mbox{\hyperlink{classtodo_1_1_priority_change_action_ad4cb1de1b49fab1e8ce1b873854ce85c}{todo\+::\+Priority\+Change\+Action}}, \mbox{\hyperlink{classtodo_1_1_remove_action_ab15bdf0a1284aa5088d2d2e8bff86a30}{todo\+::\+Remove\+Action}}, and \mbox{\hyperlink{classtodo_1_1_status_change_action_aa30e5cb277db3632fd311b598dbf72cb}{todo\+::\+Status\+Change\+Action}}.
 
+\Hypertarget{classtodo_1_1_action_a5ff3556b2f853bef9be057df98f692fc}\index{todo::Action@{todo::Action}!find\_task@{find\_task}}
+\index{find\_task@{find\_task}!todo::Action@{todo::Action}}
+\doxysubsubsection{\texorpdfstring{find\_task()}{find\_task()}}
+{\footnotesize\ttfamily \label{classtodo_1_1_action_a5ff3556b2f853bef9be057df98f692fc} 
+\mbox{\hyperlink{structtodo_1_1_task}{Task}} \texorpdfstring{$\ast$}{*} todo\+::\+Action\+::find\+\_\+task (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Finds specified task. 
+
 \Hypertarget{classtodo_1_1_action_a5845c7352b8f938fe3844adcc76e90ae}\index{todo::Action@{todo::Action}!undo@{undo}}
 \index{undo@{undo}!todo::Action@{todo::Action}}
 \doxysubsubsection{\texorpdfstring{undo()}{undo()}}
@@ -112,11 +127,11 @@ Implemented in \mbox{\hyperlink{classtodo_1_1_add_action_a9b1baac07722d54171bfec
 \label{doc-variable-members}
 \Hypertarget{classtodo_1_1_action_doc-variable-members}
 \doxysubsection{Member Data Documentation}
-\Hypertarget{classtodo_1_1_action_a76ea42e0334d953ec95e45d772912782}\index{todo::Action@{todo::Action}!exe\_path\_@{exe\_path\_}}
+\Hypertarget{classtodo_1_1_action_a9d7eeeb14fc0d95fb8ce64fd06f38206}\index{todo::Action@{todo::Action}!exe\_path\_@{exe\_path\_}}
 \index{exe\_path\_@{exe\_path\_}!todo::Action@{todo::Action}}
 \doxysubsubsection{\texorpdfstring{exe\_path\_}{exe\_path\_}}
-{\footnotesize\ttfamily \label{classtodo_1_1_action_a76ea42e0334d953ec95e45d772912782} 
-std\+::vector$<$\mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}$>$ todo\+::\+Action\+::exe\+\_\+path\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \label{classtodo_1_1_action_a9d7eeeb14fc0d95fb8ce64fd06f38206} 
+std\+::vector$<$\mbox{\hyperlink{namespacetodo_ab22bc1beb51bff792d48b6f9057d50f7}{u64}}$>$ todo\+::\+Action\+::exe\+\_\+path\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

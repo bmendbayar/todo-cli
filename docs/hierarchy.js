@@ -7,6 +7,7 @@ var hierarchy =
       [ "todo::StatusChangeAction", "classtodo_1_1_status_change_action.html", null ]
     ] ],
     [ "todo::Controller", "classtodo_1_1_controller.html", null ],
+    [ "todo::Task::Date", "structtodo_1_1_task_1_1_date.html", null ],
     [ "todo::Model", "classtodo_1_1_model.html", null ],
     [ "todo::Task", "structtodo_1_1_task.html", null ],
     [ "todo::UserInput", "structtodo_1_1_user_input.html", null ],

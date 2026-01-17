@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['removeaction_0',['RemoveAction',['../classtodo_1_1_remove_action.html',1,'todo']]]
+  ['prioritychangeaction_0',['PriorityChangeAction',['../classtodo_1_1_priority_change_action.html',1,'todo']]]
 ];

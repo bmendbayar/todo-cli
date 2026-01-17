@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['remove_0',['remove',['../classtodo_1_1_model.html#a7ba2b5799d90c111df7c6df299eaa37a',1,'todo::Model']]],
-  ['removeaction_1',['RemoveAction',['../classtodo_1_1_remove_action.html#af4a8dd753ed1d6ea1c132a36b42fb34d',1,'todo::RemoveAction']]],
-  ['run_2',['run',['../classtodo_1_1_controller.html#a847f4eed3c2a15bd1213875dc2d6bc3b',1,'todo::Controller']]]
+  ['parse_5fdate_0',['parse_date',['../namespacetodo.html#ab94729ff4d457c99c08660bb34a2c724',1,'todo']]],
+  ['pre_5forder_5ftrav_1',['pre_order_trav',['../namespacetodo.html#ae69ca8e48f18909a6c18b5b70fb2138a',1,'todo']]],
+  ['prioritychangeaction_2',['PriorityChangeAction',['../classtodo_1_1_priority_change_action.html#a319eddcca91f821a6f2e741d5a9d4cbd',1,'todo::PriorityChangeAction']]]
 ];

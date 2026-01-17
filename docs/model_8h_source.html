@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cli-todo: src/model/model.h Source File</title>
+<title>todo-cli: src/model/model.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cli-todo
+   <div id="projectname">todo-cli
    </div>
   </td>
  </tr>
@@ -104,7 +104,7 @@ $(function(){initNavTree('model_8h_source.html','',''); });
 <div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classtodo_1_1_model.html">   11</a></span><span class="keyword">class </span><a class="code hl_function" href="classtodo_1_1_model.html#a71a983e0e658a36147187cf8e271e8ba">Model</a> {</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">const</span> <span class="keyword">static</span> <span class="keyword">inline</span> std::filesystem::path TODO_DIR = <span class="stringliteral">&quot;.todo&quot;</span>;  </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>  <span class="keyword">const</span> <span class="keyword">static</span> <span class="keyword">inline</span> std::filesystem::path TODO_DIR = <span class="stringliteral">&quot;.todo&quot;</span>;            </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>  <span class="keyword">const</span> <span class="keyword">static</span> <span class="keyword">inline</span> std::filesystem::path TODO_FILE = <span class="stringliteral">&quot;todo_list.json&quot;</span>;  </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
@@ -112,9 +112,9 @@ $(function(){initNavTree('model_8h_source.html','',''); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtodo_1_1_model.html#a9a2b55d1dca034b956ec8f2e8b34138d">dir_init</a>();</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtodo_1_1_model.html#aab839700a992af197cfbd3d5d5762e45">add</a>(<a class="code hl_struct" href="structtodo_1_1_task.html">Task</a> task, <span class="keyword">const</span> std::vector&lt;u16&gt; &amp;path);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtodo_1_1_model.html#a8defc20e5ca62b14a6771cc018bd7c9d">add</a>(<a class="code hl_struct" href="structtodo_1_1_task.html">Task</a> &amp;task, <span class="keyword">const</span> std::vector&lt;u64&gt; &amp;path);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtodo_1_1_model.html#a7ba2b5799d90c111df7c6df299eaa37a">remove</a>(<span class="keyword">const</span> std::vector&lt;u16&gt; &amp;path);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtodo_1_1_model.html#a54586efb346cd90618a4f65e231eec3d">remove</a>(<span class="keyword">const</span> std::vector&lt;u64&gt; &amp;path);</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtodo_1_1_model.html#ace3a3bd53595d9f59c8de11c9598fbda">clear</a>();</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
@@ -122,32 +122,36 @@ $(function(){initNavTree('model_8h_source.html','',''); });
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtodo_1_1_model.html#ad52b94f101290513f2b081ef8670bf46">save_file</a>();</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtodo_1_1_model.html#a74aae297d52923deb67f70325199263c">change_task_status</a>(<span class="keyword">const</span> std::vector&lt;u16&gt; &amp;path, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetodo.html#a7d93fd77405c9eb5daf19213f0e6cb6a">Status</a> status);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtodo_1_1_model.html#ab7b3dcf2cc3832166e6fb6429f26f233">change_task_status</a>(<span class="keyword">const</span> std::vector&lt;u64&gt; &amp;path, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetodo.html#a7d93fd77405c9eb5daf19213f0e6cb6a">Status</a> status);</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtodo_1_1_model.html#a0ca09008eeb9034af659914fff2e0d3f">change_task_priority</a>(<span class="keyword">const</span> std::vector&lt;u16&gt; &amp;path, <span class="keyword">const</span> <span class="keywordtype">int</span> priority);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classtodo_1_1_model.html#a80e8165d189e69c870354ce27f9c2ee7">change_task_priority</a>(<span class="keyword">const</span> std::vector&lt;u64&gt; &amp;path, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetodo.html#a01f639f1521effd0c112afd273e8b233">u16</a> priority);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">const</span> std::vector&lt;Task&gt; &amp;<a class="code hl_function" href="classtodo_1_1_model.html#a51bc1b5b4f58b21324f0c5a9cbd77fc1">get_list</a>();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  std::vector&lt;Task&gt; todo_list_;  </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">void</span> change_child_task_status(<a class="code hl_struct" href="structtodo_1_1_task.html">Task</a> &amp;task, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetodo.html#a7d93fd77405c9eb5daf19213f0e6cb6a">Status</a> status);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <a class="code hl_struct" href="structtodo_1_1_task.html">Task</a> *<a class="code hl_function" href="classtodo_1_1_model.html#ad26c84e05667ad679c24272426d0c11d">find_task</a>(<span class="keyword">const</span> std::vector&lt;u64&gt; &amp;path, <span class="keywordtype">bool</span> parent = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  std::vector&lt;Task&gt; todo_list_;  </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordtype">void</span> change_child_task_status(<a class="code hl_struct" href="structtodo_1_1_task.html">Task</a> &amp;task, <span class="keyword">const</span> <a class="code hl_typedef" href="namespacetodo.html#a7d93fd77405c9eb5daf19213f0e6cb6a">Status</a> status);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>};</div>
 </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}  <span class="comment">// namespace todo</span></div>
-<div class="ttc" id="aclasstodo_1_1_model_html_a0ca09008eeb9034af659914fff2e0d3f"><div class="ttname"><a href="classtodo_1_1_model.html#a0ca09008eeb9034af659914fff2e0d3f">todo::Model::change_task_priority</a></div><div class="ttdeci">void change_task_priority(const std::vector&lt; u16 &gt; &amp;path, const int priority)</div><div class="ttdoc">Changes the completion status of a task.</div><div class="ttdef"><b>Definition</b> model.cpp:156</div></div>
-<div class="ttc" id="aclasstodo_1_1_model_html_a51bc1b5b4f58b21324f0c5a9cbd77fc1"><div class="ttname"><a href="classtodo_1_1_model.html#a51bc1b5b4f58b21324f0c5a9cbd77fc1">todo::Model::get_list</a></div><div class="ttdeci">const std::vector&lt; Task &gt; &amp; get_list()</div><div class="ttdoc">Returns a const reference of the todo list vector.</div><div class="ttdef"><b>Definition</b> model.cpp:171</div></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}  <span class="comment">// namespace todo</span></div>
+<div class="ttc" id="aclasstodo_1_1_model_html_a51bc1b5b4f58b21324f0c5a9cbd77fc1"><div class="ttname"><a href="classtodo_1_1_model.html#a51bc1b5b4f58b21324f0c5a9cbd77fc1">todo::Model::get_list</a></div><div class="ttdeci">const std::vector&lt; Task &gt; &amp; get_list()</div><div class="ttdoc">Returns a const reference of the todo list vector.</div><div class="ttdef"><b>Definition</b> model.cpp:210</div></div>
+<div class="ttc" id="aclasstodo_1_1_model_html_a54586efb346cd90618a4f65e231eec3d"><div class="ttname"><a href="classtodo_1_1_model.html#a54586efb346cd90618a4f65e231eec3d">todo::Model::remove</a></div><div class="ttdeci">void remove(const std::vector&lt; u64 &gt; &amp;path)</div><div class="ttdoc">Remove task from the todo list.</div><div class="ttdef"><b>Definition</b> model.cpp:135</div></div>
 <div class="ttc" id="aclasstodo_1_1_model_html_a71a983e0e658a36147187cf8e271e8ba"><div class="ttname"><a href="classtodo_1_1_model.html#a71a983e0e658a36147187cf8e271e8ba">todo::Model::Model</a></div><div class="ttdeci">Model()</div><div class="ttdoc">Constructs an object by reading from a JSON file.</div><div class="ttdef"><b>Definition</b> model.cpp:11</div></div>
-<div class="ttc" id="aclasstodo_1_1_model_html_a74aae297d52923deb67f70325199263c"><div class="ttname"><a href="classtodo_1_1_model.html#a74aae297d52923deb67f70325199263c">todo::Model::change_task_status</a></div><div class="ttdeci">void change_task_status(const std::vector&lt; u16 &gt; &amp;path, const Status status)</div><div class="ttdoc">Changes the completion status of a task.</div><div class="ttdef"><b>Definition</b> model.cpp:129</div></div>
-<div class="ttc" id="aclasstodo_1_1_model_html_a7ba2b5799d90c111df7c6df299eaa37a"><div class="ttname"><a href="classtodo_1_1_model.html#a7ba2b5799d90c111df7c6df299eaa37a">todo::Model::remove</a></div><div class="ttdeci">void remove(const std::vector&lt; u16 &gt; &amp;path)</div><div class="ttdef"><b>Definition</b> model.cpp:90</div></div>
+<div class="ttc" id="aclasstodo_1_1_model_html_a80e8165d189e69c870354ce27f9c2ee7"><div class="ttname"><a href="classtodo_1_1_model.html#a80e8165d189e69c870354ce27f9c2ee7">todo::Model::change_task_priority</a></div><div class="ttdeci">void change_task_priority(const std::vector&lt; u64 &gt; &amp;path, const u16 priority)</div><div class="ttdoc">Changes the completion status of a task.</div><div class="ttdef"><b>Definition</b> model.cpp:199</div></div>
+<div class="ttc" id="aclasstodo_1_1_model_html_a8defc20e5ca62b14a6771cc018bd7c9d"><div class="ttname"><a href="classtodo_1_1_model.html#a8defc20e5ca62b14a6771cc018bd7c9d">todo::Model::add</a></div><div class="ttdeci">void add(Task &amp;task, const std::vector&lt; u64 &gt; &amp;path)</div><div class="ttdoc">Adds task with description to todo list.</div><div class="ttdef"><b>Definition</b> model.cpp:107</div></div>
 <div class="ttc" id="aclasstodo_1_1_model_html_a9a2b55d1dca034b956ec8f2e8b34138d"><div class="ttname"><a href="classtodo_1_1_model.html#a9a2b55d1dca034b956ec8f2e8b34138d">todo::Model::dir_init</a></div><div class="ttdeci">void dir_init()</div><div class="ttdoc">Sets up the .todo directory and its contents.</div><div class="ttdef"><b>Definition</b> model.cpp:53</div></div>
-<div class="ttc" id="aclasstodo_1_1_model_html_aab839700a992af197cfbd3d5d5762e45"><div class="ttname"><a href="classtodo_1_1_model.html#aab839700a992af197cfbd3d5d5762e45">todo::Model::add</a></div><div class="ttdeci">void add(Task task, const std::vector&lt; u16 &gt; &amp;path)</div><div class="ttdef"><b>Definition</b> model.cpp:74</div></div>
-<div class="ttc" id="aclasstodo_1_1_model_html_ace3a3bd53595d9f59c8de11c9598fbda"><div class="ttname"><a href="classtodo_1_1_model.html#ace3a3bd53595d9f59c8de11c9598fbda">todo::Model::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears (empties) the list.</div><div class="ttdef"><b>Definition</b> model.cpp:110</div></div>
+<div class="ttc" id="aclasstodo_1_1_model_html_ab7b3dcf2cc3832166e6fb6429f26f233"><div class="ttname"><a href="classtodo_1_1_model.html#ab7b3dcf2cc3832166e6fb6429f26f233">todo::Model::change_task_status</a></div><div class="ttdeci">void change_task_status(const std::vector&lt; u64 &gt; &amp;path, const Status status)</div><div class="ttdoc">Changes the completion status of a task.</div><div class="ttdef"><b>Definition</b> model.cpp:172</div></div>
+<div class="ttc" id="aclasstodo_1_1_model_html_ace3a3bd53595d9f59c8de11c9598fbda"><div class="ttname"><a href="classtodo_1_1_model.html#ace3a3bd53595d9f59c8de11c9598fbda">todo::Model::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears (empties) the list.</div><div class="ttdef"><b>Definition</b> model.cpp:153</div></div>
+<div class="ttc" id="aclasstodo_1_1_model_html_ad26c84e05667ad679c24272426d0c11d"><div class="ttname"><a href="classtodo_1_1_model.html#ad26c84e05667ad679c24272426d0c11d">todo::Model::find_task</a></div><div class="ttdeci">Task * find_task(const std::vector&lt; u64 &gt; &amp;path, bool parent=false)</div><div class="ttdoc">Finds task via path.</div><div class="ttdef"><b>Definition</b> model.cpp:74</div></div>
 <div class="ttc" id="aclasstodo_1_1_model_html_ad52b94f101290513f2b081ef8670bf46"><div class="ttname"><a href="classtodo_1_1_model.html#ad52b94f101290513f2b081ef8670bf46">todo::Model::save_file</a></div><div class="ttdeci">void save_file()</div><div class="ttdoc">Save todo list vector to a JSON file.</div><div class="ttdef"><b>Definition</b> model.cpp:45</div></div>
 <div class="ttc" id="aclasstodo_1_1_model_html_afd1fc965ed45c72608bd47c5a2fd701e"><div class="ttname"><a href="classtodo_1_1_model.html#afd1fc965ed45c72608bd47c5a2fd701e">todo::Model::load_file</a></div><div class="ttdeci">void load_file()</div><div class="ttdoc">Load from a JSON file to populate todo list vector.</div><div class="ttdef"><b>Definition</b> model.cpp:16</div></div>
 <div class="ttc" id="anamespacetodo_html"><div class="ttname"><a href="namespacetodo.html">todo</a></div><div class="ttdef"><b>Definition</b> actions.cpp:3</div></div>
+<div class="ttc" id="anamespacetodo_html_a01f639f1521effd0c112afd273e8b233"><div class="ttname"><a href="namespacetodo.html#a01f639f1521effd0c112afd273e8b233">todo::u16</a></div><div class="ttdeci">uint16_t u16</div><div class="ttdef"><b>Definition</b> types.h:14</div></div>
 <div class="ttc" id="anamespacetodo_html_a7d93fd77405c9eb5daf19213f0e6cb6a"><div class="ttname"><a href="namespacetodo.html#a7d93fd77405c9eb5daf19213f0e6cb6a">todo::Status</a></div><div class="ttdeci">todo::Task::Status Status</div><div class="ttdef"><b>Definition</b> types.h:18</div></div>
-<div class="ttc" id="astructtodo_1_1_task_html"><div class="ttname"><a href="structtodo_1_1_task.html">todo::Task</a></div><div class="ttdef"><b>Definition</b> task.h:9</div></div>
+<div class="ttc" id="astructtodo_1_1_task_html"><div class="ttname"><a href="structtodo_1_1_task.html">todo::Task</a></div><div class="ttdef"><b>Definition</b> task.h:10</div></div>
 <div class="ttc" id="atask_8h_html"><div class="ttname"><a href="task_8h.html">task.h</a></div></div>
 <div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

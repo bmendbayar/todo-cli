@@ -24,13 +24,12 @@
 */
 var NAVTREE =
 [
-  [ "cli-todo", "index.html", [
+  [ "todo-cli", "index.html", [
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
-        [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ]
       ] ]
@@ -58,7 +57,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"actions_8cpp.html"
+"actions_8cpp.html",
+"structtodo_1_1_user_input.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';

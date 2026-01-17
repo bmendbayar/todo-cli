@@ -14,7 +14,7 @@
 \DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetodo}{todo}}\ \{}
 \DoxyCodeLine{00011\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classtodo_1_1_model_a71a983e0e658a36147187cf8e271e8ba}{Model}}\ \{}
 \DoxyCodeLine{00012\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::filesystem::path\ TODO\_DIR\ =\ \textcolor{stringliteral}{"{}.todo"{}};\ \ }
+\DoxyCodeLine{00013\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::filesystem::path\ TODO\_DIR\ =\ \textcolor{stringliteral}{"{}.todo"{}};\ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00014\ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::filesystem::path\ TODO\_FILE\ =\ \textcolor{stringliteral}{"{}todo\_list.json"{}};\ \ }
 \DoxyCodeLine{00015\ }
 \DoxyCodeLine{00016\ \textcolor{keyword}{public}:}
@@ -22,9 +22,9 @@
 \DoxyCodeLine{00019\ }
 \DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_model_a9a2b55d1dca034b956ec8f2e8b34138d}{dir\_init}}();}
 \DoxyCodeLine{00022\ }
-\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_model_aab839700a992af197cfbd3d5d5762e45}{add}}(\mbox{\hyperlink{structtodo_1_1_task}{Task}}\ task,\ \textcolor{keyword}{const}\ std::vector<u16>\ \&path);}
+\DoxyCodeLine{00026\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_model_a8defc20e5ca62b14a6771cc018bd7c9d}{add}}(\mbox{\hyperlink{structtodo_1_1_task}{Task}}\ \&task,\ \textcolor{keyword}{const}\ std::vector<u64>\ \&path);}
 \DoxyCodeLine{00027\ }
-\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_model_a7ba2b5799d90c111df7c6df299eaa37a}{remove}}(\textcolor{keyword}{const}\ std::vector<u16>\ \&path);}
+\DoxyCodeLine{00030\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_model_a54586efb346cd90618a4f65e231eec3d}{remove}}(\textcolor{keyword}{const}\ std::vector<u64>\ \&path);}
 \DoxyCodeLine{00031\ }
 \DoxyCodeLine{00033\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_model_ace3a3bd53595d9f59c8de11c9598fbda}{clear}}();}
 \DoxyCodeLine{00034\ }
@@ -32,17 +32,19 @@
 \DoxyCodeLine{00038\ }
 \DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_model_ad52b94f101290513f2b081ef8670bf46}{save\_file}}();}
 \DoxyCodeLine{00042\ }
-\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_model_a74aae297d52923deb67f70325199263c}{change\_task\_status}}(\textcolor{keyword}{const}\ std::vector<u16>\ \&path,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetodo_a7d93fd77405c9eb5daf19213f0e6cb6a}{Status}}\ status);}
+\DoxyCodeLine{00046\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_model_ab7b3dcf2cc3832166e6fb6429f26f233}{change\_task\_status}}(\textcolor{keyword}{const}\ std::vector<u64>\ \&path,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetodo_a7d93fd77405c9eb5daf19213f0e6cb6a}{Status}}\ status);}
 \DoxyCodeLine{00047\ }
-\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_model_a0ca09008eeb9034af659914fff2e0d3f}{change\_task\_priority}}(\textcolor{keyword}{const}\ std::vector<u16>\ \&path,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ priority);}
+\DoxyCodeLine{00051\ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_model_a80e8165d189e69c870354ce27f9c2ee7}{change\_task\_priority}}(\textcolor{keyword}{const}\ std::vector<u64>\ \&path,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}\ priority);}
 \DoxyCodeLine{00052\ }
 \DoxyCodeLine{00054\ \ \ \textcolor{keyword}{const}\ std::vector<Task>\ \&\mbox{\hyperlink{classtodo_1_1_model_a51bc1b5b4f58b21324f0c5a9cbd77fc1}{get\_list}}();}
 \DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00057\ \ \ std::vector<Task>\ todo\_list\_;\ \ }
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00061\ \ \ \textcolor{keywordtype}{void}\ change\_child\_task\_status(\mbox{\hyperlink{structtodo_1_1_task}{Task}}\ \&task,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetodo_a7d93fd77405c9eb5daf19213f0e6cb6a}{Status}}\ status);}
-\DoxyCodeLine{00062\ \};}
-\DoxyCodeLine{00063\ \}\ \ \textcolor{comment}{//\ namespace\ todo}}
+\DoxyCodeLine{00059\ \ \ \mbox{\hyperlink{structtodo_1_1_task}{Task}}\ *\mbox{\hyperlink{classtodo_1_1_model_ad26c84e05667ad679c24272426d0c11d}{find\_task}}(\textcolor{keyword}{const}\ std::vector<u64>\ \&path,\ \textcolor{keywordtype}{bool}\ parent\ =\ \textcolor{keyword}{false});}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ std::vector<Task>\ todo\_list\_;\ \ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \ \ \textcolor{keywordtype}{void}\ change\_child\_task\_status(\mbox{\hyperlink{structtodo_1_1_task}{Task}}\ \&task,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacetodo_a7d93fd77405c9eb5daf19213f0e6cb6a}{Status}}\ status);}
+\DoxyCodeLine{00067\ \};}
+\DoxyCodeLine{00068\ \}\ \ \textcolor{comment}{//\ namespace\ todo}}
 
 \end{DoxyCode}

@@ -1,8 +1,10 @@
 \doxysection{src/controller/controller.cpp File Reference}
 \hypertarget{controller_8cpp}{}\label{controller_8cpp}\index{src/controller/controller.cpp@{src/controller/controller.cpp}}
+{\ttfamily \#include $<$chrono$>$}\newline
 {\ttfamily \#include $<$cstdlib$>$}\newline
 {\ttfamily \#include $<$exception$>$}\newline
 {\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$sstream$>$}\newline
 {\ttfamily \#include $<$stdexcept$>$}\newline
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include "{}actions.\+h"{}}\newline
@@ -10,6 +12,7 @@
 {\ttfamily \#include "{}controller.\+h"{}}\newline
 {\ttfamily \#include "{}i\+\_\+view.\+h"{}}\newline
 {\ttfamily \#include "{}menu\+\_\+opts.\+h"{}}\newline
+{\ttfamily \#include "{}user\+\_\+input.\+h"{}}\newline
 {\ttfamily \#include "{}vi\+\_\+view.\+h"{}}\newline
 {\ttfamily \#include "{}view.\+h"{}}\newline
 Include dependency graph for controller.\+cpp\+:
@@ -28,10 +31,9 @@ namespace \mbox{\hyperlink{namespacetodo}{todo}}
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{namespacetodo_a6b92b80d95281e58507863197f0a9fff}{todo\+::pre\+\_\+order\+\_\+trav}} (const std\+::vector$<$ \mbox{\hyperlink{structtodo_1_1_task}{Task}} $>$ \&list, int \&curr, const int target, std\+::vector$<$ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} $>$ \&path)
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Variables}
-\begin{DoxyCompactItemize}
+bool \mbox{\hyperlink{namespacetodo_ae69ca8e48f18909a6c18b5b70fb2138a}{todo\+::pre\+\_\+order\+\_\+trav}} (const std\+::vector$<$ \mbox{\hyperlink{structtodo_1_1_task}{Task}} $>$ \&list, int \&curr, const int target, std\+::vector$<$ \mbox{\hyperlink{namespacetodo_ab22bc1beb51bff792d48b6f9057d50f7}{u64}} $>$ \&path)
 \item 
-constexpr std\+::string \mbox{\hyperlink{namespacetodo_aeb31537c10c76dc10160d77411e7f524}{todo\+::\+SEN}} = "{}deadbeef"{}
+\mbox{\hyperlink{structtodo_1_1_task_1_1_date}{Task\+::\+Date}} \mbox{\hyperlink{namespacetodo_ab94729ff4d457c99c08660bb34a2c724}{todo\+::parse\+\_\+date}} (std\+::string \&\&due\+\_\+date)
+\item 
+bool \mbox{\hyperlink{namespacetodo_a49d179276874d62b3c447e59938733dd}{todo\+::validate\+\_\+date}} (const std\+::chrono\+::year\+\_\+month\+\_\+day \&today, const \mbox{\hyperlink{structtodo_1_1_task_1_1_date}{Task\+::\+Date}} \&due)
 \end{DoxyCompactItemize}

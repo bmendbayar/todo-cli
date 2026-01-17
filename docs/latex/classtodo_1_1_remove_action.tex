@@ -27,7 +27,7 @@ Collaboration diagram for todo\+::Remove\+Action\+:
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classtodo_1_1_remove_action_af4a8dd753ed1d6ea1c132a36b42fb34d}{Remove\+Action}} (\mbox{\hyperlink{classtodo_1_1_model}{Model}} \&model, std\+::vector$<$ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} $>$ path)
+\mbox{\hyperlink{classtodo_1_1_remove_action_aee232a7f0ae3f8a3c2e1808ffb4645fb}{Remove\+Action}} (\mbox{\hyperlink{classtodo_1_1_model}{Model}} \&model, std\+::vector$<$ \mbox{\hyperlink{namespacetodo_ab22bc1beb51bff792d48b6f9057d50f7}{u64}} $>$ \&\&path)
 \begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classtodo_1_1_remove_action_ab15bdf0a1284aa5088d2d2e8bff86a30}{execute}} () override
 \begin{DoxyCompactList}\small\item\em execute action. \end{DoxyCompactList}\item 
@@ -36,28 +36,33 @@ virtual void \mbox{\hyperlink{classtodo_1_1_remove_action_a8a5fbcd5d60dd6dcb1f8c
 \doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classtodo_1_1_action}{todo\+::\+Action}}}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classtodo_1_1_action_a08cdef6732ee7a68a8b7b218ac8f6817}{Action}} (\mbox{\hyperlink{classtodo_1_1_model}{Model}} \&model, std\+::vector$<$ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} $>$ path)
+\mbox{\hyperlink{classtodo_1_1_action_aec9ece2691afb50775f7433dac570e02}{Action}} (\mbox{\hyperlink{classtodo_1_1_model}{Model}} \&model, std\+::vector$<$ \mbox{\hyperlink{namespacetodo_ab22bc1beb51bff792d48b6f9057d50f7}{u64}} $>$ \&\&path)
 \begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classtodo_1_1_action_aec002564fb8bd9c4e705d40bd3e30355}{\texorpdfstring{$\sim$}{\string~}\+Action}} ()=default
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{classtodo_1_1_action}{todo\+::\+Action}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structtodo_1_1_task}{Task}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtodo_1_1_action_a5ff3556b2f853bef9be057df98f692fc}{find\+\_\+task}} ()
+\begin{DoxyCompactList}\small\item\em Finds specified task. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classtodo_1_1_action}{todo\+::\+Action}}}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classtodo_1_1_model}{Model}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classtodo_1_1_action_a22d1bc9a843775d05d58aaf34cc7a824}{model\+\_\+}} \{nullptr\}
 \begin{DoxyCompactList}\small\item\em \doxylink{classtodo_1_1_model}{Model} to perform actions on. \end{DoxyCompactList}\item 
-std\+::vector$<$ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} $>$ \mbox{\hyperlink{classtodo_1_1_action_a76ea42e0334d953ec95e45d772912782}{exe\+\_\+path\+\_\+}}
+std\+::vector$<$ \mbox{\hyperlink{namespacetodo_ab22bc1beb51bff792d48b6f9057d50f7}{u64}} $>$ \mbox{\hyperlink{classtodo_1_1_action_a9d7eeeb14fc0d95fb8ce64fd06f38206}{exe\+\_\+path\+\_\+}}
 \begin{DoxyCompactList}\small\item\em Path of execution. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \label{doc-constructors}
 \Hypertarget{classtodo_1_1_remove_action_doc-constructors}
 \doxysubsection{Constructor \& Destructor Documentation}
-\Hypertarget{classtodo_1_1_remove_action_af4a8dd753ed1d6ea1c132a36b42fb34d}\index{todo::RemoveAction@{todo::RemoveAction}!RemoveAction@{RemoveAction}}
+\Hypertarget{classtodo_1_1_remove_action_aee232a7f0ae3f8a3c2e1808ffb4645fb}\index{todo::RemoveAction@{todo::RemoveAction}!RemoveAction@{RemoveAction}}
 \index{RemoveAction@{RemoveAction}!todo::RemoveAction@{todo::RemoveAction}}
 \doxysubsubsection{\texorpdfstring{RemoveAction()}{RemoveAction()}}
-{\footnotesize\ttfamily \label{classtodo_1_1_remove_action_af4a8dd753ed1d6ea1c132a36b42fb34d} 
-todo\+::\+Remove\+Action\+::\+Remove\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtodo_1_1_model}{Model}} \&}]{model}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}} $>$}]{path}{}\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{classtodo_1_1_remove_action_aee232a7f0ae3f8a3c2e1808ffb4645fb} 
+todo\+::\+Remove\+Action\+::\+Remove\+Action (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classtodo_1_1_model}{Model}} \&}]{model}{, }\item[{std\+::vector$<$ \mbox{\hyperlink{namespacetodo_ab22bc1beb51bff792d48b6f9057d50f7}{u64}} $>$ \&\&}]{path}{}\end{DoxyParamCaption})}
 
 
 
@@ -67,7 +72,7 @@ Parameterized constructor.
 \begin{DoxyParams}{Parameters}
 {\em model} & Reference to the model to work with. \\
 \hline
-{\em path} & Path (execution) of action. \\
+{\em path} & R-\/value reference to the path (execution) of action. \\
 \hline
 \end{DoxyParams}
 

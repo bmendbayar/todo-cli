@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cli-todo: todo Namespace Reference</title>
+<title>todo-cli: todo Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cli-todo
+   <div id="projectname">todo-cli
    </div>
   </td>
  </tr>
@@ -139,16 +139,18 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6b92b80d95281e58507863197f0a9fff" id="r_a6b92b80d95281e58507863197f0a9fff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b92b80d95281e58507863197f0a9fff">pre_order_trav</a> (const std::vector&lt; <a class="el" href="structtodo_1_1_task.html">Task</a> &gt; &amp;list, int &amp;curr, const int target, std::vector&lt; <a class="el" href="#a01f639f1521effd0c112afd273e8b233">u16</a> &gt; &amp;path)</td></tr>
+<tr class="memitem:ae69ca8e48f18909a6c18b5b70fb2138a" id="r_ae69ca8e48f18909a6c18b5b70fb2138a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae69ca8e48f18909a6c18b5b70fb2138a">pre_order_trav</a> (const std::vector&lt; <a class="el" href="structtodo_1_1_task.html">Task</a> &gt; &amp;list, int &amp;curr, const int target, std::vector&lt; <a class="el" href="#ab22bc1beb51bff792d48b6f9057d50f7">u64</a> &gt; &amp;path)</td></tr>
+<tr class="memitem:ab94729ff4d457c99c08660bb34a2c724" id="r_ab94729ff4d457c99c08660bb34a2c724"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtodo_1_1_task_1_1_date.html">Task::Date</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab94729ff4d457c99c08660bb34a2c724">parse_date</a> (std::string &amp;&amp;due_date)</td></tr>
+<tr class="memitem:a49d179276874d62b3c447e59938733dd" id="r_a49d179276874d62b3c447e59938733dd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49d179276874d62b3c447e59938733dd">validate_date</a> (const std::chrono::year_month_day &amp;today, const <a class="el" href="structtodo_1_1_task_1_1_date.html">Task::Date</a> &amp;due)</td></tr>
 <tr class="memitem:a7addf6598bab78a42b278dee9a53da64" id="r_a7addf6598bab78a42b278dee9a53da64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7addf6598bab78a42b278dee9a53da64">tag_invoke</a> (boost::json::value_from_tag, boost::json::value &amp;v, <a class="el" href="structtodo_1_1_task.html#a5ed19984d30523d42230049cd5527881">todo::Task::Status</a> const &amp;s)</td></tr>
 <tr class="memitem:a9ac1312fe48d3e24a607fabf5875ec5c" id="r_a9ac1312fe48d3e24a607fabf5875ec5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtodo_1_1_task.html#a5ed19984d30523d42230049cd5527881">todo::Task::Status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9ac1312fe48d3e24a607fabf5875ec5c">tag_invoke</a> (boost::json::value_to_tag&lt; <a class="el" href="structtodo_1_1_task.html#a5ed19984d30523d42230049cd5527881">todo::Task::Status</a> &gt;, boost::json::value const &amp;v)</td></tr>
 <tr class="memitem:a386debfede5a25e398519c28774ff1c8" id="r_a386debfede5a25e398519c28774ff1c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a386debfede5a25e398519c28774ff1c8">BOOST_DESCRIBE_ENUM</a> (<a class="el" href="structtodo_1_1_task.html#a5ed19984d30523d42230049cd5527881">Task::Status</a>, NOT_STARTED, IN_PROGRESS, COMPLETED)</td></tr>
-<tr class="memitem:a20c7807c8fc67c15695fc6e75fb67c24" id="r_a20c7807c8fc67c15695fc6e75fb67c24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20c7807c8fc67c15695fc6e75fb67c24">BOOST_DESCRIBE_STRUCT</a> (<a class="el" href="structtodo_1_1_task.html">Task</a>,(),(desc, child_tasks, priority, status))</td></tr>
+<tr class="memitem:abdb4faa43aeab12fe6b0ce350d884dc1" id="r_abdb4faa43aeab12fe6b0ce350d884dc1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abdb4faa43aeab12fe6b0ce350d884dc1">BOOST_DESCRIBE_STRUCT</a> (<a class="el" href="structtodo_1_1_task_1_1_date.html">Task::Date</a>,(),(year, month, day))</td></tr>
+<tr class="memitem:a140e48a66fd314800fedea7b8cb9913b" id="r_a140e48a66fd314800fedea7b8cb9913b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a140e48a66fd314800fedea7b8cb9913b">BOOST_DESCRIBE_STRUCT</a> (<a class="el" href="structtodo_1_1_task.html">Task</a>,(),(desc, child_tasks, priority, id, status, due_date))</td></tr>
+<tr class="memitem:a7e8641c8f8d3675f280919ebcfa59cd3" id="r_a7e8641c8f8d3675f280919ebcfa59cd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7e8641c8f8d3675f280919ebcfa59cd3">adjust_ids_add</a> (std::vector&lt; <a class="el" href="structtodo_1_1_task.html">Task</a> &gt; &amp;vector, <a class="el" href="#a01f639f1521effd0c112afd273e8b233">u16</a> id)</td></tr>
+<tr class="memitem:a5fceada30c64e3e888d3f4778577d235" id="r_a5fceada30c64e3e888d3f4778577d235"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fceada30c64e3e888d3f4778577d235">adjust_ids_rm</a> (std::vector&lt; <a class="el" href="structtodo_1_1_task.html">Task</a> &gt; &amp;vector, <a class="el" href="#a01f639f1521effd0c112afd273e8b233">u16</a> id)</td></tr>
 <tr class="memitem:a50a4fc4f1d2d77683b5c8ecbc8248e7d" id="r_a50a4fc4f1d2d77683b5c8ecbc8248e7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50a4fc4f1d2d77683b5c8ecbc8248e7d">clear_input_buf</a> ()</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:aeb31537c10c76dc10160d77411e7f524" id="r_aeb31537c10c76dc10160d77411e7f524"><td class="memItemLeft" align="right" valign="top">constexpr std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb31537c10c76dc10160d77411e7f524">SEN</a> = &quot;deadbeef&quot;</td></tr>
+<tr class="memitem:a257cac1b9ae860067a1116f7ee5de4fd" id="r_a257cac1b9ae860067a1116f7ee5de4fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a41aa58835386ed2bad852619eb98a7e4">i32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a257cac1b9ae860067a1116f7ee5de4fd">find_indent_lvl</a> (WINDOW *win, int cursor_y)</td></tr>
 </table>
 <a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Typedef Documentation</h2>
 <a id="a6c3bec73e30fca40f71e2972850c9940" name="a6c3bec73e30fca40f71e2972850c9940"></a>
@@ -312,6 +314,64 @@ Variables</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
+<a id="a7e8641c8f8d3675f280919ebcfa59cd3" name="a7e8641c8f8d3675f280919ebcfa59cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8641c8f8d3675f280919ebcfa59cd3">&#9670;&#160;</a></span>adjust_ids_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void todo::adjust_ids_add </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structtodo_1_1_task.html">Task</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vector</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a01f639f1521effd0c112afd273e8b233">u16</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5fceada30c64e3e888d3f4778577d235" name="a5fceada30c64e3e888d3f4778577d235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fceada30c64e3e888d3f4778577d235">&#9670;&#160;</a></span>adjust_ids_rm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void todo::adjust_ids_rm </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structtodo_1_1_task.html">Task</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vector</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a01f639f1521effd0c112afd273e8b233">u16</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a386debfede5a25e398519c28774ff1c8" name="a386debfede5a25e398519c28774ff1c8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a386debfede5a25e398519c28774ff1c8">&#9670;&#160;</a></span>BOOST_DESCRIBE_ENUM()</h2>
 
@@ -343,8 +403,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a20c7807c8fc67c15695fc6e75fb67c24" name="a20c7807c8fc67c15695fc6e75fb67c24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20c7807c8fc67c15695fc6e75fb67c24">&#9670;&#160;</a></span>BOOST_DESCRIBE_STRUCT()</h2>
+<a id="a140e48a66fd314800fedea7b8cb9913b" name="a140e48a66fd314800fedea7b8cb9913b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140e48a66fd314800fedea7b8cb9913b">&#9670;&#160;</a></span>BOOST_DESCRIBE_STRUCT() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -362,7 +422,33 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">(desc, child_tasks, priority, status)</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+          <td class="paramtype">(desc, child_tasks, priority, id, status, due_date)</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abdb4faa43aeab12fe6b0ce350d884dc1" name="abdb4faa43aeab12fe6b0ce350d884dc1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdb4faa43aeab12fe6b0ce350d884dc1">&#9670;&#160;</a></span>BOOST_DESCRIBE_STRUCT() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">todo::BOOST_DESCRIBE_STRUCT </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtodo_1_1_task_1_1_date.html">Task::Date</a></td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">()</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">(year, month, day)</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -386,8 +472,62 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6b92b80d95281e58507863197f0a9fff" name="a6b92b80d95281e58507863197f0a9fff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6b92b80d95281e58507863197f0a9fff">&#9670;&#160;</a></span>pre_order_trav()</h2>
+<a id="a257cac1b9ae860067a1116f7ee5de4fd" name="a257cac1b9ae860067a1116f7ee5de4fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a257cac1b9ae860067a1116f7ee5de4fd">&#9670;&#160;</a></span>find_indent_lvl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a41aa58835386ed2bad852619eb98a7e4">i32</a> todo::find_indent_lvl </td>
+          <td>(</td>
+          <td class="paramtype">WINDOW *</td>          <td class="paramname"><span class="paramname"><em>win</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>cursor_y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab94729ff4d457c99c08660bb34a2c724" name="ab94729ff4d457c99c08660bb34a2c724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab94729ff4d457c99c08660bb34a2c724">&#9670;&#160;</a></span>parse_date()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtodo_1_1_task_1_1_date.html">Task::Date</a> todo::parse_date </td>
+          <td>(</td>
+          <td class="paramtype">std::string &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>due_date</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae69ca8e48f18909a6c18b5b70fb2138a" name="ae69ca8e48f18909a6c18b5b70fb2138a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69ca8e48f18909a6c18b5b70fb2138a">&#9670;&#160;</a></span>pre_order_trav()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -413,7 +553,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="#a01f639f1521effd0c112afd273e8b233">u16</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="#ab22bc1beb51bff792d48b6f9057d50f7">u64</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -488,9 +628,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Variable Documentation</h2>
-<a id="aeb31537c10c76dc10160d77411e7f524" name="aeb31537c10c76dc10160d77411e7f524"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb31537c10c76dc10160d77411e7f524">&#9670;&#160;</a></span>SEN</h2>
+<a id="a49d179276874d62b3c447e59938733dd" name="a49d179276874d62b3c447e59938733dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49d179276874d62b3c447e59938733dd">&#9670;&#160;</a></span>validate_date()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -499,12 +638,19 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string todo::SEN = &quot;deadbeef&quot;</td>
+          <td class="memname">bool todo::validate_date </td>
+          <td>(</td>
+          <td class="paramtype">const std::chrono::year_month_day &amp;</td>          <td class="paramname"><span class="paramname"><em>today</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structtodo_1_1_task_1_1_date.html">Task::Date</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>due</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel constexpr">constexpr</span></span>  </td>
+<span class="mlabels"><span class="mlabel inline">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

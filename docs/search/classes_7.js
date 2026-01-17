@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['statuschangeaction_0',['StatusChangeAction',['../classtodo_1_1_status_change_action.html',1,'todo']]]
+  ['removeaction_0',['RemoveAction',['../classtodo_1_1_remove_action.html',1,'todo']]]
 ];

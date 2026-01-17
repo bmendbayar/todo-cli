@@ -20,50 +20,53 @@
 \DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}\ \mbox{\hyperlink{classtodo_1_1_vi_view_ad6951d688cd18a4fe5ed89df208e59d2}{y}}\{\};}
 \DoxyCodeLine{00017\ \ \ \}\ cursor\_;\ \ }
 \DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \ \ \textcolor{keywordtype}{int}\ border\_y\_\{\};\ \ \ \ \ \ \ }
-\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{int}\ border\_x\_\{\};\ \ \ \ \ \ \ }
-\DoxyCodeLine{00021\ \ \ \textcolor{keywordtype}{int}\ scroll\_offset\_\{\};\ \ }
-\DoxyCodeLine{00022\ }
-\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{enum\ class}\ Mode\ :\ \mbox{\hyperlink{namespacetodo_a3c2494205b390d9b22b260fbd6c043b8}{u8}}\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ NORMAL\ =\ 0,}
-\DoxyCodeLine{00025\ \ \ \ \ REMOVE\ =\ 1,}
-\DoxyCodeLine{00026\ \ \ \ \ CHANGE\ =\ 2,}
-\DoxyCodeLine{00027\ \ \ \ \ SIBLING\_INSERT\ =\ 3,}
-\DoxyCodeLine{00028\ \ \ \ \ CHILD\_INSERT\ =\ 4,}
-\DoxyCodeLine{00029\ \ \ \}\ mode\_\{Mode::NORMAL\};\ \ }
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ \ \ \textcolor{keyword}{enum\ class}\ InsertChain\ :\ \mbox{\hyperlink{namespacetodo_a3c2494205b390d9b22b260fbd6c043b8}{u8}}\ \{}
-\DoxyCodeLine{00032\ \ \ \ \ DESC\ =\ 0,}
-\DoxyCodeLine{00033\ \ \ \ \ PATH\ =\ 1,}
-\DoxyCodeLine{00034\ \ \ \ \ PRIO\ =\ 2}
-\DoxyCodeLine{00035\ \ \ \}\ ichain\_\{InsertChain::DESC\};\ \ }
-\DoxyCodeLine{00036\ }
-\DoxyCodeLine{00037\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00039\ \ \ \mbox{\hyperlink{classtodo_1_1_vi_view_a28677cc76efb07af176c53e312ed56f8}{ViView}}();}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{classtodo_1_1_vi_view_a3a967f7cda7e21b85ae0abc81e0eca0b}{\string~ViView}}();}
+\DoxyCodeLine{00019\ \ \ \mbox{\hyperlink{namespacetodo_a6c3bec73e30fca40f71e2972850c9940}{i16}}\ initial\_cursor\_x\_;\ \ }
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \mbox{\hyperlink{namespacetodo_a6c3bec73e30fca40f71e2972850c9940}{i16}}\ border\_y\_\{\};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00022\ \ \ \mbox{\hyperlink{namespacetodo_a6c3bec73e30fca40f71e2972850c9940}{i16}}\ border\_x\_\{\};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00023\ \ \ \mbox{\hyperlink{namespacetodo_a6c3bec73e30fca40f71e2972850c9940}{i16}}\ scroll\_offset\_\{\};\ \ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \textcolor{keyword}{enum\ class}\ Mode\ :\ \mbox{\hyperlink{namespacetodo_a3c2494205b390d9b22b260fbd6c043b8}{u8}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ NORMAL\ =\ 0,}
+\DoxyCodeLine{00027\ \ \ \ \ REMOVE\ =\ 1,}
+\DoxyCodeLine{00028\ \ \ \ \ CHANGE\ =\ 2,}
+\DoxyCodeLine{00029\ \ \ \ \ SIBLING\_INSERT\ =\ 3,}
+\DoxyCodeLine{00030\ \ \ \ \ CHILD\_INSERT\ =\ 4,}
+\DoxyCodeLine{00031\ \ \ \}\ mode\_\{Mode::NORMAL\};\ \ }
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \textcolor{keyword}{enum\ class}\ InsertChain\ :\ \mbox{\hyperlink{namespacetodo_a3c2494205b390d9b22b260fbd6c043b8}{u8}}\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ DESC\ =\ 0,}
+\DoxyCodeLine{00035\ \ \ \ \ PATH\ =\ 1,}
+\DoxyCodeLine{00036\ \ \ \ \ PRIORITY\ =\ 2,}
+\DoxyCodeLine{00037\ \ \ \ \ DATE\ =\ 3,}
+\DoxyCodeLine{00038\ \ \ \}\ curr\_event\_\{InsertChain::DESC\};\ \ }
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \mbox{\hyperlink{classtodo_1_1_vi_view_a28677cc76efb07af176c53e312ed56f8}{ViView}}();}
 \DoxyCodeLine{00043\ }
-\DoxyCodeLine{00046\ \ \ \textcolor{keyword}{virtual}\ UserInput\ \mbox{\hyperlink{classtodo_1_1_vi_view_abf4fceb84c19a2dec858cc8badad62a9}{get\_input}}(\textcolor{keyword}{const}\ std::string\ \&msg)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00051\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_vi_view_adfd487a3a2a36b0cf2b98a23f62d85cc}{display\_list}}(\textcolor{keyword}{const}\ std::vector<Task>\ \&todo\_list,\ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}\ level\ =\ 0)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00055\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_vi_view_a49598945a99eaef5893f5301c6052ce6}{display\_msg}}(\textcolor{keyword}{const}\ std::string\ \&msg)\ \textcolor{keyword}{override};}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00057\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00059\ \ \ \textcolor{keywordtype}{void}\ refresh\_list\_view();}
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00062\ \ \ UserInput\ handle\_normal();}
+\DoxyCodeLine{00045\ \ \ \mbox{\hyperlink{classtodo_1_1_vi_view_a3a967f7cda7e21b85ae0abc81e0eca0b}{\string~ViView}}();}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00049\ \ \ \textcolor{keyword}{virtual}\ UserInput\ \mbox{\hyperlink{classtodo_1_1_vi_view_abf4fceb84c19a2dec858cc8badad62a9}{get\_input}}(\textcolor{keyword}{const}\ std::string\ \&msg)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00054\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_vi_view_adfd487a3a2a36b0cf2b98a23f62d85cc}{display\_list}}(\textcolor{keyword}{const}\ std::vector<Task>\ \&todo\_list,\ \mbox{\hyperlink{namespacetodo_a01f639f1521effd0c112afd273e8b233}{u16}}\ level\ =\ 0)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00058\ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classtodo_1_1_vi_view_a49598945a99eaef5893f5301c6052ce6}{display\_msg}}(\textcolor{keyword}{const}\ std::string\ \&msg)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \textcolor{keywordtype}{void}\ refresh\_list\_view();}
 \DoxyCodeLine{00063\ }
-\DoxyCodeLine{00065\ \ \ UserInput\ handle\_remove();}
+\DoxyCodeLine{00065\ \ \ UserInput\ handle\_normal();}
 \DoxyCodeLine{00066\ }
-\DoxyCodeLine{00068\ \ \ UserInput\ handle\_change();}
+\DoxyCodeLine{00068\ \ \ UserInput\ handle\_remove();}
 \DoxyCodeLine{00069\ }
-\DoxyCodeLine{00071\ \ \ UserInput\ handle\_insert();}
+\DoxyCodeLine{00071\ \ \ UserInput\ handle\_change();}
 \DoxyCodeLine{00072\ }
-\DoxyCodeLine{00074\ \ \ \textcolor{keywordtype}{void}\ handle\_child\_insert();}
+\DoxyCodeLine{00074\ \ \ UserInput\ handle\_insert();}
 \DoxyCodeLine{00075\ }
-\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{void}\ handle\_sibling\_insert();}
-\DoxyCodeLine{00078\ \};}
-\DoxyCodeLine{00079\ \}\ \ \textcolor{comment}{//\ namespace\ todo}}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{void}\ handle\_child\_insert();}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00080\ \ \ \textcolor{keywordtype}{void}\ handle\_sibling\_insert();}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ \}\ \ \textcolor{comment}{//\ namespace\ todo}}
 
 \end{DoxyCode}

@@ -6,62 +6,99 @@
 \DoxyCodeLine{00002\ }
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <boost/describe.hpp>}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <boost/json.hpp>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00007\ }
-\DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetodo}{todo}}\ \{}
-\DoxyCodeLine{00009\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtodo_1_1_task}{Task}}\ \{}
-\DoxyCodeLine{00010\ \ \ std::string\ \mbox{\hyperlink{structtodo_1_1_task_a140d4ddc068dd6d6a19ce3fbda954fb6}{desc}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00011\ \ \ std::vector<Task>\ \mbox{\hyperlink{structtodo_1_1_task_a805a45271abde7aa3e61738ee49308b5}{child\_tasks}};\ \ }
-\DoxyCodeLine{00012\ \ \ uint16\_t\ \mbox{\hyperlink{structtodo_1_1_task_ae584d56b87aa28ce31486d9f7c02cb9f}{priority}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00013\ }
-\DoxyCodeLine{00014\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{Status}}\ :\ \textcolor{keywordtype}{char}\ \{}
-\DoxyCodeLine{00015\ \ \ \ \ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881a06972acc3aafeb3a65dbd996c8dedc73}{NOT\_STARTED}}\ =\ 1,}
-\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881aca69f96c768067fbff6c911ca87bccc9}{IN\_PROGRESS}}\ =\ 2,}
-\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881a8f7afecbc8fbc4cd0f50a57d1172482e}{COMPLETED}}\ =\ 3}
-\DoxyCodeLine{00018\ \ \ \}\ \mbox{\hyperlink{structtodo_1_1_task_a21931b4d1f41063832bc9b789e1ec660}{status}};\ \ }
-\DoxyCodeLine{00019\ }
-\DoxyCodeLine{00020\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structtodo_1_1_task_aa71d8c8524bd9c62342b30bb7cd2b909}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtodo_1_1_task}{Task}}\ \&other)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00021\ \textcolor{keyword}{\ \ }\{}
-\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtodo_1_1_task_a140d4ddc068dd6d6a19ce3fbda954fb6}{desc}}\ !=\ other.\mbox{\hyperlink{structtodo_1_1_task_a140d4ddc068dd6d6a19ce3fbda954fb6}{desc}})\ \{}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00024\ \ \ \ \ \}}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtodo_1_1_task_ae584d56b87aa28ce31486d9f7c02cb9f}{priority}}\ !=\ other.\mbox{\hyperlink{structtodo_1_1_task_ae584d56b87aa28ce31486d9f7c02cb9f}{priority}})\ \{}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00028\ \ \ \ \ \}}
-\DoxyCodeLine{00029\ }
-\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtodo_1_1_task_a21931b4d1f41063832bc9b789e1ec660}{status}}\ !=\ other.\mbox{\hyperlink{structtodo_1_1_task_a21931b4d1f41063832bc9b789e1ec660}{status}})\ \{}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00032\ \ \ \ \ \}}
-\DoxyCodeLine{00033\ }
-\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtodo_1_1_task_a805a45271abde7aa3e61738ee49308b5}{child\_tasks}}\ !=\ other.\mbox{\hyperlink{structtodo_1_1_task_a805a45271abde7aa3e61738ee49308b5}{child\_tasks}})\ \{}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00036\ \ \ \ \ \}}
-\DoxyCodeLine{00037\ }
-\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
-\DoxyCodeLine{00039\ \ \ \}}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structtodo_1_1_task_afa18d6d397a6b8ef624f714b76f2f845}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtodo_1_1_task}{Task}}\ \&other)\textcolor{keyword}{\ const}}
-\DoxyCodeLine{00042\ \textcolor{keyword}{\ \ }\{}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ not(*\textcolor{keyword}{this}\ ==\ other);}
-\DoxyCodeLine{00044\ \ \ \}}
-\DoxyCodeLine{00045\ \};}
-\DoxyCodeLine{00046\ }
-\DoxyCodeLine{00047\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetodo_a7addf6598bab78a42b278dee9a53da64}{tag\_invoke}}(boost::json::value\_from\_tag,\ boost::json::value\ \&v,}
-\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{todo::Task::Status}}\ \textcolor{keyword}{const}\ \&s)}
-\DoxyCodeLine{00049\ \{}
-\DoxyCodeLine{00050\ \ \ v\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(s);}
-\DoxyCodeLine{00051\ \}}
-\DoxyCodeLine{00052\ }
-\DoxyCodeLine{00053\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{todo::Task::Status}}\ \mbox{\hyperlink{namespacetodo_a7addf6598bab78a42b278dee9a53da64}{tag\_invoke}}(boost::json::value\_to\_tag<todo::Task::Status>,}
-\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::json::value\ \textcolor{keyword}{const}\ \&v)}
-\DoxyCodeLine{00055\ \{}
-\DoxyCodeLine{00056\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{todo::Task::Status}}\textcolor{keyword}{>}(v.as\_int64());}
-\DoxyCodeLine{00057\ \}}
-\DoxyCodeLine{00058\ }
-\DoxyCodeLine{00059\ \mbox{\hyperlink{namespacetodo_a386debfede5a25e398519c28774ff1c8}{BOOST\_DESCRIBE\_ENUM}}(\mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{Task::Status}},\ NOT\_STARTED,\ IN\_PROGRESS,\ COMPLETED);}
-\DoxyCodeLine{00060\ \mbox{\hyperlink{namespacetodo_a20c7807c8fc67c15695fc6e75fb67c24}{BOOST\_DESCRIBE\_STRUCT}}(\mbox{\hyperlink{structtodo_1_1_task}{Task}},\ (),\ (desc,\ child\_tasks,\ priority,\ status));}
-\DoxyCodeLine{00061\ \}\ \ \textcolor{comment}{//\ namespace\ todo}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacetodo}{todo}}\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtodo_1_1_task_a6ea3c63acef74b79e51f62173336b377}{Task}}\ \{}
+\DoxyCodeLine{00011\ \ \ std::string\ \mbox{\hyperlink{structtodo_1_1_task_a140d4ddc068dd6d6a19ce3fbda954fb6}{desc}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00012\ \ \ std::vector<Task>\ \mbox{\hyperlink{structtodo_1_1_task_a805a45271abde7aa3e61738ee49308b5}{child\_tasks}};\ \ }
+\DoxyCodeLine{00013\ \ \ uint16\_t\ \mbox{\hyperlink{structtodo_1_1_task_ae584d56b87aa28ce31486d9f7c02cb9f}{priority}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00014\ \ \ uint16\_t\ \mbox{\hyperlink{structtodo_1_1_task_a6c3c7cbf04fc83e4244db6df7d89eae3}{id}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{Status}}\ :\ \textcolor{keywordtype}{char}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881a06972acc3aafeb3a65dbd996c8dedc73}{NOT\_STARTED}}\ =\ 1,}
+\DoxyCodeLine{00018\ \ \ \ \ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881aca69f96c768067fbff6c911ca87bccc9}{IN\_PROGRESS}}\ =\ 2,}
+\DoxyCodeLine{00019\ \ \ \ \ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881a8f7afecbc8fbc4cd0f50a57d1172482e}{COMPLETED}}\ =\ 3,}
+\DoxyCodeLine{00020\ \ \ \ \ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881accc0377a8afbf50e7094f5c23a8af223}{INVALID}}\ =\ 4}
+\DoxyCodeLine{00021\ \ \ \}\ \mbox{\hyperlink{structtodo_1_1_task_a21931b4d1f41063832bc9b789e1ec660}{status}};\ \ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structtodo_1_1_task_1_1_date}{Date}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structtodo_1_1_task_1_1_date_a046b2cc5c8f160e824040f9d71d49145}{year}}\{\};}
+\DoxyCodeLine{00025\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structtodo_1_1_task_1_1_date_aac2114d2d96843dc44b71e0fa4d7ac8c}{month}}\{\};}
+\DoxyCodeLine{00026\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structtodo_1_1_task_1_1_date_a38da17b318e6a7b43f50f9255789b788}{day}}\{\};}
+\DoxyCodeLine{00027\ \ \ \}\ \mbox{\hyperlink{structtodo_1_1_task_a48cf2c4c9fa3759a374ab4b0aeb9049b}{due\_date}};\ \ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \mbox{\hyperlink{structtodo_1_1_task_a6ea3c63acef74b79e51f62173336b377}{Task}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ \ \ \mbox{\hyperlink{structtodo_1_1_task_a0df5a96e3ab7be89d360971ae5dca35a}{Task}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtodo_1_1_task_a6ea3c63acef74b79e51f62173336b377}{Task}}\ \&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00031\ \ \ \mbox{\hyperlink{structtodo_1_1_task_ae18674ede41cad8799abff10045163d9}{Task}}(\mbox{\hyperlink{structtodo_1_1_task_a6ea3c63acef74b79e51f62173336b377}{Task}}\ \&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00032\ \ \ \mbox{\hyperlink{structtodo_1_1_task_a6ea3c63acef74b79e51f62173336b377}{Task}}\ \&\mbox{\hyperlink{structtodo_1_1_task_a4844da25ade6303bd39451829d6c22cc}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtodo_1_1_task_a6ea3c63acef74b79e51f62173336b377}{Task}}\ \&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00033\ \ \ \mbox{\hyperlink{structtodo_1_1_task_a6ea3c63acef74b79e51f62173336b377}{Task}}\ \&\mbox{\hyperlink{structtodo_1_1_task_a973816f8412d4178f569bbba53e02d36}{operator=}}(\mbox{\hyperlink{structtodo_1_1_task_a6ea3c63acef74b79e51f62173336b377}{Task}}\ \&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \mbox{\hyperlink{structtodo_1_1_task_a042e100dc1eaf4a39b459d8ed301ff62}{Task}}(std::string\ \&\&\mbox{\hyperlink{structtodo_1_1_task_a140d4ddc068dd6d6a19ce3fbda954fb6}{desc}},\ uint16\_t\ prio,\ uint16\_t\ \textcolor{keywordtype}{id},\ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{Status}}\ completion,\ \mbox{\hyperlink{structtodo_1_1_task_1_1_date}{Date}}\ \&\&date)}
+\DoxyCodeLine{00036\ \ \ \ \ :\ \mbox{\hyperlink{structtodo_1_1_task_a140d4ddc068dd6d6a19ce3fbda954fb6}{desc}}(std::move(\mbox{\hyperlink{structtodo_1_1_task_a140d4ddc068dd6d6a19ce3fbda954fb6}{desc}}))}
+\DoxyCodeLine{00037\ \ \ \ \ ,\ \mbox{\hyperlink{structtodo_1_1_task_ae584d56b87aa28ce31486d9f7c02cb9f}{priority}}(prio)}
+\DoxyCodeLine{00038\ \ \ \ \ ,\ \mbox{\hyperlink{structtodo_1_1_task_a6c3c7cbf04fc83e4244db6df7d89eae3}{id}}(\mbox{\hyperlink{structtodo_1_1_task_a6c3c7cbf04fc83e4244db6df7d89eae3}{id}})}
+\DoxyCodeLine{00039\ \ \ \ \ ,\ \mbox{\hyperlink{structtodo_1_1_task_a21931b4d1f41063832bc9b789e1ec660}{status}}(completion)}
+\DoxyCodeLine{00040\ \ \ \ \ ,\ \mbox{\hyperlink{structtodo_1_1_task_a48cf2c4c9fa3759a374ab4b0aeb9049b}{due\_date}}(std::move(date))}
+\DoxyCodeLine{00041\ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structtodo_1_1_task_aa71d8c8524bd9c62342b30bb7cd2b909}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtodo_1_1_task_a6ea3c63acef74b79e51f62173336b377}{Task}}\ \&other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtodo_1_1_task_a140d4ddc068dd6d6a19ce3fbda954fb6}{desc}}\ !=\ other.\mbox{\hyperlink{structtodo_1_1_task_a140d4ddc068dd6d6a19ce3fbda954fb6}{desc}})\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00048\ \ \ \ \ \}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtodo_1_1_task_ae584d56b87aa28ce31486d9f7c02cb9f}{priority}}\ !=\ other.\mbox{\hyperlink{structtodo_1_1_task_ae584d56b87aa28ce31486d9f7c02cb9f}{priority}})\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtodo_1_1_task_a21931b4d1f41063832bc9b789e1ec660}{status}}\ !=\ other.\mbox{\hyperlink{structtodo_1_1_task_a21931b4d1f41063832bc9b789e1ec660}{status}})\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00056\ \ \ \ \ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtodo_1_1_task_a805a45271abde7aa3e61738ee49308b5}{child\_tasks}}\ !=\ other.\mbox{\hyperlink{structtodo_1_1_task_a805a45271abde7aa3e61738ee49308b5}{child\_tasks}})\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtodo_1_1_task_a48cf2c4c9fa3759a374ab4b0aeb9049b}{due\_date}}.year\ !=\ other.\mbox{\hyperlink{structtodo_1_1_task_a48cf2c4c9fa3759a374ab4b0aeb9049b}{due\_date}}.\mbox{\hyperlink{structtodo_1_1_task_1_1_date_a046b2cc5c8f160e824040f9d71d49145}{year}})\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtodo_1_1_task_a48cf2c4c9fa3759a374ab4b0aeb9049b}{due\_date}}.month\ !=\ other.\mbox{\hyperlink{structtodo_1_1_task_a48cf2c4c9fa3759a374ab4b0aeb9049b}{due\_date}}.\mbox{\hyperlink{structtodo_1_1_task_1_1_date_aac2114d2d96843dc44b71e0fa4d7ac8c}{month}})\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structtodo_1_1_task_a48cf2c4c9fa3759a374ab4b0aeb9049b}{due\_date}}.day\ !=\ other.\mbox{\hyperlink{structtodo_1_1_task_a48cf2c4c9fa3759a374ab4b0aeb9049b}{due\_date}}.\mbox{\hyperlink{structtodo_1_1_task_1_1_date_a38da17b318e6a7b43f50f9255789b788}{day}})\ \{}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00072\ \ \ \ \ \}}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00075\ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structtodo_1_1_task_afa18d6d397a6b8ef624f714b76f2f845}{operator!=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtodo_1_1_task_a6ea3c63acef74b79e51f62173336b377}{Task}}\ \&other)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00078\ \textcolor{keyword}{\ \ }\{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{return}\ not(*\textcolor{keyword}{this}\ ==\ other);}
+\DoxyCodeLine{00080\ \ \ \}}
+\DoxyCodeLine{00081\ \};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{namespacetodo_a7addf6598bab78a42b278dee9a53da64}{tag\_invoke}}(boost::json::value\_from\_tag,\ boost::json::value\ \&v,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{todo::Task::Status}}\ \textcolor{keyword}{const}\ \&s)}
+\DoxyCodeLine{00085\ \{}
+\DoxyCodeLine{00086\ \ \ v\ =\ \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{int}\textcolor{keyword}{>}(s);}
+\DoxyCodeLine{00087\ \}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{todo::Task::Status}}\ \mbox{\hyperlink{namespacetodo_a7addf6598bab78a42b278dee9a53da64}{tag\_invoke}}(boost::json::value\_to\_tag<todo::Task::Status>,}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ boost::json::value\ \textcolor{keyword}{const}\ \&v)}
+\DoxyCodeLine{00091\ \{}
+\DoxyCodeLine{00092\ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{static\_cast<}\mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{todo::Task::Status}}\textcolor{keyword}{>}(v.as\_int64());}
+\DoxyCodeLine{00093\ \}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \mbox{\hyperlink{namespacetodo_a386debfede5a25e398519c28774ff1c8}{BOOST\_DESCRIBE\_ENUM}}(\mbox{\hyperlink{structtodo_1_1_task_a5ed19984d30523d42230049cd5527881}{Task::Status}},\ NOT\_STARTED,\ IN\_PROGRESS,\ COMPLETED);}
+\DoxyCodeLine{00096\ \mbox{\hyperlink{namespacetodo_abdb4faa43aeab12fe6b0ce350d884dc1}{BOOST\_DESCRIBE\_STRUCT}}(\mbox{\hyperlink{structtodo_1_1_task_1_1_date}{Task::Date}},\ (),\ (year,\ month,\ day));}
+\DoxyCodeLine{00097\ \mbox{\hyperlink{namespacetodo_abdb4faa43aeab12fe6b0ce350d884dc1}{BOOST\_DESCRIBE\_STRUCT}}(\mbox{\hyperlink{structtodo_1_1_task}{Task}},\ (),\ (desc,\ child\_tasks,\ priority,\ \textcolor{keywordtype}{id},\ status,\ due\_date));}
+\DoxyCodeLine{00098\ \}\ \ \textcolor{comment}{//\ namespace\ todo}}
 
 \end{DoxyCode}

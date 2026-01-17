@@ -33,11 +33,16 @@ var namespacetodo =
       [ "CLEAR", "namespacetodo.html#aa00270ee171d6975cd933235f656bd6fa813461e0c58e7ad59a2fd83ca2237fec", null ],
       [ "INVALID", "namespacetodo.html#aa00270ee171d6975cd933235f656bd6faccc0377a8afbf50e7094f5c23a8af223", null ]
     ] ],
+    [ "adjust_ids_add", "namespacetodo.html#a7e8641c8f8d3675f280919ebcfa59cd3", null ],
+    [ "adjust_ids_rm", "namespacetodo.html#a5fceada30c64e3e888d3f4778577d235", null ],
     [ "BOOST_DESCRIBE_ENUM", "namespacetodo.html#a386debfede5a25e398519c28774ff1c8", null ],
-    [ "BOOST_DESCRIBE_STRUCT", "namespacetodo.html#a20c7807c8fc67c15695fc6e75fb67c24", null ],
+    [ "BOOST_DESCRIBE_STRUCT", "namespacetodo.html#a140e48a66fd314800fedea7b8cb9913b", null ],
+    [ "BOOST_DESCRIBE_STRUCT", "namespacetodo.html#abdb4faa43aeab12fe6b0ce350d884dc1", null ],
     [ "clear_input_buf", "namespacetodo.html#a50a4fc4f1d2d77683b5c8ecbc8248e7d", null ],
-    [ "pre_order_trav", "namespacetodo.html#a6b92b80d95281e58507863197f0a9fff", null ],
+    [ "find_indent_lvl", "namespacetodo.html#a257cac1b9ae860067a1116f7ee5de4fd", null ],
+    [ "parse_date", "namespacetodo.html#ab94729ff4d457c99c08660bb34a2c724", null ],
+    [ "pre_order_trav", "namespacetodo.html#ae69ca8e48f18909a6c18b5b70fb2138a", null ],
     [ "tag_invoke", "namespacetodo.html#a7addf6598bab78a42b278dee9a53da64", null ],
     [ "tag_invoke", "namespacetodo.html#a9ac1312fe48d3e24a607fabf5875ec5c", null ],
-    [ "SEN", "namespacetodo.html#aeb31537c10c76dc10160d77411e7f524", null ]
+    [ "validate_date", "namespacetodo.html#a49d179276874d62b3c447e59938733dd", null ]
 ];

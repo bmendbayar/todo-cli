@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.15.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>cli-todo: todo::Action Class Reference</title>
+<title>todo-cli: todo::Action Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -26,7 +26,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cli-todo
+   <div id="projectname">todo-cli
    </div>
   </td>
  </tr>
@@ -122,8 +122,8 @@ Collaboration diagram for todo::Action:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a08cdef6732ee7a68a8b7b218ac8f6817" id="r_a08cdef6732ee7a68a8b7b218ac8f6817"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a08cdef6732ee7a68a8b7b218ac8f6817">Action</a> (<a class="el" href="classtodo_1_1_model.html">Model</a> &amp;model, std::vector&lt; <a class="el" href="namespacetodo.html#a01f639f1521effd0c112afd273e8b233">u16</a> &gt; path)</td></tr>
-<tr class="memdesc:a08cdef6732ee7a68a8b7b218ac8f6817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterized constructor.  <br /></td></tr>
+<tr class="memitem:aec9ece2691afb50775f7433dac570e02" id="r_aec9ece2691afb50775f7433dac570e02"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec9ece2691afb50775f7433dac570e02">Action</a> (<a class="el" href="classtodo_1_1_model.html">Model</a> &amp;model, std::vector&lt; <a class="el" href="namespacetodo.html#ab22bc1beb51bff792d48b6f9057d50f7">u64</a> &gt; &amp;&amp;path)</td></tr>
+<tr class="memdesc:aec9ece2691afb50775f7433dac570e02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parameterized constructor.  <br /></td></tr>
 <tr class="memitem:aec002564fb8bd9c4e705d40bd3e30355" id="r_aec002564fb8bd9c4e705d40bd3e30355"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec002564fb8bd9c4e705d40bd3e30355">~Action</a> ()=default</td></tr>
 <tr class="memdesc:aec002564fb8bd9c4e705d40bd3e30355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor.  <br /></td></tr>
 <tr class="memitem:aacf9de44fea7054f2e9019a7eabecf53" id="r_aacf9de44fea7054f2e9019a7eabecf53"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aacf9de44fea7054f2e9019a7eabecf53">execute</a> ()=0</td></tr>
@@ -131,16 +131,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5845c7352b8f938fe3844adcc76e90ae" id="r_a5845c7352b8f938fe3844adcc76e90ae"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5845c7352b8f938fe3844adcc76e90ae">undo</a> ()=0</td></tr>
 <tr class="memdesc:a5845c7352b8f938fe3844adcc76e90ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Undo action.  <br /></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a5ff3556b2f853bef9be057df98f692fc" id="r_a5ff3556b2f853bef9be057df98f692fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structtodo_1_1_task.html">Task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ff3556b2f853bef9be057df98f692fc">find_task</a> ()</td></tr>
+<tr class="memdesc:a5ff3556b2f853bef9be057df98f692fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds specified task.  <br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:a22d1bc9a843775d05d58aaf34cc7a824" id="r_a22d1bc9a843775d05d58aaf34cc7a824"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classtodo_1_1_model.html">Model</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22d1bc9a843775d05d58aaf34cc7a824">model_</a> {nullptr}</td></tr>
 <tr class="memdesc:a22d1bc9a843775d05d58aaf34cc7a824"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classtodo_1_1_model.html">Model</a> to perform actions on.  <br /></td></tr>
-<tr class="memitem:a76ea42e0334d953ec95e45d772912782" id="r_a76ea42e0334d953ec95e45d772912782"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacetodo.html#a01f639f1521effd0c112afd273e8b233">u16</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76ea42e0334d953ec95e45d772912782">exe_path_</a></td></tr>
-<tr class="memdesc:a76ea42e0334d953ec95e45d772912782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path of execution.  <br /></td></tr>
+<tr class="memitem:a9d7eeeb14fc0d95fb8ce64fd06f38206" id="r_a9d7eeeb14fc0d95fb8ce64fd06f38206"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespacetodo.html#ab22bc1beb51bff792d48b6f9057d50f7">u64</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9d7eeeb14fc0d95fb8ce64fd06f38206">exe_path_</a></td></tr>
+<tr class="memdesc:a9d7eeeb14fc0d95fb8ce64fd06f38206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Path of execution.  <br /></td></tr>
 </table>
 <a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a08cdef6732ee7a68a8b7b218ac8f6817" name="a08cdef6732ee7a68a8b7b218ac8f6817"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a08cdef6732ee7a68a8b7b218ac8f6817">&#9670;&#160;</a></span>Action()</h2>
+<a id="aec9ece2691afb50775f7433dac570e02" name="aec9ece2691afb50775f7433dac570e02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec9ece2691afb50775f7433dac570e02">&#9670;&#160;</a></span>Action()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,7 +158,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="namespacetodo.html#a01f639f1521effd0c112afd273e8b233">u16</a> &gt;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="namespacetodo.html#ab22bc1beb51bff792d48b6f9057d50f7">u64</a> &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -162,7 +167,7 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">model</td><td>Reference to the model to work with. </td></tr>
-    <tr><td class="paramname">path</td><td>Path (execution) of action. </td></tr>
+    <tr><td class="paramname">path</td><td>R-value reference to the path (execution) of action. </td></tr>
   </table>
   </dd>
 </dl>
@@ -226,6 +231,33 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a5ff3556b2f853bef9be057df98f692fc" name="a5ff3556b2f853bef9be057df98f692fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ff3556b2f853bef9be057df98f692fc">&#9670;&#160;</a></span>find_task()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtodo_1_1_task.html">Task</a> * todo::Action::find_task </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds specified task. </p>
+
+</div>
+</div>
 <a id="a5845c7352b8f938fe3844adcc76e90ae" name="a5845c7352b8f938fe3844adcc76e90ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5845c7352b8f938fe3844adcc76e90ae">&#9670;&#160;</a></span>undo()</h2>
 
@@ -256,8 +288,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
-<a id="a76ea42e0334d953ec95e45d772912782" name="a76ea42e0334d953ec95e45d772912782"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76ea42e0334d953ec95e45d772912782">&#9670;&#160;</a></span>exe_path_</h2>
+<a id="a9d7eeeb14fc0d95fb8ce64fd06f38206" name="a9d7eeeb14fc0d95fb8ce64fd06f38206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d7eeeb14fc0d95fb8ce64fd06f38206">&#9670;&#160;</a></span>exe_path_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -266,7 +298,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="namespacetodo.html#a01f639f1521effd0c112afd273e8b233">u16</a>&gt; todo::Action::exe_path_</td>
+          <td class="memname">std::vector&lt;<a class="el" href="namespacetodo.html#ab22bc1beb51bff792d48b6f9057d50f7">u64</a>&gt; todo::Action::exe_path_</td>
         </tr>
       </table>
   </td>

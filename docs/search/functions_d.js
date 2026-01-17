@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tag_5finvoke_0',['tag_invoke',['../namespacetodo.html#a7addf6598bab78a42b278dee9a53da64',1,'todo::tag_invoke(boost::json::value_from_tag, boost::json::value &amp;v, todo::Task::Status const &amp;s)'],['../namespacetodo.html#a9ac1312fe48d3e24a607fabf5875ec5c',1,'todo::tag_invoke(boost::json::value_to_tag&lt; todo::Task::Status &gt;, boost::json::value const &amp;v)']]]
+  ['save_5ffile_0',['save_file',['../classtodo_1_1_model.html#ad52b94f101290513f2b081ef8670bf46',1,'todo::Model']]],
+  ['statuschangeaction_1',['StatusChangeAction',['../classtodo_1_1_status_change_action.html#ac143acf961126582f5fefc741eacac92',1,'todo::StatusChangeAction']]]
 ];
