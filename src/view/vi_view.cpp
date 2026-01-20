@@ -17,7 +17,9 @@ ViView::ViView()
     noecho();
     curs_set(1);
 
-    notif_ = newwin(2, 30, 0, COLS - 30);
+    notif_ = newwin(2, COLS, LINES - 2, 0);
+    wattron(notif_, A_REVERSE);
+    wrefresh(notif_);
     list_pad_ = newpad(1000, COLS);
     keypad(list_pad_, true);
     set_escdelay(25);
@@ -37,7 +39,7 @@ ViView::~ViView()
 
 void ViView::refresh_list_view()
 {
-    prefresh(list_pad_, border_y_, border_x_, 0, 0, LINES - 1, COLS);
+    prefresh(list_pad_, border_y_, border_x_, 0, 0, LINES - 3, COLS);
 }
 
 UserInput ViView::get_input(const std::string &msg)
@@ -66,7 +68,6 @@ UserInput ViView::handle_normal()
     int ch;
     while (true) {
         ch = wgetch(list_pad_);
-        wclear(notif_);
 
         switch (ch) {
             case 'h':
@@ -123,7 +124,7 @@ UserInput ViView::handle_normal()
                 break;
         }
 
-        if (cursor_.y == getmaxy(stdscr) + scroll_offset_ - 7) {
+        if (cursor_.y == getmaxy(stdscr) + scroll_offset_ - 9) {
             scroll_offset_++;
             border_y_++;
         } else if (cursor_.y == scroll_offset_ + 6) {
@@ -220,7 +221,6 @@ UserInput ViView::handle_insert()
         curr_event_ = InsertChain::DATE;
     }
 
-    wclear(notif_);
     return {buf, true, false};
 }
 
@@ -260,7 +260,6 @@ UserInput ViView::handle_remove()
         return {{}, true, false};
     }
 
-    wclear(notif_);
     return {std::to_string(cursor_.y + 1), true, false};
 }
 
@@ -276,7 +275,6 @@ UserInput ViView::handle_change()
         return {std::to_string(cursor_.y + 1), true, false};
     }
 
-    wclear(notif_);
     return {{}, true, false};
 }
 
@@ -370,8 +368,9 @@ void ViView::display_list(const std::vector<Task> &todo_list, u16 level)
 
 void ViView::display_msg(const std::string &msg)
 {
-    mvwprintw(notif_, 0, 0, "%s", msg.c_str());
-    mvwprintw(notif_, 1, 0, "Press any key to continue. ");
+    mvwprintw(notif_, 0, 1, "%s", msg.c_str());
+    mvwprintw(notif_, 1, 1, "Press any key to continue. ");
+    wgetch(notif_);
     wrefresh(notif_);
 }
 }  // namespace todo
