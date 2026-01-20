@@ -25,6 +25,12 @@ Controller::Controller(int argc, char **argv)
     } else if (strcmp(argv[1], "-i") == 0) {
         view_ = std::make_unique<IView>();
     }
+
+    try {
+        model_.load_file();
+    } catch (const std::exception &e) {
+        view_->display_msg(e.what());
+    }
 }
 
 void Controller::run()

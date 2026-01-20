@@ -3,24 +3,19 @@
 #include <filesystem>
 #include <fstream>
 #include <iostream>
+#include <stdexcept>
 
 #include "model.h"
 #include "task.h"
 
 namespace todo {
-Model::Model()
-{
-    load_file();
-}
-
 void Model::load_file()
 {
     dir_init();
 
     std::ifstream infile{TODO_DIR / TODO_FILE};
     if (infile.is_open() == false) {
-        std::cerr << "error: file not opened\n";
-        std::exit(EXIT_FAILURE);
+        throw std::runtime_error("file was not opened");
     }
 
     u64 size = std::filesystem::file_size(TODO_DIR / TODO_FILE);
@@ -28,18 +23,8 @@ void Model::load_file()
     infile.read(&buf[0], size);
     infile.close();
 
-    try {
-        boost::json::value jv = boost::json::parse(buf);
-        if (jv.is_array() == false) {
-            std::cerr << "json parsing error: json was not an array\n";
-            std::exit(EXIT_FAILURE);
-        }
-
-        todo_list_ = boost::json::value_to<std::vector<Task>>(jv);
-    } catch (const std::exception &e) {
-        std::cerr << "json parsing error: " << e.what() << '\n';
-        std::exit(EXIT_FAILURE);
-    }
+    boost::json::value jv = boost::json::parse(buf);
+    todo_list_ = boost::json::value_to<std::vector<Task>>(jv);
 }
 
 void Model::save_file()
@@ -52,22 +37,18 @@ void Model::save_file()
 
 void Model::dir_init()
 {
-    try {
-        if (std::filesystem::exists(TODO_DIR) == false) {
-            std::filesystem::create_directory(TODO_DIR);
-        }
+    if (std::filesystem::exists(TODO_DIR) == false) {
+        std::filesystem::create_directory(TODO_DIR);
+    }
 
-        if (std::filesystem::exists(TODO_DIR / TODO_FILE) == false) {
-            std::ofstream outfile{TODO_DIR / TODO_FILE};
-            outfile << "[]";
+    if (std::filesystem::exists(TODO_DIR / TODO_FILE) == false) {
+        std::ofstream outfile{TODO_DIR / TODO_FILE};
+        outfile << "[]";
 
-            if (outfile.is_open() == false) {
-                std::cerr << "file could not be initialized\n";
-            }
-            outfile.close();
+        if (outfile.is_open() == false) {
+            std::cerr << "file could not be initialized\n";
         }
-    } catch (const std::exception &e) {
-        return;
+        outfile.close();
     }
 }
 
@@ -138,9 +119,13 @@ void Model::remove(const std::vector<u64> &path)
         return;
     }
 
+    if (path.empty()) {
+        throw std::runtime_error("rm err: path was empty");
+    }
+
     Task *parent_task = get_parent_task(path);
     if (parent_task == nullptr) {
-        return;
+        throw std::out_of_range("rm err: parent task was null");
     }
     parent_task->child_tasks.erase(
         parent_task->child_tasks.begin() + *(path.end() - 1)
@@ -173,7 +158,7 @@ void Model::change_task_status(
 )
 {
     if (path.empty()) {
-        return;
+        throw std::runtime_error("change status err: path was empty");
     }
 
     // necessary duplicate code for task inheritance.
@@ -202,7 +187,7 @@ void Model::change_task_priority(
 )
 {
     if (path.empty()) {
-        return;
+        throw std::runtime_error("change priority err: path was empty");
     }
 
     Task *task = get_task(path);

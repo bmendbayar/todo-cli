@@ -16,8 +16,8 @@ private:
         "todo_list.json";  ///< File name.
 
 public:
-    /// \brief Constructs an object by reading from a JSON file.
-    Model();
+    Model() = default;
+    ~Model() = default;
 
     /// \brief Sets up the .todo directory and its contents.
     void dir_init();
