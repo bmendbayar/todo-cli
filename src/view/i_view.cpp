@@ -17,8 +17,7 @@ IView::IView()
     noecho();
     curs_set(0);
     if (has_colors() == false) {
-        fprintf(stderr, "err: terminal has no color support\n");
-        std::exit(EXIT_FAILURE);
+        throw("terminal has no color support");
     }
     start_color();
 

@@ -1,6 +1,7 @@
 #include <chrono>
 #include <cstdlib>
 #include <exception>
+#include <iostream>
 #include <memory>
 #include <sstream>
 #include <stdexcept>
@@ -18,18 +19,23 @@
 namespace todo {
 Controller::Controller(int argc, char **argv)
 {
-    if (argc == 1) {
-        view_ = std::make_unique<ViView>();
-    } else if (strcmp(argv[1], "-b") == 0) {
-        view_ = std::make_unique<BasicView>();
-    } else if (strcmp(argv[1], "-i") == 0) {
-        view_ = std::make_unique<IView>();
-    }
-
     try {
+        if (argc == 1) {
+            view_ = std::make_unique<ViView>();
+        } else if (strcmp(argv[1], "-b") == 0) {
+            view_ = std::make_unique<BasicView>();
+        } else if (strcmp(argv[1], "-i") == 0) {
+            view_ = std::make_unique<IView>();
+        }
+
         model_.load_file();
     } catch (const std::exception &e) {
-        view_->display_msg(e.what());
+        if (view_ == nullptr) {
+            std::cerr << e.what();
+            std::exit(EXIT_FAILURE);
+        } else {
+            view_->display_msg(e.what());
+        }
     }
 }
 

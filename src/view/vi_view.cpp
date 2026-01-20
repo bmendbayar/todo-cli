@@ -1,5 +1,6 @@
 #include <cctype>
 #include <chrono>
+#include <stdexcept>
 #include <string>
 
 #include "vi_view.h"
@@ -9,8 +10,7 @@ ViView::ViView()
 {
     initscr();
     if (has_colors() == false) {
-        fprintf(stderr, "err: terminal has no color support\n");
-        std::exit(EXIT_FAILURE);
+        throw std::runtime_error("terminal has no color support");
     }
     start_color();
     cbreak();
