@@ -102,6 +102,11 @@ void Model::add(Task &task, const std::vector<u64> &path)
 {
     Task *parent_task = get_parent_task(path);
     if (parent_task == nullptr) {
+        if (path.empty() == true) {
+            todo_list_.emplace_back(task);
+            return;
+        }
+
         todo_list_.emplace(todo_list_.cbegin() + *(path.cend() - 1), task);
         return;
     }

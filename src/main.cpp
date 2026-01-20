@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv)
 {
-  todo::Controller app(argc, argv);
-  app.run();
-  return 0;
+    todo::Controller app(argc, argv);
+    app.run();
+    return 0;
 }

@@ -235,10 +235,7 @@ void Controller::handle_add(int ch)
         }
 
         std::vector<u64> path_vec = parse_path(path);
-        if (ch == 'O') {
-            if (path_vec.empty() == true) {
-                return;
-            }
+        if (ch == 'O' && path_vec.empty() == false) {
             path_vec.pop_back();
         }
 
