@@ -155,9 +155,6 @@ inline i32 find_indent_lvl(WINDOW *win, int cursor_y)
     return indent;
 }
 
-/// Works in a cascade type fashion. There are a chain of events that happen
-/// when inserting and depending on the mode the view is currently in, it may
-/// skip a step.
 UserInput ViView::handle_insert()
 {
     std::string buf;
