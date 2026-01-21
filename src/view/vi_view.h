@@ -51,6 +51,9 @@ public:
     ~ViView();
 
     /// \brief Gets input from the user.
+    /// \note Works in a cascade type fashion. There are a chain of events that
+    ///       happen when inserting and depending on the mode the view is
+    ///       currently in, it may skip a step.
     /// \param msg String to display.
     virtual UserInput get_input(const std::string &msg) override;
 
