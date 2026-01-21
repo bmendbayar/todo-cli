@@ -284,6 +284,15 @@ void ViView::display_list(const std::vector<Task> &todo_list, u16 level)
         wclear(list_pad_);
     }
 
+    std::chrono::time_point<std::chrono::system_clock> now{};
+    std::chrono::year_month_day today{};
+    if (level == 0) {
+        now = std::chrono::system_clock::now();
+        std::chrono::year_month_day today{
+            std::chrono::floor<std::chrono::days>(now)
+        };
+    }
+
     u16 lsize = todo_list.size();
     for (u16 i = 0; i < lsize; ++i) {
         const auto &task = todo_list[i];
@@ -318,28 +327,23 @@ void ViView::display_list(const std::vector<Task> &todo_list, u16 level)
                 break;
         }
 
-        auto const now = std::chrono::system_clock::now();
-        std::chrono::year_month_day today{
-            std::chrono::floor<std::chrono::days>(now)
-        };
-
         std::string overdue = [&task, &today]() -> std::string {
             if ((int)today.year() > task.due_date.year) {
-                return std::string("OVERDUE");
+                return "OVERDUE";
             }
 
             if ((int)today.year() == task.due_date.year &&
                 (unsigned)today.month() > task.due_date.month) {
-                return std::string("OVERDUE");
+                return "OVERDUE";
             }
 
             if ((int)today.year() == task.due_date.year &&
                 (unsigned)today.month() == task.due_date.month &&
                 (unsigned)today.day() > task.due_date.day) {
-                return std::string("OVERDUE");
+                return "OVERDUE";
             }
 
-            return std::string("");
+            return "";
         }();
 
         mvwprintw(
